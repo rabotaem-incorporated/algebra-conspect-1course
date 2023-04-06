@@ -230,7 +230,7 @@ $forall A, space B, space C$:
 ]
 
 #examples[
-    + $RR^* = RR \\ {0}$
+    + $RR^* = RR without {0}$
     + $ZZ^* = {-1, 1}$
     + $(factor(ZZ, 4 ZZ))^* = {overline(1), overline(3)}$
     + $(factor(ZZ, 5 ZZ))^* = {overline(1), overline(2), overline(3), overline(4)}$
