@@ -69,8 +69,6 @@
     $dim Hom(V, W) = (dim V) mul (dim W)$.
 ]
 
-#let Bb = math.cal($B$)
-
 #props[
     Пусть $Aa in Hom(U, V)$, $Bb in Hom(v, W)$; $E, F, G$ --- базисы $U, V, W$. Тогда $ [Bb Aa]_(E, G) = underbrace([Bb]_(F, G), B) underbrace([Aa]_(E,F), A) $
 ]
@@ -80,8 +78,6 @@
         cases(Aa E = F A, Bb F = G B) ==> Bb Aa E = (Bb F) A = G B A = G (B A) = G [Bb Aa]_(E, G) ==> [Bb Aa]_(E, G) = B A.
     $
 ]
-
-#let Id = math.op("Id")
 
 #import "../../utils/cd.typ": *
 

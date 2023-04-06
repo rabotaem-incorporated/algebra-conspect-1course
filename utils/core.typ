@@ -144,6 +144,7 @@
 #let empty = sym.nothing.rev
 #let Lin = math.op("Lin")
 #let Dim = math.op("dim")
+#let id = math.op("id")
 #let GL = math.op("GL")
 #let quad = sym.space.quad
 #let sq(char, ..args) = {
@@ -158,5 +159,10 @@
 #let Hom = math.op("Hom")
 #let Ker = math.op("Ker")
 #let Im = math.op("Im")
+#let Id = math.op("Id")
 #let Aa = math.cal($A$)
+#let End = math.op("End")
 #let maps = sym.arrow.long.bar
+
+#import "shortcuts.typ": *
+

@@ -45,3 +45,17 @@
     + $W_1 times ... times W_k arrow.long V$ --- биекция (причем биекция, сохраняющая структуру линейного пространства)
         $(w_1, ..., w_k) arrow.long.bar w_1 + ... + w_k$.
 ]
+
+#lemma[
+    Пусть $V = W_1 pc ... pc W_k$; в $W_j$ зафиксируем базис $e_(j 1), ..., e_(j d_j)$
+
+    Тогда совокупность всех $(e_jl bar 1 <= j <= k, 1 <= l <= d_j)$ --- базис $V$.
+]
+
+#exercise[
+    Доказать #emoji.smiley.
+]
+
+#follow[
+    $dim (W_1 pc W_2 pc ... pc W_k) = dim W_1 + dim W_2 + ... + dim W_k$.
+]
