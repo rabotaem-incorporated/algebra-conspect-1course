@@ -1,6 +1,5 @@
 = Линейная алгебра
 
-/*
 #include "1-permutations-cont.typ"
 #include "2-determinants.typ"
 #include "3-determinants-more-props.typ"
