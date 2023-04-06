@@ -109,7 +109,7 @@
       )
     )[  
       #if name != none [
-        *#type: #name.*
+        *#type (#name).*
       ] else [
         *#type.*
       ]
