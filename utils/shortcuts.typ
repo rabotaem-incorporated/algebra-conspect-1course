@@ -6,9 +6,11 @@
 #let empty = sym.nothing.rev
 #let quad = sym.space.quad
 #let maps = sym.arrow.long.bar
+#let sim = sym.zws + sym.tilde + sym.zws
 #let hat(x) = math.accent(x, "^")
 
 // operators
+#let lcm = math.op("lcm")
 #let diag = math.op("diag")
 #let sgn = math.op("sgn")
 #let Lin = math.op("Lin")
@@ -28,6 +30,7 @@
 
 // functions
 #let det(..a) = {set math.mat(delim: "|"); math.mat(..a)}
+
 #let sq(char, ..args) = {
     if args.pos().len() == 0 { 
         $char_1, ..., char_n$
@@ -35,3 +38,7 @@
         $char_1, ..., char_#{args.pos().at(0)}$
     }
 }
+
+#let factor(first, second) = $first\/second$
+
+#let equiv(mod) = $limits(ident)_(mod)$
