@@ -13,5 +13,4 @@
 #include "11-linear-mappings.typ"
 #include "12-linear-mapping-matrix.typ"
 #include "13-linear-operators.typ"
-*/
 #include "14-eigen-values-vectors.typ"
