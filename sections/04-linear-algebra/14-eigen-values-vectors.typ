@@ -22,7 +22,7 @@
     Такие скаляры $lambda$ называют _собственными значениями_, или _собственными числами_ оператора $Aa$. То есть $lambda$ является собственным значением, если найдется ненулевой $v$ такой, что $Aa v = lambda v$. Или, $lambda$ является собственным значением если $V_lambda = {v in V bar Aa v = lambda v} != 0.$ Или, если $(A - lambda epsilon_V)(v) != 0$. Или, если $Ker (Aa - lambda epsilon_V) != 0$.
 
 
-    Если $lambda$ --- собветвенные значения $Aa$, то такое $V_lambda$ называется _собственным подпростантсвом_, принадлежащим собственному значению $V$. Собственные вектора являются элементами таких пространств.
+    Если $lambda$ --- собственные значения $Aa$, то такое $V_lambda$ называется _собственным подпростантсвом_, принадлежащим собственному значению $V$. Собственные вектора являются элементами таких пространств.
 ]
 
 #notice[
@@ -30,7 +30,7 @@
 ]
 
 #props[
-    Пусть $v_i in V_lambda_i \ {0}$ --- собственные вектора, $i = 1,..., m$, $lambda_1, ..., lambda_m$ --- различные собственные значения. Тогда $v_1, ..., v_2, ..., v_m$ --- ЛНС.
+    Пусть $v_i in V_lambda_i \\ {0}$ --- собственные вектора, $i = 1,..., m$, $lambda_1, ..., lambda_m$ --- различные собственные значения. Тогда $v_1, ..., v_2, ..., v_m$ --- ЛНС.
 ]
 
 #proof[
@@ -48,7 +48,7 @@
 ]
 
 #follow[
-    Собственных значений $Aa$ не более $dim V$.
+    Собственных значений $Aa$ не более, чем $dim V$.
 ]
 
 #let pc = sym.plus.circle
@@ -71,20 +71,20 @@
 #props[
     Пусть $lambda_1, ..., lambda_m$ --- все собственные значение оператора $Aa$; $n = dim(V)$.
 
-    + $g_(lambda_1) + ... g_(lambda_m) <= n$
-    + $Aa$ --- диагоназир... $<==> g_(lambda_1) + ... g_(lambda_m) = n$
+    + $g_(lambda_1) + ... + g_(lambda_m) <= n$
+    + $Aa$ --- диагоназируем $<==> g_(lambda_1) + ... g_(lambda_m) = n$
 ]
 
 #proof[
     + #h(1fr) $
-        V > V_lambda_1 pc ... pc V_lambda_m ==> dim V &>=\  dim(V_lambda_1 pc ... pc V_lambda_m) &=\ dim V_lambda_1 + ... + dim V_lambda_m &=\ g_lambda_1 + ... + g_lambda_m
+        V > V_lambda_1 pc ... pc V_lambda_m ==> dim V &>=  dim(V_lambda_1 pc ... pc V_lambda_m) &=\ = dim V_lambda_1 + ... + dim V_lambda_m &= g_lambda_1 + ... + g_lambda_m
     $
 
     + #[Можно считать 
     $
         [Aa]_E = diag(underbrace((lambda_1, ..., lambda_1), r_1), ..., underbrace((lambda_m, ..., lambda_m), r_m)) \
         ==> underbrace(dim(V_(lambda_j)), = g_(lambda_j)) >= r_j, #[так как $V_(lambda_j)$ содержит $r_j$ базисных $==>$ линейно независимых векторов] \
-        g_(lambda_1) + ... + g_(lambda_m) >= r_1 + ... + r_, = n ==> g_(lambda_1) + ... + g_(lambda_m) = n
+        g_(lambda_1) + ... + g_(lambda_m) >= r_1 + ... + r_m = n ==> g_(lambda_1) + ... + g_(lambda_m) = n
     $
     Обратно: пусть $sum g_lambda_j = n$, $E_j$ --- любой базис $V_lambda_j$.
     $

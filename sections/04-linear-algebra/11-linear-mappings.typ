@@ -40,7 +40,7 @@
 
 #proof[    
     $0 in Aa(0) in Im Aa$, $A(0) = 0 ==> 0 in Ker Aa$.
-    $Aa(v_1) + Aa(v_2) = Aa(v_1 + v-2) in Im Aa$, $alpha mul Aa v = Aa(alpha v) in Im Aa$
+    $Aa(v_1) + Aa(v_2) = Aa(v_1 + v_2) in Im Aa$, $alpha mul Aa v = Aa(alpha v) in Im Aa$
 ]
 
 #notice[
@@ -74,7 +74,7 @@
 ]
 
 #proof[
-    $d = dim Ker Aa$, $e_1, ..., e_d$ --- базис $Ker$ Aa, $e_1, ..., e_d$ --- ЛНС в $V$. $e_(d+1), ..., e_n$ --- дополнение ее до базиса $V$.
+    $d = dim Ker Aa$, $e_1, ..., e_d$ --- базис $Ker Aa$, $e_1, ..., e_d$ --- ЛНС в $V$. $e_(d+1), ..., e_n$ --- дополнение ее до базиса $V$.
 
     Докажем, что $Aa e_(d + 1), ..., Aa e_n$ --- базис $Im Aa$. Рассмотрим $w in Im Aa$. $w = Aa(v), v = alpha e_1 + ... + alpha_n e_n$. Значит
     $
