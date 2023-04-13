@@ -23,10 +23,12 @@
 #let Id = math.op("Id")
 #let End = math.op("End")
 #let rk = math.op("rk")
+#let Tr = math.op("Tr")
 
 // letters
 #let Aa = math.cal($A$)
 #let Bb = math.cal($B$)
+#let xi = $χ$
 
 // functions
 #let det(..a) = {set math.mat(delim: "|"); math.mat(..a)}

@@ -104,3 +104,133 @@
         (*): quad [Aa - alpha epsilon_V]_E = [Aa]_E - [lambda epsilon_V]_E = [Aa]_E - lambda E_n.
     $
 ]
+
+#def[
+    Для какого-то $Aa = End V$ можно записать собственные числа как корни _характеристического многочлена матрицы A_, $xi_A = abs(A - x mul E_n) in K[x] subset K(x)$.
+
+    $
+        abs(A - x mul E_n) &= (a_(1 1) - x)...(a_(n n) - x) + 
+        #[многочлены степени $<= n-2$] \ &= (-1)^n x^n + (-1)^(n-1)(underbrace(a_(1 1) + a_(2 2) + ... + a_(n n), #[$Tr A$ --- След матрицы $A$]))x^(n-1) + ... + abs(A)
+    $
+]
+
+#lemma[
+    Пусть $A' = C^(-1)A C, C in GL_n(K)$. Тогда $xi_(A') = xi_A$
+]
+
+#proof[
+    $
+        xi_(A') = abs(A' - x mul E_n) = abs(C^(-1) A C - x mul C C^(-1)) = abs(C^(-1) A C - C^(-1)( x C)) = \
+        abs(C^(-1)(A - x E_n)C) = abs(C)^(-1) mul abs(A - X E_n) mul abs(C) = xi_A.
+    $
+]
+
+#follow[
+    Характеристический многочлен оператора $xi_([Aa]_E)$ не зависит от выбора базиса $E$.
+]
+
+#def[
+    _Характеристический многочлен оператора $Aa$_ --- $xi_Aa = xi_([Aa]_E)$, в каком-то базисе $E$.
+]
+
+#props[
+    $lambda$ --- собственное значение $Aa$ <==> $xi_Aa(lambda) = 0$.
+]
+
+#proof[
+    $
+        Ker (A - lambda E_n) = 0 <==> abs(A - lambda E_n) = 0 <==> xi_Aa(lambda) = 0.
+    $
+]
+
+#def[
+    _Алгебраической крастностью_ собственного значения $lambda$ называют кратностью $lambda$ как корня $xi_(Aa)$
+ ]
+
+#notice(name: [Не особо важно, просто для понимания])[
+    Вернемся на секундочку к самому началу разговора. Матрицы часто диагонализируемы. Оказывается, что корни характеричтического многочлена совпадают друг с другом редко (можно обобщить понятие дискриминанта и понять, что обычно дискриминант не равен 0), и пространство многочленов, в которых корни совпадают --- довольно мало (оно строго зификсировано как многочлен от коэффициентов характеристического многочлена). Поэтому очень многие матрицы диагонализируемы.
+]
+
+#props[
+    $g_lambda <= a_lambda$
+]
+
+#let line_end(ident, ..args) = {
+    let end_label = label("line_end_" + ident)
+
+    show end_label: locate(loc => {
+        let end = loc.position()
+        let begin_label = label("line_begin_" + ident)
+        let start = query(begin_label, before: loc).last().location().position()
+        box(place(line(end: (start.x - end.x, start.y - end.y), ..args)))
+    })
+
+    [#box()#end_label]
+}
+
+#let line_begin(ident) = [#box()#label("line_begin_" + ident)]
+
+#proof[
+    Пусть $e_1, ..., e_g$ --- базис $V_lambda$, $e_(g+1), ..., e_n$ --- дополнение до базиса $E$ пространства $V$
+    $
+        [A]_E = mat(
+            lambda, 0, ..., 0, limits(#hide("A"))^#line_begin("B"), dots.v, dots.v;
+            0, lambda, ..., 0, space, dots.v, dots.v;
+            dots.v, dots.v, dots.down, lambda, space, dots.v, dots.v;
+            #move(dx: -5pt)[#line_begin("A")], #box(), #box(), #box(), #box(), #box(), #move(dx: 5pt)[#line_end("A")] ;
+            0, 0, ..., 0, space, dots.v, dots.v;
+            0, 0, ..., 0, limits(#hide("A"))_#line_end("B"), dots.v, dots.v;
+            )
+    $ 
+    $
+    xi_(Aa) = ... = abs((lambda - x) E_g) mul abs(*) = (lambda - x)^g mul (...) ==> a_lambda >= g
+    $
+]
+
+#props[
+    Для оператора $Aa in End(V)$ эквивалентны:
+    + $Aa$ -- диаг-м
+    + $xi_(Aa)$ расскладывается на линейные множетили и для всех собственных значений $lambda$ выполняется $g_lambda = a_lambda$ 
+]
+
+#proof[
+    \ $1 ==> 2$
+    $
+        g_(lambda_1) + ... + g_(lambda_m) = n, xi_(d i a g(alpha_1, ..., alpha_n)) = plus.minus product_(i=1)^n(x- a_i) \
+        a_(lambda_1) + ... + a_(lambda_m) \
+        g_(lambda_j) <= a_(lambda_j) ==> forall j: g_(lambda_j) = a_(lambda_j)
+    $
+    \ $2 ==> 1$
+    $
+        a_(lambda_1) + ... + a_(lambda_m) = n ==> g_(lambda_1) + ... + g_(lambda_m) = n ==> #[$Aa$ диагонализируем]
+    $
+]
+
+#example[
+    Эта матрица недиагонализируема: $ A = mat(0, 0; 1, 0). $
+    У этой матрицы алгебраическая кратность $a_0$ собственного числа 0 это кратность кореня $x^2$, то есть 2, а геометрическая, $1$ так как $dim Lin(e_2) = 1$.
+]
+
+#th[
+    $m in NN, space lambda in L$
+    $
+        J_m(lambda) = mat(
+            lambda, 0, ..., 0;
+            1, lambda, ..., 0;
+            0, 1, ..., 0;
+            dots.v, dots.v, dots.down, dots.v;
+            0, 0, ..., lambda
+        ) in M_m(K)
+    $
+    Такая матрица называется _Жордановой клеткой_.
+
+    Жорданова матрица --- блочная диагональная матрица, в которой каждый блок --- Жорданова клетка.
+
+    Пусть $chi_Aa$ расскладывается на линейные множители. Тогда в $V$ существует базис $E$ такой, что $[Aa]_E$ --- Жорданова матрица. При этом, матрица $[Aa]_E$ определена однозначно, с точностью до порядка блоков.
+]
+
+#proof[
+    #emoji.faith.islam
+]
+
+
