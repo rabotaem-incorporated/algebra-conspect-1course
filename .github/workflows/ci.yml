@@ -24,19 +24,19 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          echo "name=date::$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
-          echo "name=sha::$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       - name: Add tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          custom_tag: ${{ steps.vars.outputs.date }}-${{ steps.vars.outputs.sha }}
+          custom_tag: ${{ env.date }}-${{ env.sha }}
       - name: Post the release
         uses: softprops/action-gh-release@v1
         with:
           files: main.pdf
-          name: ${{ steps.vars.outputs.date }}-${{ steps.vars.outputs.sha }}
+          name: ${{ env.date }}-${{ env.sha }}
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
