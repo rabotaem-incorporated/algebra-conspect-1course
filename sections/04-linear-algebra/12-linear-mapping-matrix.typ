@@ -3,30 +3,30 @@
 == Матрица линейного отображения
 
 #props[
-    Пусть $V$, $W$ --- линейные пространства над $K$. $e_1, ..., e_n in "базис" V$, $w_1, ..., w_n in W$. 
+    Пусть $V$, $W$ --- линейные пространства над $K$. $e_1, ..., e_n in "базис" V$, $sq(w) in W$.
     Тогда $exists! Aa in Hom(V, W): Aa e_i = w_i, i = 1, ..., n$.
 ]
 
 #proof[
     - #[
-        "$!$": Пусть $Aa$ --- как в условии, $v = alpha_1 e_1 + ... + alpha_n e_n$. Тогда  $Aa v = alpha_1 Aa e_1 + ... + alpha_n Aa e_n = alpha_1 w_1 + ... + alpha_n w_n = Aa' v. $ 
+        "Единственность": Пусть $Aa$ --- как в условии, $v = alpha_1 e_1 + ... + alpha_n e_n$. Тогда  $Aa v = alpha_1 Aa e_1 + ... + alpha_n Aa e_n = alpha_1 w_1 + ... + alpha_n w_n = Aa' v. $ 
         Это доказывает единственность $Aa$, так как для любого преобразования $Aa'$ выполняется единственность разложения в базисе (?).
     ]
     - #[
-        "$exists$":
+        "Существование":
         Рассмотрим $alpha_1 w_1 + ... + alpha_n w_n = Aa(alpha_1 e_1 + ... + alpha_n e_n)$. Оно подходит.
     ]
 ]
 
 #def[
-    Пусть $dim V = n, dim W = m$, $E = (e_1, ..., e_n)$ --- базис $V$, а $F = (f_1, ..., f_m)$ --- базис $W$. $Aa in Hom(V, W)$.
+    Пусть $dim V = n, dim W = m$, $E = (sq(e))$ --- базис $V$, а $F = (sq(f, m))$ --- базис $W$. $Aa in Hom(V, W)$.
 
     _Матрицей линейного отображения $Aa$ в базисах $E, F$_ называется:
     $ [Aa]_(E, F) = A = ([Aa e_1]_F, [Aa e_2]_F, ..., [Aa e_n]_F) in M_(m,n) $
 ]
 
 #example[
-    - $V = W = {f in K[X] bar deg f <= 2}$, $E = (1, x, x^2) = F$, $Aa: f arrow.long.bar 5f - f'$. #h(1fr)
+    - $V = W = {f in K[X] bar zws deg f <= 2}$, $E = (1, x, x^2) = F$, $Aa: f maps 5f - f'$. #h(1fr)
         $ mat(5, -1, 0; 0, 5, -2; 0, 0, 5) = [A]_(E, F) $
 ]
 
@@ -45,7 +45,7 @@
 ]
 
 #props[
-    Пусть $phi: V --> W$ --- изоморфизм, $e_1, ..., e_n$ --- базис $V$. Тогда $phi(e_1), ..., phi(e_n)$ --- базис $W$.
+    Пусть $phi: V --> W$ --- изоморфизм, $sq(e)$ --- базис $V$. Тогда $phi(e_1), ..., phi(e_n)$ --- базис $W$.
 ]
 
 #proof[
@@ -63,7 +63,6 @@
 ]
 
 #exercise[Доказать #emoji.finger.m]
-// осталось 15 минут :)
 
 #follow[
     $dim Hom(V, W) = (dim V) mul (dim W)$.
@@ -79,14 +78,13 @@
     $
 ]
 
-#import "../../utils/cd.typ": *
-
 $ Aa: limits(V)^(E, E') --> limits(W)^(F, F') $
 $ [Aa]_(E, F) = A, [Aa]_(E', F') = ? $
 $ Aa = Id_W compose Aa compose Id_V $
 $ [Aa]_(E', F') = [Id_W]_(F, F') mul A mul [Id_v]_(E', E) = M_(F' --> F) mul A mul M_(E --> E') $
 $ [Aa]_(E', F') = M_(F --> F')^(-1) mul A mul M_(E --> E') $
 
+#import "../../utils/cd.typ": *
 
 #align(center)[#commutative_diagram(
   node((0, 0), [$V$]),
@@ -100,7 +98,7 @@ $ [Aa]_(E', F') = M_(F --> F')^(-1) mul A mul M_(E --> E') $
 )]
 
 #props[
-    Пусть $V$, $W$ --- конечномерные, $Aa in Hom(V, W)$. Тогда в $V$ и $W$ сущесвуют базисы $E$ и $F$ такие, что $[Aa]_(E, F)$ --- окаймленная единичная.
+    Пусть $V$, $W$ --- конечномерные, $Aa in Hom(V, W)$. Тогда в $V$ и $W$ существуют базисы $E$ и $F$ такие, что $[Aa]_(E, F)$ --- окаймленная единичная.
 ]
 
 #proof[

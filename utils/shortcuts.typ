@@ -7,9 +7,12 @@
 #let quad = sym.space.quad
 #let maps = sym.arrow.long.bar
 #let sim = sym.zws + sym.tilde + sym.zws
-#let hat(x) = math.accent(x, "^")
+#let pc = sym.plus.circle
 
 // operators
+#let sgn = math.op("sgn")
+#let Inv = math.op("Inv")
+#let Det = math.op("det")
 #let lcm = math.op("lcm")
 #let diag = math.op("diag")
 #let sgn = math.op("sgn")
@@ -28,19 +31,31 @@
 // letters
 #let Aa = math.cal($A$)
 #let Bb = math.cal($B$)
-#let xi = $χ$
+#let xi = math.chi
 
 // functions
-#let det(..a) = {set math.mat(delim: "|"); math.mat(..a)}
+
+#let hat(x) = math.accent(x, "^")
+#let adj(A) = math.accent(A, "~")
+#let factor(first, second) = $first\/second$
+#let equiv(mod) = $limits(ident)_(mod)$
+#let mrow(mtx, idx) = $mtx[idx,]$
+#let mcol(mtx, idx) = $mtx[,idx]$
+
+#let det(..a) = {
+    if a.pos().len() == 1 {
+        $Det #a.pos().at(0)$
+    } else {
+        math.mat(delim: "|", ..a)
+    }
+}
 
 #let sq(char, ..args) = {
     if args.pos().len() == 0 { 
         $char_1, ..., char_n$
     } else if args.pos().len() == 1 {
-        $char_1, ..., char_#{args.pos().at(0)}$
+        $char_1, ..., char_#args.pos().at(0)$
+    } else if args.pos().len() == 2 {
+        $char_#args.pos().at(0), ..., char_#args.pos().at(1)$
     }
 }
-
-#let factor(first, second) = $first\/second$
-
-#let equiv(mod) = $limits(ident)_(mod)$

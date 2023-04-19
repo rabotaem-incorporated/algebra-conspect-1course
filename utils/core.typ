@@ -1,5 +1,11 @@
 #let chapter_state = state("chapter", "")
 
+#let clabel(name) = {
+  [
+    $$#label(name)
+  ]
+}
+
 #let notes(
   name: none,
   short-name: none,
@@ -32,7 +38,7 @@
             spacing: .5em,
             line(length: 100%),
             [
-              #short-name
+              @start[#short-name]
               #h(1fr)
               #it   
             ]
@@ -56,6 +62,8 @@
     numbering: "1.a)",
   )
 
+  set math.equation(numbering: (..nums) => "")
+
   show heading.where(level: 1): it => {
     chapter_state.update(it.body.text)
     [
@@ -72,6 +80,7 @@
   }
    
   [
+    #clabel("start")
     #align(center + horizon)[
       #text(
          size: 30pt
@@ -129,6 +138,7 @@
 #let proof = make_theorem("Доказательство")
 #let def = make_theorem("Определение", color: def_color)
 #let prop = make_theorem("Свойство", color: oth_color)
+#let propes = make_theorem("Свойства", color: oth_color)
 #let notice = make_theorem("Замечание")
 #let example = make_theorem("Пример")
 #let examples = make_theorem("Примеры")
