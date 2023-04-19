@@ -7,6 +7,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set variables
+        id: vars
+        run: |
+          echo name=date::$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+          echo name=sha::$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v3
       - name: Get typsted
@@ -21,22 +26,17 @@ jobs:
         run: |
           ./typst compile main.typ 2> error.log
           if [[ -s error.log ]]; then echo "Compilation failed"; cat error.log; exit 1; else echo "Compilation successful!"; fi
-      - name: Set variables
-        id: vars
-        run: |
-          echo "::set-output name=date::$(date +'%Y-%m-%d')"
-          echo "::set-output name=sha::$(git rev-parse --short HEAD)"
       - name: Add tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          custom_tag: ${{ steps.vars.outputs.date }}-${{ steps.vars.outputs.sha }}
+          custom_tag: ${{ env.date }}-${{ env.sha }}
       - name: Post the release
         uses: softprops/action-gh-release@v1
         with:
           files: main.pdf
-          name: ${{ steps.vars.outputs.date }}
+          name: ${{ env.date }}-${{ env.sha }}
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
