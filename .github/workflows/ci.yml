@@ -10,8 +10,8 @@ jobs:
       - name: Set variables
         id: vars
         run: |
-          echo name=date::$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-          echo name=sha::$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+          echo "name=date::$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+          echo "name=sha::$(git rev-parse --short HEAD)" >> $GITHUB_ENV
       - name: Checkout
         uses: actions/checkout@v3
       - name: Get typsted
@@ -36,7 +36,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: main.pdf
-          name: ${{ env.date }}-${{ env.sha }}
+          name: ${{ env.date }}
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
