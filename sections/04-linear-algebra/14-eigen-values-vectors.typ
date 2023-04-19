@@ -161,7 +161,7 @@
     show end_label: locate(loc => {
         let end = loc.position()
         let begin_label = label("line_begin_" + ident)
-        let start = query(begin_label, before: loc).last().location().position()
+        let start = query(begin_label, loc).last().location().position()
         box(place(line(end: (start.x - end.x, start.y - end.y), ..args)))
     })
 
