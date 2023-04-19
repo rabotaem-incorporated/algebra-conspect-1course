@@ -1,0 +1,32 @@
+name: Compile PDF on push
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get typsted
+        uses: robinraju/release-downloader@v1.6
+        with:
+          repo: rabotaem-incorporated/opinionated-typst
+          latest: true
+          filename: typst-x86_64-unknown-linux*.tar.*
+      - name: Extract the executable
+        run: tar -xf typst-x86_64-unknown-linux*.tar.* && mv typst-x86_64-unknown-linux*/typst .
+      - name: Compile the PDF
+        run: ./typst compile main.pdf
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+      - name: Post the release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: main.pdf
+          tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
+          name: ${{ steps.date.outputs.date }}-${{ github.sha }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
