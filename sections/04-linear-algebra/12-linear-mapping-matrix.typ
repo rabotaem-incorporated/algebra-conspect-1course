@@ -84,7 +84,7 @@ $ Aa = Id_W compose Aa compose Id_V $
 $ [Aa]_(E', F') = [Id_W]_(F, F') mul A mul [Id_v]_(E', E) = M_(F' --> F) mul A mul M_(E --> E') $
 $ [Aa]_(E', F') = M_(F --> F')^(-1) mul A mul M_(E --> E') $
 
-#import "../../utils/cd.typ": *
+#import "../../utils/cd/cd.typ": *
 
 #align(center)[#commutative_diagram(
   node((0, 0), [$V$]),
