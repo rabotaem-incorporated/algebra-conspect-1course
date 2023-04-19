@@ -12,21 +12,31 @@ jobs:
       - name: Get typsted
         uses: robinraju/release-downloader@v1.6
         with:
-          repo: rabotaem-incorporated/opinionated-typst
+          repository: rabotaem-incorporated/opinionated-typst
           latest: true
           filename: typst-x86_64-unknown-linux*.tar.*
       - name: Extract the executable
         run: tar -xf typst-x86_64-unknown-linux*.tar.* && mv typst-x86_64-unknown-linux*/typst .
       - name: Compile the PDF
-        run: ./typst compile main.pdf
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+        run: |
+          ./typst compile main.typ 2> error.log
+          if [[ -s error.log ]]; then echo "Compilation failed"; cat error.log; exit 1; else echo "Compilation successful!"; fi
+      - name: Set variables
+        id: vars
+        run: |
+          echo "::set-output name=date::$(date +'%Y-%m-%d')"
+          echo "::set-output name=sha::$(git rev-parse --short HEAD)"
+      - name: Add tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          custom_tag: ${{ steps.vars.outputs.date }}-${{ steps.vars.outputs.sha }}
       - name: Post the release
         uses: softprops/action-gh-release@v1
         with:
           files: main.pdf
-          tag_name: ${{ steps.date.outputs.date }}-${{ github.sha }}
-          name: ${{ steps.date.outputs.date }}-${{ github.sha }}
+          name: ${{ steps.vars.outputs.date }}
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
