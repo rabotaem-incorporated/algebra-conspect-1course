@@ -1,0 +1,42 @@
+name: Compile PDF on push
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get typsted
+        uses: robinraju/release-downloader@v1.6
+        with:
+          repository: rabotaem-incorporated/opinionated-typst
+          latest: true
+          filename: typst-x86_64-unknown-linux*.tar.*
+      - name: Extract the executable
+        run: tar -xf typst-x86_64-unknown-linux*.tar.* && mv typst-x86_64-unknown-linux*/typst .
+      - name: Compile the PDF
+        run: |
+          ./typst compile main.typ 2> error.log
+          if [[ -s error.log ]]; then echo "Compilation failed"; cat error.log; exit 1; else echo "Compilation successful!"; fi
+      - name: Set variables
+        id: vars
+        run: |
+          echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+          echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: Add tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          custom_tag: ${{ env.date }}-${{ env.sha }}
+      - name: Post the release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: main.pdf
+          name: ${{ env.date }}-${{ env.sha }}
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
