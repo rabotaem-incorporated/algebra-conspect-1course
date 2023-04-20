@@ -73,12 +73,61 @@
     - $(g^k)^l = g^(k l)$
 ]
 
-#let cycle(elem) = $lr(angle.l elem angle.r)$
-
 #def[
-    _Циклическая подгруппа порожденная элементом_ $g$ --- $cycle(g) = {g^n bar n in NN}$.
+    _Циклическая подгруппа порожденная элементом_ $g$ --- $gen(g) = {g^n bar n in NN}$.
 ]
 
 #def[
     Группа называется _циклической_, если она является циклической подгруппой себя, порожденной каким-то своим элементом.
+]
+
+#def[
+    _Порядком элемента_ называется наименьшее такое число $n in NN$, что $g^n = e$. Обозначается $ord g$. Если для любого $n$, $g^n != e$, говорят, что $ord g = infinity$.
+]
+
+#lemma[
+    Пусть $ord(g) = d in NN$. Тогда $abs(gen(g)) = d$ и $gen(g) limits(=)^((*)) {e, g, g^2, ..., g^(d-1)}$
+]
+
+#proof[
+    Пусть $h in gen(g) ==> h = g^m, space m in ZZ$
+    $ m = d q + r, 0 <= r <= d-1 ==> h = g^(d q + r) = (g^d)^q mul g^r = g^r #[доказали $(*)$] $
+    Предположим, $g^k = g^l, space 0<= k <= l <= d-1 ==> g^(l-k) = e$. $space 1 <= l - k <= d-1$, противоречие с $ord(g) = d$.
+]
+
+#notice[
+    Если $ord g = infinity$, то все $g^k$ различны между собой.
+]
+
+#denote[
+    Пусть $G$ --- группа, $A, B subset G$.
+    Тогда 
+    $
+        A B = { a b bar a in A, b in B } \
+        A^(-1) = { a^-1 bar a in A }
+    $
+]
+
+#def[
+    Пусть $M subset G$. _Подгруппой, порожденной $M$_ называется 
+    $
+        gen(M) = {g_1 ... g_n bar n >= 0; space g_i in M union M^(-1), i = 1, ..., n} 
+    $
+    Если в произведении $0$ множителей, оно считается равным $e$.
+]
+
+#notice[
+    Подгруппа, порожденная $M$ --- действительно подргуппа.
+]
+
+#props[
+    Пусть $M subset G$. Тогда 
+    $
+        gen(M) = limits(sect.big)_(H < G \ H > M) H
+    $
+]
+
+#proof[
+    + "$subset$": Пусть $H < G$, $H supset M$. Тогда $M^(-1) subset H$, значит $M union M^(-1) subset H ==> gen(M) subset H$.
+    + "$supset$": $gen(M) < G, space gen(M) supset M ==>  limits(sect.big)_(H < G \ H > M) subset gen(M)$
 ]

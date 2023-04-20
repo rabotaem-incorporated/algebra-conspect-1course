@@ -106,23 +106,48 @@
   ]
 }
 
-#let make_theorem(type, color: white) = {
+#let last_theorem = state("last_theorem", none)
+
+#let make_theorem(type, color: white, highlight_color: none, glues_to: ()) = {
+  
+  if highlight_color == none {
+    highlight_color = color.lighten(25%)
+  }
+
   (name: none, content) => [
+    #locate(loc => {
+      let lt = last_theorem.at(loc)
+      // [Value: #lt]
+      let th_label = query(<end-of-last-th>, before: loc)
+      let last_th_page = if th_label.len() > 0 { 
+        th_label.last().location().position().page
+      } else { 
+        -1
+      }
+
+      if lt in glues_to and last_th_page == loc.position().page { 
+        v(-0.4em)
+      }
+    })
+
+    #last_theorem.update(type)
+
     #block(
       outset: .4em,
       inset: .4em,
       width: 100%,
       fill: color.lighten(90%), 
       stroke: (
-        left: 2pt + color.lighten(25%),
-      )
-    )[  
+        left: highlight_color,
+      ),
+    )[
       #if name != none [
         *#type (#name).*
       ] else [
         *#type.*
       ]
       #sym.space.hair #content
+      #box()<end-of-last-th>
     ]
   ]
 }
@@ -135,7 +160,6 @@
 #let lemma = make_theorem("Лемма", color: oth_color)
 #let props = make_theorem("Предложение", color: oth_color)
 #let follow = make_theorem("Следствие", color: oth_color)
-#let proof = make_theorem("Доказательство")
 #let def = make_theorem("Определение", color: def_color)
 #let prop = make_theorem("Свойство", color: oth_color)
 #let propes = make_theorem("Свойства", color: oth_color)
@@ -143,6 +167,15 @@
 #let example = make_theorem("Пример")
 #let examples = make_theorem("Примеры")
 #let exercise = make_theorem("Упражнение")
+#let denote = make_theorem("Обозначение", color: def_color)
+
+#let proof = make_theorem("Доказательство", highlight_color: gray, 
+  glues_to: (
+    "Теорема", "Лемма", "Предложение", "Следствие", 
+    "Свойство", "Свойства", "Замечание"
+  )
+)
+
 
 #import "shortcuts.typ": *
 

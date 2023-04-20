@@ -8,6 +8,7 @@
 #let maps = sym.arrow.long.bar
 #let sim = sym.zws + sym.tilde + sym.zws
 #let pc = sym.plus.circle
+#let nsubg = sym.triangle.l.small
 
 // operators
 #let sgn = math.op("sgn")
@@ -27,6 +28,7 @@
 #let End = math.op("End")
 #let rk = math.op("rk")
 #let Tr = math.op("Tr")
+#let ord = math.op("ord")
 
 // letters
 #let Aa = math.cal($A$)
@@ -41,6 +43,8 @@
 #let equiv(mod) = $limits(ident)_(mod)$
 #let mrow(mtx, idx) = $mtx[idx,]$
 #let mcol(mtx, idx) = $mtx[,idx]$
+#let gen(elem) = $lr(angle.l elem angle.r)$
+#let pmod(x) = $quad mod x$
 
 #let det(..a) = {
     if a.pos().len() == 1 {
