@@ -118,7 +118,7 @@
     #locate(loc => {
       let lt = last_theorem.at(loc)
       // [Value: #lt]
-      let th_label = query(<end-of-last-th>, before: loc)
+      let th_label = query(selector(<end-of-last-th>).before(loc), loc)
       let last_th_page = if th_label.len() > 0 { 
         th_label.last().location().position().page
       } else { 
