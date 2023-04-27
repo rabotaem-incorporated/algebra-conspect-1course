@@ -24,7 +24,7 @@
     $ {g' bar g' ~ g} = {g h bar h in H} = g H $
 
     Аналогично определяются правые смежные классы.
-    Множество левых смежных классов $G$ по $H$: $G \/ H$,
+    Множество левых смежных классов $G$ по $H$: $G fg H$,
     множество правых смежных классов $G$ по $H$: $G \\ H$.
 ]
 
@@ -32,13 +32,13 @@
     Пусть $G = S_3$, $H = gen((1 2)) = {e, (1 2)}$.
 
     $
-        G \/ H = { e H, (1 3)H, (2 3)H } = { H, {(1 3), (1 2 3)}, {(2 3), (1 3 2)} } \
+        G fg H = { e H, (1 3)H, (2 3)H } = { H, {(1 3), (1 2 3)}, {(2 3), (1 3 2)} } \
         H \\ G = { H e, H(1 3), H(2 3) } = { H, {(1 3), (1 3 2)}, {(2 3), (1 2 3)} }
     $
 ]
 
 #def[
-    Индексом подгруппы $G$ называют $(G : H) = abs(G \/ H)$
+    Индексом подгруппы $G$ называют $(G : H) = abs(G fg H)$
 ]
 
 #example[
@@ -49,10 +49,10 @@
 #props[
     Существует биекция:
     $
-        G \/ H &limits(-->)^(alpha) H \\ G \
+        G fg H &limits(-->)^(alpha) H \\ G \
         M &maps M^(-1) 
     $
-    Это означает, что $abs(G \/ H) = abs(H \\ G)$, поэтому "левый" и "правый" индексы подгруппы --- одно и тоже.
+    Это означает, что $abs(G fg H) = abs(H \\ G)$, поэтому "левый" и "правый" индексы подгруппы --- одно и тоже.
 ]
 
 #proof[
@@ -61,10 +61,10 @@
     
     Рассмотрим отображение $beta$:
     $ 
-        H \\ G &limits(-->)^(beta) G \/ H
+        H \\ G &limits(-->)^(beta) G fg H
         M &maps M^(-1)
 
-        beta compose alpha = id_(G \/ H),space alpha compose beta = id_(H \\ G)
+        beta compose alpha = id_(G fg H),space alpha compose beta = id_(H \\ G)
     $
 ]
 
@@ -76,7 +76,7 @@
 ]
 
 #proof[
-    $ abs(G) = limits(sum)_(M in G \/ H) abs(M) = (G : H) abs(H) $.
+    $ abs(G) = limits(sum)_(M in G fg H) abs(M) = (G : H) abs(H) $.
     пояснение $ M = g H, space H &--> g H space #[--- биекция]\
     h &maps g h \ g h_1 = g h_2 ==> h_1 = h_2 ==> abs(M) = abs(H) $
 ]

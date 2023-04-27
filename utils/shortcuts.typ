@@ -9,6 +9,8 @@
 #let sim = sym.zws + sym.tilde + sym.zws
 #let pc = sym.plus.circle
 #let nsubg = sym.triangle.l.small
+#let iso = sym.tilde.eqq
+#let fg = sym.slash
 
 // operators
 #let sgn = math.op("sgn")
@@ -39,6 +41,7 @@
 
 #let hat(x) = math.accent(x, "^")
 #let adj(A) = math.accent(A, "~")
+#let wave(x) = math.accent(x, "~")
 #let factor(first, second) = $first\/second$
 #let equiv(mod) = $limits(ident)_(mod)$
 #let mrow(mtx, idx) = $mtx[idx,]$
