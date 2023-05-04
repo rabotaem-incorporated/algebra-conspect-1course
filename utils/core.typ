@@ -181,8 +181,16 @@
 #let prop = make_theorem("Свойство", color: oth_color)
 #let props = make_theorem("Свойства", color: oth_color)
 #let notice = make_theorem("Замечание", highlight_color: gray)
-#let example = make_theorem("Пример", highlight_color: gray)
-#let examples = make_theorem("Примеры", highlight_color: gray)
+#let example = make_theorem("Пример", highlight_color: orange.lighten(25%), glues_to: (
+    "Теорема", "Лемма", "Предложение", "Следствие", 
+    "Свойство", "Свойства", "Замечание", "Определение",
+    "Доказательство", "Обозначение",
+))
+#let examples = make_theorem("Примеры", highlight_color: orange.lighten(25%), glues_to: (
+    "Теорема", "Лемма", "Предложение", "Следствие", 
+    "Свойство", "Свойства", "Замечание", "Определение",
+    "Доказательство", "Обозначение",
+))
 #let exercise = make_theorem("Упражнение", highlight_color: gray)
 #let denote = make_theorem("Обозначение", color: def_color)
 

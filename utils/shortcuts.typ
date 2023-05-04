@@ -66,3 +66,13 @@
         $char_#args.pos().at(0), ..., char_#args.pos().at(1)$
     }
 }
+
+
+// amogus
+
+#let amogus_baby = "ව"
+#let amogus_toddler = "ධ"
+#let amogus_tween = "ඩ"
+#let amogus_teen = "ඞ"
+#let amogus_adult = "ඞ්"
+#let amogus = amogus_teen

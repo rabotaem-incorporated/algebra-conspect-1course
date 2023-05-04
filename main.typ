@@ -1,5 +1,8 @@
 #import "utils/core.typ": notes
 
+
+//#show regex("[^☭]"): "☭"
+
 #show: notes.with(
   name: "Конспект лекций по алгебре за второй семестр",
   short-name: "Алгебра " + emoji.wheelchair,

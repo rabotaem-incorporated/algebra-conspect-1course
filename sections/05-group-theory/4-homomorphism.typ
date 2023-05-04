@@ -147,7 +147,7 @@
 
 #th(name: "О классификации цилических групп")[
     Пусть $G$ --- циклическая группа. 
-    + Если $abs(G) = infinity ==> G iso ZZ$.
+    + Если $abs(G) = oo ==> G iso ZZ$.
     + Если $abs(G) = n ==> G iso ZZ \/n ZZ$
 ]
 #proof[

@@ -69,7 +69,7 @@
 ]
 
 #th(name: [Лагранжа])[
-    Пусть $abs(G) < infinity$, $H < G$. Тогда 
+    Пусть $abs(G) < oo$, $H < G$. Тогда 
     $
         abs(G) = abs(H) mul (G : H).
     $
@@ -82,11 +82,11 @@
 ]
 
 #follow[
-    + Если $abs(G) < infinity$ и $H < G$, то $abs(H) bar abs(G)$.
+    + Если $abs(G) < oo$ и $H < G$, то $abs(H) bar abs(G)$.
     
-    + Если $abs(G) < infinity$ и $g in G$, то $ord g = abs(gen(g))$.
+    + Если $abs(G) < oo$ и $g in G$, то $ord g = abs(gen(g))$.
     
-    + Если $abs(G) < infinity$ и $g in G$, то $g^(abs(G)) = e$.
+    + Если $abs(G) < oo$ и $g in G$, то $g^(abs(G)) = e$.
     
     + #[
         Теорема Эйлера.

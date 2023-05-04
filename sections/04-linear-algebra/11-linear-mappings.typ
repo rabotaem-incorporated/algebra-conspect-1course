@@ -66,7 +66,7 @@
 ]
 
 #pr[
-    Пусть $Aa in Hom(V, W)$, $dim V = n < infinity$. 
+    Пусть $Aa in Hom(V, W)$, $dim V = n < oo$. 
     Тогда $Im Aa$ конечномерен и 
     $ 
         underbrace(dim Ker Aa, #[Дефект $Aa$, $space.thin delta(Aa)$]) + underbrace(dim Im Aa, #[Ранг $Aa$, $rk Aa$]) = n.
