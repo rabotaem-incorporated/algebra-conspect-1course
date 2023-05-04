@@ -51,7 +51,7 @@
     -   $n = 6006 = 2^1 dot.c 3^1 dot.c 7^1 dot.c 11^1 dot.c 13^1$
 ]
 
-#props[    
+#pr[    
     Пусть $a = p_1^(r_1) ... p_s^(r_s), space  b = p_1^(t_1) ... p_s^(t_s)$
 
     Тогда $a  divides b <==> r_i <= t_i space forall i in {1, ..., s}$
@@ -95,7 +95,7 @@
     
 ]
 
-#props[    
+#pr[    
     Пусть $a = p_1^(r_1) ... p_s^(r_s), space  b = p_1^(t_1) ... p_s^(t_s)$
 
     Тогда $c = p_1^(max(r_1, t_1)) ... p_s^(max(r_s, t_s))$ --- наименьшее общее кратное чисел $a$ и $b$

@@ -34,7 +34,7 @@
     $Aa(0) = Aa(0 + 0) = Aa(0) + Aa(0) ==> Aa(0) = 0.$
 ]
 
-#props[
+#pr[
     $Im Aa < W$, $Ker Aa < V$
 ]
 
@@ -52,7 +52,7 @@
 ]
 
 
-#props[
+#pr[
     Пусть $Aa in Hom(V, W)$. Тогда $Aa$ инъективно $iff$ $Ker Aa = 0$
 ]
 #proof[
@@ -65,7 +65,7 @@
     + "$<==$": \ пусть $Aa v_1 = Aa v_2 ==> Aa(v_1 - v_2) = Aa v_1 - Aa v_2 = 0 ==> v_1 - v_2 in Ker Aa = 0 ==> v_1 = v_2 $
 ]
 
-#props[
+#pr[
     Пусть $Aa in Hom(V, W)$, $dim V = n < infinity$. 
     Тогда $Im Aa$ конечномерен и 
     $ 

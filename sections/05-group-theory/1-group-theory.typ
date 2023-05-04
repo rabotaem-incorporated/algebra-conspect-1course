@@ -120,7 +120,7 @@
     Подгруппа, порожденная $M$ --- действительно подргуппа.
 ]
 
-#props[
+#pr[
     Пусть $M subset G$. Тогда 
     $
         gen(M) = limits(sect.big)_(H < G \ H supset M) H

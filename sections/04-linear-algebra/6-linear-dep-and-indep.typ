@@ -12,7 +12,7 @@
   $Lin(empty) = {0}$.
 ]
 
-#props[
+#pr[
   $v_1, ..., v_m in V$, тогда равносильны:
   + $v_1, ..., v_m$ --- ЛЗС
   + $exists j: 1 <= j <= m space.quad v_j in Lin(v_1, ..., hat(v)_j, ..., v_m)$
@@ -34,7 +34,7 @@
     $
 ]
 
-#props[
+#pr[
   Пусть $sq(v)$ --- ЛЗC, тогда $sq(v), v$ --- тоже ЛЗC.
 ]
 

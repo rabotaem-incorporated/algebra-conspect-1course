@@ -172,14 +172,14 @@
 
 #let th = make_theorem("Теорема", color: th_color)
 #let lemma = make_theorem("Лемма", color: th_color)
-#let props = make_theorem("Предложение", color: oth_color)
+#let pr = make_theorem("Предложение", color: oth_color)
 #let follow = make_theorem(
   "Следствие", color: oth_color,
   glues_to: ("Теорема", "Лемма", "Доказательство")
 )
 #let def = make_theorem("Определение", color: def_color)
 #let prop = make_theorem("Свойство", color: oth_color)
-#let propes = make_theorem("Свойства", color: oth_color)
+#let props = make_theorem("Свойства", color: oth_color)
 #let notice = make_theorem("Замечание", highlight_color: gray)
 #let example = make_theorem("Пример", highlight_color: gray)
 #let examples = make_theorem("Примеры", highlight_color: gray)

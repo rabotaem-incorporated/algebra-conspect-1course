@@ -55,7 +55,7 @@
     +   $forall r_1, r_2: space phi(r_1 r_2) = phi(r_1) phi(r_2)$
 ]
 
-#props[    
+#pr[    
     Пусть $m_1 bot m_2$, тогда существует изоморфизм: $factor(ZZ, m_1 m_2) -> factor(ZZ, m_1 ZZ) times factor(ZZ, m_2 ZZ)$
     
     $[a]_(m_1m_2) |-> ([a]_(m_1), [a]_(m_2))$

@@ -16,7 +16,7 @@
     +   $p divides a b ==> p divides a$ или $p divides b$. 
 ]
 
-#props[
+#pr[
     Пусть $a eq.not plus.minus 1$, тогда существует простое число $p : space p divides a$.
 ]
 

@@ -46,7 +46,7 @@
     + $(ZZ : n ZZ) = n$, для $n in NN$.
 ]
 
-#props[
+#pr[
     Существует биекция:
     $
         G fg H &limits(-->)^(alpha) H \\ G \

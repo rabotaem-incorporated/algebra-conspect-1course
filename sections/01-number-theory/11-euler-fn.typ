@@ -2,7 +2,7 @@
 
 == Функция Эйлера
 
-#props[
+#pr[
     Пусть $m in NN, space  a in ZZ$, тогда $[a]_m in (factor(ZZ, m ZZ))^* <==> a bot m$
 ]
 
@@ -38,7 +38,7 @@
     $\F_(n)$ --- поле из $n$ элементов. Называется _конечным полем_ или _полем Галуа_.
 ]
 
-#props[    
+#pr[    
     $\F_(n)$ --- поле из $n$ элементов $<==> n = p^r, space  p in PP, space  r in ZZ_(+)$.
 
     $p$ --- характеристика $\F_(n)$.
@@ -54,7 +54,7 @@
     Функция $phi times NN -> NN$ --- _функция Эйлера_.
 ]
 
-#props[    
+#pr[    
     Пусть $p in PP, space r in NN$.
 
     Тогда $phi(p^r) = p^r - p^(r-1)$.
@@ -68,7 +68,7 @@
     $p^r - |{a divides 0 <= a < p^r, space p divides a}| = p^r - p^(r-1)$
 ]
 
-#props[ 
+#pr[ 
     Мультипликативность функции Эйлера. 
     
     Пусть $m, n in NN, space  m bot n$.

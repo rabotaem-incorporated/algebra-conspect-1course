@@ -107,7 +107,7 @@
     $
 ]
 
-#props[
+#pr[
     Пусть $U in M_n(K)$. Тогда следующие условия равносильны:
     + $U in GL_n(K).$
     + $exists V in M_n(K): space U V = E_n.$

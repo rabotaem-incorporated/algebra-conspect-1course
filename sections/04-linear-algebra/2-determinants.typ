@@ -36,7 +36,7 @@
   $ Det(A) = abs(A) = limits(sum)_(sigma in S_n) sgn(sigma) a_(1 sigma_1) a_(2 sigma_2) ... a_(n sigma_n). $
 ]
 
-#propes[
+#props[
   + $det(A) = det(A^T)$
 
   + $A = mat(delim: "[", A_1; dots.v; A_i' + A_i'';  dots.v; A_n) ==> det(A) = det(A_1; dots.v; A_i'; dots.v; A_n) + det(A_1; dots.v; A_i''; dots.v; A_n)$
