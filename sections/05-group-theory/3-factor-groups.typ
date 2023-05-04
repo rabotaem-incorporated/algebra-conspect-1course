@@ -75,6 +75,6 @@
     + #[
         Обратный к $g H fg$ --- это $g^(-1)H$
         $ g H mul g^(-1) H = (g g^(-1))H = e G $
-        $ g^(-1)H mul g H = (g^(-1)g)H - e H $
+        $ g^(-1)H mul g H = (g^(-1)g)H = e H $
     ]
 ]

@@ -104,7 +104,7 @@
     Тогда 
     $
         A B = { a b bar a in A, b in B } \
-        A^(-1) = { a^-1 bar a in A }
+        A^(-1) = { a^(-1) bar a in A }
     $
 ]
 
@@ -123,11 +123,11 @@
 #props[
     Пусть $M subset G$. Тогда 
     $
-        gen(M) = limits(sect.big)_(H < G \ H > M) H
+        gen(M) = limits(sect.big)_(H < G \ H supset M) H
     $
 ]
 
 #proof[
     + "$subset$": Пусть $H < G$, $H supset M$. Тогда $M^(-1) subset H$, значит $M union M^(-1) subset H ==> gen(M) subset H$.
-    + "$supset$": $gen(M) < G, space gen(M) supset M ==>  limits(sect.big)_(H < G \ H > M) subset gen(M)$
+    + "$supset$": $gen(M) < G, space gen(M) supset M ==>  limits(sect.big)_(H < G \ H supset M) subset gen(M)$
 ]
