@@ -61,11 +61,15 @@
     
     Рассмотрим отображение $beta$:
     $ 
-        H \\ G &limits(-->)^(beta) G fg H
-        M &maps M^(-1)
-
-        beta compose alpha = id_(G fg H),space alpha compose beta = id_(H \\ G)
+        H \\ G &limits(-->)^(beta) G fg H\
+        M &maps M^(-1)\
+    $ тогда: $
+        beta compose alpha = id_(G fg H), space alpha compose beta = id_(H \\ G)
     $
+]
+
+#denote[
+    Если $G$ конечная группа, то будем на это указывать так: $abs(G) < oo$.
 ]
 
 #th(name: [Лагранжа])[
@@ -76,13 +80,13 @@
 ]
 
 #proof[
-    $ abs(G) = limits(sum)_(M in G fg H) abs(M) = (G : H) abs(H) $.
-    пояснение $ M = g H, space H &--> g H space #[--- биекция]\
+    $ abs(G) = limits(sum)_(M in G fg H) abs(M) = (G : H) abs(H). $
+    Пояснение: $ M = g H, space H &--> g H space #[--- биекция]\
     h &maps g h \ g h_1 = g h_2 ==> h_1 = h_2 ==> abs(M) = abs(H) $
 ]
 
 #follow[
-    + Если $abs(G) < oo$ и $H < G$, то $abs(H) bar abs(G)$.
+    + Если $abs(G) < oo$ и $H < G$, то $abs(G) dots.v abs(H)$.
     
     + Если $abs(G) < oo$ и $g in G$, то $ord g = abs(gen(g))$.
     
@@ -93,7 +97,7 @@
 
         Пусть $(a, m) = 1, m in NN, a in ZZ$. Тогда 
         $
-            a^(phi(m)) ident 1 pmod(m).
+            a^(phi(m)) equiv(m) 1.
         $
     ]
 

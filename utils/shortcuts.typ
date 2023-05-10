@@ -48,6 +48,7 @@
 #let mcol(mtx, idx) = $mtx[,idx]$
 #let gen(elem) = $lr(angle.l elem angle.r)$
 #let pmod(x) = $quad mod x$
+#let todo(msg) = text(fill: red)[TODO: #msg]
 
 #let det(..a) = {
     if a.pos().len() == 1 {

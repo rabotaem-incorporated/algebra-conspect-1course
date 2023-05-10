@@ -18,19 +18,19 @@
 
     + $g maps g^k$, где $g in G$ --- Абелева группа, $k in ZZ$.
 
-    + $H < G$, $H --> G$: $h maps h$ --- гомоморфизм из подгруппы в группу.
+    + $H < G$, $i_H: H --> G$: $h maps h$ --- гомоморфизм из подгруппы в группу.
 
-    + $H nsubg G$, $pi_H: G --> G fg H$: $g maps g H$ --- проекция на подгруппу.
+    + $H nsubg G$, $pi_H: G --> G fg H$: $g maps g H$ --- проекция группы на подгруппу.
 ]
 
 #def[
-    Пусть $phi : G --> G'$ --- гомоморфизм
-    $Ker(phi) = {g in G bar phi(g) = e}$
-    $Im(phi) = {phi(g) bar g in G}$
+    Пусть $phi : G --> G'$ --- гомоморфизм. Тогда:
+    - $Ker(phi) = {g in G bar phi(g) = e}$ --- _ядро гомоморфизма_.
+    - $Im(phi) = {phi(g) bar g in G}$ --- _образ гомоморфизма_.
 ]
 
 #lemma[
-    Пусть $phi: G --> G'$ --- гомоморфизм. Тогда
+    Пусть $phi: G --> G'$ --- гомоморфизм. Тогда:
     + $phi(e) = e$
     + $forall g in G: phi(g^(-1)) = (phi(g))^(-1)$
 ]
@@ -58,13 +58,13 @@
         - $g in Ker(phi) ==> phi(g^(-1)) = (phi(g))^(-1) = e^(-1) = e$
         - Пусть $h in Ker phi$, $g in G$. 
             $ 
-                phi(g h g^(-1)) = phi(g) phi(h) phi(g^(-1)) = phi(g) e phi(g)^-1 = e ==> g h g^(-1) in Ker phi.
+                phi(g h g^(-1)) = phi(g) phi(h) phi(g^(-1)) = phi(g) compose e compose phi(g)^(-1) = e ==> g h g^(-1) in Ker phi.
             $
 ]
 
-#notice[
-    - Если $H < G'$, то $Im i_H = H$.
-    - Если $H nsubg G$, то $Ker pi_H = H$.
+#examples[
+    - Если $H < G'$, то $Im i_H = H$, где $i_H$ --- гомоморфизм из подгруппы в группу.
+    - Если $H nsubg G$, то $Ker pi_H = H$, где $pi_H$ --- проекция группы на подгруппу.
 ]
 
 #def[
@@ -82,6 +82,7 @@
 ]
 
 #proof[
+
     "$==>$": если $phi$ --- инъективный, то 
     $ abs(Ker phi) = abs(phi^(-1)(e)) <= 1 ==> Ker phi = {e} $
 
@@ -89,27 +90,32 @@
 ]
 
 #notice[
-    Попробуем понять что-то про общию структуру гомоморфизмов, а точнее про то как превратить из в изоморфизм.
+    Попробуем понять что-то про общую структуру гомоморфизмов, а точнее про то как превратить их в изоморфизм.
 ]
 
 #pr[
     Пусть $phi: G --> G'$ --- гомоморфизм; $H nsubg G, space H subset Ker phi, H' < G', space H' supset Im phi$. Тогда определим гомоморфизм $wave(phi): $
     $ 
         G fg H &--> H' \
-        g H &arrow.bar phi(g)
+        g H &maps phi(g)
      $
 ]
 
 #proof[
-    Пусть $g_1 H = g_2 H ==> g_2 = g_1 h, space h in H subset Ker phi$.
+    Проверим, что операция корректна, то есть что элементы из одного класса смежности перейдут в один и тот же элемент:
+
+    Пусть $g_1 H = g_2 H ==> g_2 = g_1 h, space h in H subset Ker phi$, тогда: 
+    $ 
+        phi(g_2) = phi(g_1)phi(h) = phi(g_1). 
     $
-        phi(g_2) = phi(g_1)phi(h) = phi(g_1) = wave(phi)(g_1 g_2 H)) = \
-        phi(g_1 g_2) = phi(g_1) phi(g_2) = wave(phi)(g_1 H) wave(phi)(g_2 H).
+    Теперь проверим, то что $wave(phi)$ --- гомоморфизм:
+    $ 
+        wave(phi)(g_1 g_2 H) = phi(g_1 g_2) = phi(g_1) phi(g_2) = wave(phi)(g_1 H) wave(phi)(g_2 H).
     $
 ]
 
 #notice[
-    Пусть $grave(phi)$ --- как выше. Тогда $phi = i_H wave(phi) pi_H$
+    Пусть $wave(phi)$ --- как выше. Тогда $phi = i_H compose wave(phi) compose pi_H$
     
     #align(center)[#commutative_diagram(
         node((0, 0), $G$),
@@ -124,19 +130,23 @@
 ]
 
 #th(name: [о гомоморфизме])[
-    Пусть $phi: G --> G'$ --- гомоморфизм. Тогда индуцированный гомоморфизм
+    Пусть $phi: G --> G'$ --- гомоморфизм. Тогда индуцированный гомоморфизм $wave(phi)$
     $ 
-        G fg Ker phi limits(-->)^(Ker wave(phi)) Im phi
+        G fg Ker phi &--> Im phi\
+        g Ker phi &maps phi(g)
     $
     является изоморфизмом.
 
     aka гомоморфный образ группы изоморфен факторгруппе по ядру гомоморфизма по закону коммунизма.
 ]
 
-#proof[
+#proof[\
+    "Сюръективность":
     $Im wave(phi) = Im phi ==> wave(phi)$ --- сюръективно.
-    Пусть $g mul Ker phi in Ker wave(phi) ==> wave(phi)(g Ker phi) = e$, тогда $g in Ker phi ==> g mul Ker phi = e Ker phi$. \
-    Таким образом $Ker wave(phi) = {e mul Ker phi} ==> wave(phi)$ --- инъективно.
+
+    "Инъективность":
+    Пусть $g Ker phi in Ker wave(phi) ==> wave(phi)(g Ker phi) = e$, тогда $g in Ker phi ==> g Ker phi = e Ker phi$. \
+    Таким образом $Ker wave(phi) = {e Ker phi} ==> wave(phi)$ --- инъективно.
 ]
 
 #example[
@@ -170,13 +180,13 @@
 ]
 
 #proof[
-    Заметим, что $K H = limits(union.big)_(k in K) k H = union.big H k = H K$.
+    Заметим, что $K H = limits(union.big)_(k in K) k H = union.big_(k in K) H k = H K$.
 
     + #[
         $H K != empty$ \
         $(H K)(H K) = H (K H) K =  H H K K = H K$\
         $(H K)^(-1) = K^(-1) H^(-1) = K H = H K$\
-        Мы ползовались тем, что $ K H = union.big_(k in K) k H = union.big H k = H K $
+        Мы пользовались тем, что $ K H = union.big_(k in K) k H = union.big_(k in K) H k = H K $
     ]
 
     + #[
