@@ -31,6 +31,7 @@
 #let rk = math.op("rk")
 #let Tr = math.op("Tr")
 #let ord = math.op("ord")
+#let St = math.op("St")
 
 // letters
 #let Aa = math.cal($A$)
@@ -46,7 +47,7 @@
 #let equiv(mod) = $limits(ident)_(mod)$
 #let mrow(mtx, idx) = $mtx[idx,]$
 #let mcol(mtx, idx) = $mtx[,idx]$
-#let gen(elem) = $lr(angle.l elem angle.r)$
+#let gen(..elem) = $lr(angle.l #elem.pos().join($,$) angle.r)$
 #let pmod(module) = $quad mod module$
 #let todo(msg) = text(fill: red)[TODO: #msg]
 
@@ -70,10 +71,10 @@
 
 
 // amogus
-
-#let amogus_baby = "ව"
-#let amogus_toddler = "ධ"
-#let amogus_tween = "ඩ"
-#let amogus_teen = "ඞ"
-#let amogus_adult = "ඞ්"
-#let amogus = amogus_teen
+#let amogus = symbol(
+    "ඞ",
+    ("adult", "ඞ"),
+    ("tween", "ඩ"),
+    ("toddler", "ධ"),
+    ("baby", "ව"),
+) // yes

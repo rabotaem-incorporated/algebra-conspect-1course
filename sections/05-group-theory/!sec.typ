@@ -7,3 +7,4 @@
 #include "5-direct-prod.typ"
 #include "6-finitely-generated-groups.typ"
 #include "7-free-groups.typ"
+#include "8-group-on-set.typ"

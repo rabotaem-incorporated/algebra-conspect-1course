@@ -108,13 +108,13 @@
 
 #let last_theorem = state("last_theorem", none)
 
-#let make_theorem(th_type, color: white, highlight_color: none, glues_to: ()) = {
+#let make_theorem(th_type, th_type_plural: none, color: white, highlight_color: none, glues_to: ()) = {
   
   if highlight_color == none {
     highlight_color = color.lighten(25%)
   }
 
-  (name: none, content, glue: false) => [
+  (name: none, plural: false, content, glue: false) => [
     #locate(loc => {
       let lt = last_theorem.at(loc)
       // [Value: #lt]
@@ -131,7 +131,8 @@
     })
 
     #last_theorem.update(th_type)
-
+    // todo: fix plural for theorems
+    // todo: add a no introspection option
     #let th_content = [
       #if name != none [
         #let name_string = if type(name) == "string" { 
@@ -139,6 +140,11 @@
         } else { 
           name.text
         }
+
+        #let th_type = th_type
+        #if plural and th_type_plural != none [
+          th_type = th_type_plural
+        ]
 
         #if name_string.starts-with(regex("(об |о |О |об)")) [
           #let name_string = name_string.replace("О ", "о ").replace("Об ", "об ")
@@ -178,19 +184,16 @@
   glues_to: ("Теорема", "Лемма", "Доказательство")
 )
 #let def = make_theorem("Определение", color: def_color)
-#let prop = make_theorem("Свойство", color: oth_color)
-#let props = make_theorem("Свойства", color: oth_color)
+#let prop = make_theorem("Свойство", th_type_plural: "Свойства", color: oth_color)
+#let props = prop.with(plural: true)
 #let notice = make_theorem("Замечание", highlight_color: gray)
-#let example = make_theorem("Пример", highlight_color: orange.lighten(25%), glues_to: (
+#let example = make_theorem("Пример", th_type_plural: "Примеры", 
+    highlight_color: orange.lighten(25%), glues_to: (
     "Теорема", "Лемма", "Предложение", "Следствие", 
     "Свойство", "Свойства", "Замечание", "Определение",
     "Доказательство", "Обозначение",
 ))
-#let examples = make_theorem("Примеры", highlight_color: orange.lighten(25%), glues_to: (
-    "Теорема", "Лемма", "Предложение", "Следствие", 
-    "Свойство", "Свойства", "Замечание", "Определение",
-    "Доказательство", "Обозначение",
-))
+#let examples = example.with(plural: true)
 #let exercise = make_theorem("Упражнение", highlight_color: gray)
 #let denote = make_theorem("Обозначение", color: def_color)
 
