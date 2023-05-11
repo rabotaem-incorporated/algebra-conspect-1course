@@ -47,7 +47,7 @@
 #let mrow(mtx, idx) = $mtx[idx,]$
 #let mcol(mtx, idx) = $mtx[,idx]$
 #let gen(elem) = $lr(angle.l elem angle.r)$
-#let pmod(x) = $quad mod x$
+#let pmod(module) = $quad mod module$
 #let todo(msg) = text(fill: red)[TODO: #msg]
 
 #let det(..a) = {

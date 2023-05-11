@@ -3,7 +3,7 @@
 == Конечно порожденные абелевы группы
 
 #pr[
-    Пусть $(a, b) = 1, space a, b in N$. Тогда
+    Пусть $(a, b) = 1, space a, b in NN$. Тогда
     $
         ZZ fg a b ZZ iso (ZZ fg a ZZ) times (ZZ fg b ZZ)
     $
