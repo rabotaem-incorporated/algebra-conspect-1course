@@ -32,6 +32,7 @@
 #let Tr = math.op("Tr")
 #let ord = math.op("ord")
 #let St = math.op("St")
+#let char = math.op("char")
 
 // letters
 #let Aa = math.cal($A$)
