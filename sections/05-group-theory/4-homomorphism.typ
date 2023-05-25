@@ -180,13 +180,12 @@
 ]
 
 #proof[
-    Заметим, что $K H = limits(union.big)_(k in K) k H = union.big_(k in K) H k = H K$.
+    Заметим, что $K H = limits(union.big)_(k in K) k H = limits(union.big)_(k in K) H k = H K$.
 
     + #[
         $H K != empty$ \
         $(H K)(H K) = H (K H) K =  H H K K = H K$\
         $(H K)^(-1) = K^(-1) H^(-1) = K H = H K$\
-        Мы пользовались тем, что $ K H = union.big_(k in K) k H = union.big_(k in K) H k = H K $
     ]
 
     + #[

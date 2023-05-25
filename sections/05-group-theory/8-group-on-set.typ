@@ -32,7 +32,7 @@
     $
     Проверим свойства:
     + $phi(g_1)(phi(g_2)(x)) = phi(g_1 g_2)(x)$
-    + $underbrace(phi(e)(x), id_X) = x$
+    + $underbrace(phi(e), id_X)(x) = x$
     
     "$2 ==> 1$": Рассмотрим $psi: G times X --> X$ и отображение $phi$:
     $
@@ -66,7 +66,10 @@
     + $G = S_n, space X = RR^n$
         $
             sigma vec(alpha_1, dots.v, alpha_n) = vec(alpha_(sigma(1)), dots.v, alpha_(sigma(n)))
-        $ // автор не определился (нравится ли ему алгебра или нет) нужно ли -1 или нет
+        $ 
+    + $G = S_n, space X = V$ --- линейное пространство с базисом $e_1, ..., e_n$ $
+        sigma(alpha_1 e_1 + ... + alpha_n e_n) = alpha_1 e_(sigma(1)) + ... + alpha_n e_(sigma(n))
+    $.
 ]
 
 
@@ -99,7 +102,7 @@
     
     Докажем корректность $phi$: 
     $
-        g_2 = g_1 h "где" h in St_x, g_2 x = g_1 h x = g_1 x = 0.
+        g_2 = g_1 h "где" h in St_x, space g_2 x = g_1 h x = g_1 x.
     $
 
     $G x = Im phi$ --- по определению. Проверим, что $phi$ --- инъективна:
@@ -129,7 +132,8 @@
     $
     Обозначим за $k_i$ число орбит размера $p^i$. Тогда 
     $
-        p^n = abs(G) = k_0 mul 1 + k_1 mul p + dots + k_n mul p^n ==> p bar k_0
+        p^n = abs(G) = k_0 mul 1 + k_1 mul p + dots + k_n mul p^n ==> p bar k_0 \
+        k_0 >= 1, "так как орбита" e "состоит только из " e 
     $
     Возвращаемся к требуемому:
     $
@@ -138,12 +142,4 @@
         &<==> h in Z(G)
     $
     Таким образом $abs(Z(G)) >= p$.
-]
-
-#notice[
-    На самом деле оффтопик.
-
-    Если $V$ --- линейное пространство с базисом $e_1, ..., e_n$ и перестановкой $sigma in S_n$, то $sigma(alpha_1 e_1 + ... + alpha_n e_n) = alpha_1 e_sigma_1 + ... + alpha_n e_sigma_n$.
-
-    Потом надо разобраться что к чему :).
 ]

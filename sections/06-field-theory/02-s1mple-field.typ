@@ -20,7 +20,7 @@
 #th[
     Пусть $F$ --- простое поле.
     + Если $char F = 0$, то $F iso QQ$.
-    + Если $char F = p > 0$, то $F iso ZZ fg (p)$.
+    + Если $char F = p > 0$, то $F iso ZZ fg p ZZ$.
 ]
 
 #lemma[
@@ -39,15 +39,15 @@
             0 &maps 0_F, \
             -(1 + ... + 1) &maps -alpha(n).
         $
-        Можно проверить $alpha$ --- вложение, и $alpha(a / b) = alpha(a) / alpha(b)$ (это следует из того, что $char F != 0$, а значит $alpha(b) != 0$)
-        По лемме, $alpha$ задает изоморфное отображение $QQ --> Im alpha$, значит $Im alpha$ --- поле и $Im alpha = F$.
+        Можно проверить, что $alpha$ --- вложение, и $alpha(a / b) = alpha(a) / alpha(b)$ (это следует из того, что $char F != 0$, а значит $alpha(b) != 0$)
+        По лемме, $alpha$ задает изоморфное отображение $QQ --> Im alpha$, значит $Im alpha$ --- поле и $Im alpha = F$, так как $F$ - простое по условию.
     + $char F = p > 0$
         $
-            #[Построим отображение ] alpha: ZZ &--> F\
-            underbrace(1 + ... + 1, n) &maps underbrace(1 + ... + 1, n),
+            alpha: ZZ &--> F \
+            underbrace(1 + ... + 1, n) &maps underbrace(1 + ... + 1, n) \
             -n &maps -alpha(n)
         $
-        $alpha$ --- гомоморфизм колец, $Ker alpha = (p)$. по теорме о гомоморфизме $ZZ fg (p) iso Im alpha ==> Im alpha$ --- поле, тогда $Im alpha = F$, так как $F$ --- простое, поэтому $F iso ZZ fg (p)$.
+        $alpha$ --- гомоморфизм колец, $Ker alpha = (p)$. По теорме о гомоморфизме $ZZ fg (p) iso Im alpha ==> Im alpha$ --- поле, тогда $Im alpha = F$, так как $F$ --- простое, поэтому $F iso ZZ fg (p)$.
 ]
 
 #def[

@@ -41,7 +41,7 @@
     Докажем, что все $p_i$ различны. Предположим противное. Не умаляя общности, можем считать $p_1 = p_2 = p$.
 
     $ 
-        {g in G bar p g = e} supset {(overline(p^(l_1-1) a), overline(p^(l_2-1) b), 0, ..., 0) bar 0 <= a <= p-1, 0 <= b <= p - 1} \
+        {g in G bar p g = 0} supset {(overline(p^(l_1-1) a), overline(p^(l_2-1) b), 0, ..., 0) bar 0 <= a <= p-1, 0 <= b <= p - 1} \
         ==> abs({g in G bar p g = 0})_(>= p^2) = {x in G bar x^p = 1} subset {x in K bar f(x) = 0}, f = x^p - 1
     $
 ]

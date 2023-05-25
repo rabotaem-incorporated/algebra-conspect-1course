@@ -98,58 +98,59 @@
     Проверка корректности:
     - Пусть мы сделали вставку $L R ~~> L x_j x_j' R$ или $L x_j' x_j R$ 
     $
-        phi([L x_j x_j' R]) = underbrace(..., phi(L)) = phi([x_j]) phi([x_j']) = underbrace(..., phi(R)) = phi([L R])
+        phi([L x_j x_j' R]) = phi([L]) phi([x_j]) phi([x_j']) phi([R]) = phi([L]) phi([R]) = phi([L R])
     $
-]
- 
-#notice(name: "пояснение (никто не в курсе что тут происходит, но это относится к доказательству)")[
-    #todo("разобраться")
+    Рассмотрим вспомогательный гомоморфизм  $Phi$ из группы слов $W$ в $G$
     $
         Phi: W &--> G\
         x_j &maps g_j\
         x_j' &maps g_j^(-1)\ 
         a_1 ... a_n &maps Phi(a_1) ... Phi(a_n)
     $
+    Нетрудно видеть, что равные с точностью до вставки слова переходят в равные элементы $G$.
 
-    $
-        w &~~> w'\
-        Phi(w) &= Phi(w')
-    $
-    // что-то проверяем
     $
         Phi(x_j) Phi(x_j') = g_j g_j' = e\
         w sim w' ==> Phi(w) = Phi(w')
     $
     
+    Тогда можно показать, что $Phi$ - это композиция двух гомоморфизмов: факторизации по вставке и некоторого $phi'$, который переводит свободные образующие $f_i$ в $g_i$.
+
     #import "../../utils/cd/cd.typ": *
     
     #align(center)[#commutative_diagram(
         node((0, 0), $W$),
-        node((0, 1), $W fg ~$),
+        node((0, 1), $F$),
         node((1, 1), $G$),
-        arr((0, 0), (0, 1), $$),
+        arr((0, 0), (0, 1), $\/~$),
         arr((0, 0), (1, 1), $Phi$),
-        arr((0, 1), (1, 1), $phi$, "dashed"),
+        arr((0, 1), (1, 1), $phi'$,),
     )]
 
-    
     $
-        exists! phi: F --> G: phi([w]) = Phi(w) space forall w in W \
+        exists! phi': F --> G\
+        forall w in W space phi'([w]) = Phi(w) \
         \
-        phi(f_j) = phi([x_j]) = Phi(x_j) = g_j\
-        Phi(w_1 w_2) = Phi(w_1) Phi(w_2) space forall w_1, w_2 in W ==> \
-        ==> phi([w_1])phi([w_2]) = phi([w_1][w_2])
-    $  // тут видимо существование доказывают
+        phi'(f_j) = phi'([x_j]) = Phi(x_j) = g_j\
+        forall w_1, w_2 in W space Phi(w_1) Phi(w_2) = Phi(w_1 w_2) ==> \
+        ==> phi'([w_1])phi'([w_2]) = phi'([w_1][w_2]) = phi'([w_1 w_2])
+    $ 
 
-    // тут единственность
+    Теперь докажем, что гомоморфизм из определения свободной группы единственен. Предположим, что есть 2 гомоморфизма:
+
     $
-        phi_1, phi_2: F --> G space #[ --- гомоморфизм] \
+        phi_1, phi_2: F --> G \
         phi_1(f_j) = phi_2(f_j) = g_j
     $
-    Но $ 
-        forall h in F: h = [...] = f_(i_1)^(plus.minus 1) ... f_(i_n)^(plus.minus 1) ==> \
-        phi_1(h_1) = phi_1(f_(i_1))^(plus.minus 1) ... space phi_1(f_(i_n))^(plus.minus 1) = phi_2(f_(i_1))^(plus.minus 1) ... space phi_2(f_(i_n))^(plus.minus 1) = phi_2(h)
+    Тогда
+    $ 
+        forall w in W space w = x_(i_1)^(plus.minus 1) ... x_(i_n)^(plus.minus 1) ==> \
+        h = [w] = f_(i_1)^(plus.minus 1) ... f_(i_n)^(plus.minus 1) ==> \
+        Phi(w) = phi_1(h) = phi_1(f_(i_1))^(plus.minus 1) ... space phi_1(f_(i_n))^(plus.minus 1) = phi_2(f_(i_1))^(plus.minus 1) ... space phi_2(f_(i_n))^(plus.minus 1) = phi_2(h)
     $
+]
+#notice[
+    Можно было для доказательства этого предложения и не рассматривать гомоморфизм $Phi$, он нужен скорее для того, чтобы лучше понимать, что происходит.
 ]
 
 #notice[
