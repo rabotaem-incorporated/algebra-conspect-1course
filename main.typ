@@ -2,7 +2,7 @@
 
 #show: notes.with(
   name: "Конспект лекций по алгебре за второй семестр",
-  short-name: "Алгебра " + emoji.wheelchair,
+  short-name: "Алгебра " + "#emoji.wheelchair",
   lector: "Игорь Борисович Жуков",
 )
 

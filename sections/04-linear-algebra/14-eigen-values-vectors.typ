@@ -230,7 +230,7 @@
 ]
 
 #proof[
-    #emoji.faith.islam
+    #"emoji.faith.islam"
 ]
 
 

@@ -62,7 +62,7 @@
     Пусть $E$ --- базис $V$, $n = dim V$, $F$ --- базис $W$, $m = dim W$. Тогда $Hom(V, W) --> M_(m, n)(K)$ --- изоморфизм линейных пространств.    
 ]
 
-#exercise[Доказать #emoji.finger.m]
+#exercise[Доказать #"emoji.finger.m"]
 
 #follow[
     $dim Hom(V, W) = (dim V) mul (dim W)$.

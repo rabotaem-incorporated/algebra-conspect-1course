@@ -52,7 +52,7 @@
 ]
 
 #exercise[
-    Доказать #emoji.face.smile.
+    Доказать #"emoji.face.smile".
 ]
 
 #follow[
