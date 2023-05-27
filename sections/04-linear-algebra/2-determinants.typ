@@ -54,13 +54,13 @@
 
 #proof[
   1.
-   $
+  $
   det(A^T) = 
-  &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n sigma(i)i &=\
+  &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(sigma(i) i) &=\
   &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
   &sum_(sigma in S_n) sgn sigma^(-1) dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
   &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma(i)) &= det(A)\
-   $
+  $
 
   // TODO: Дописать доказательства.
 ]

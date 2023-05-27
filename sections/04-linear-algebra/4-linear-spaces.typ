@@ -42,7 +42,7 @@
 #lemma[
   + $0 mul v = overline(0).$
   + $alpha mul 0 = 0$.
-  + $alpha v = 0 ==> alpha = 0 or v = overline(0)$.
+  + $alpha v = overline(0) ==> alpha = 0 or v = overline(0)$.
   + $(-1) mul v = -v$.
 ]
 
@@ -55,8 +55,8 @@
 
   + $0 + 0 = 0$ в $V$, далее аналогично 1.
 
-  + $alpha != 0 ==> alpha^(-1) (alpha v) = alpha^(-1) mul 0 ==> v = overline(0)$.
+  + $alpha != 0 ==> alpha^(-1) (alpha v) = alpha^(-1) mul overline(0) ==> v = overline(0)$.
 
-  + $(-1) mul v + 1 mul v = (-1 + 1) mul v = 0 mul v = 0 ==> (-1) mul v = -v$.
+  + $(-1) mul v + 1 mul v = (-1 + 1) mul v = 0 mul v = overline(0) ==> (-1) mul v = -v$.
 ]
 

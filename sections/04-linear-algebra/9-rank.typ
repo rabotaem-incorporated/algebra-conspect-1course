@@ -48,7 +48,7 @@
     + #[
         Рассмотрим элементарные преобразования строк. Пусть $rk A = r$. Тогда $exists j_1, ..., j_r: space mcol(A, j_1), ..., mcol(A, j_n)$ --- ЛНС. Покажем, что $mcol(B, j_1), ..., mcol(B, j_n)$ --- ЛНС. Предположим, что 
         $ 
-            lambda_1 mul mcol(B, j_1) + ... + lambda_r mul mcol(B, j_r) = 0, "где найдется" j_* != 0. 
+            lambda_1 mul mcol(B, j_1) + ... + lambda_r mul mcol(B, j_r) = 0, "где найдется" lambda_* != 0. 
         $
         $ 
             B mul underbrace(vec(0, 0, dots.v, lambda_1, dots.v, 0, dots.v, lambda_r, dots.v, 0), d) = 0, space

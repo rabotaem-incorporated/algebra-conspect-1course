@@ -9,8 +9,8 @@
 
 #proof[
     - #[
-        "Единственность": Пусть $Aa$ --- как в условии, $v = alpha_1 e_1 + ... + alpha_n e_n$. Тогда  $Aa v = alpha_1 Aa e_1 + ... + alpha_n Aa e_n = alpha_1 w_1 + ... + alpha_n w_n = Aa' v. $ 
-        Это доказывает единственность $Aa$, так как для любого преобразования $Aa'$ выполняется единственность разложения в базисе (?).
+        "Единственность": Пусть $Aa$ --- как в условии, $v = alpha_1 e_1 + ... + alpha_n e_n$. Тогда  $Aa v = alpha_1 Aa e_1 + ... + alpha_n Aa e_n = alpha_1 w_1 + ... + alpha_n w_n. $ 
+        В силу единственности разложения в базисе, получается, что линейное отображение однозначно определяется своими значениями на базисных векторах.
     ]
     - #[
         "Существование":
@@ -30,12 +30,11 @@
         $ mat(5, -1, 0; 0, 5, -2; 0, 0, 5) = [A]_(E, F) $
 ]
 
-// что-то
 #pr[
     $Aa: V --> W$, $v in V space [v]_E, A := [Aa]_(E, F)$ --- знаем, тогда $[Aa v]_F =$ ?.
 ]
 #proof[
-    $v = E mul [v]_E$, $underbrace(F[Aa v]_F, in K^m) = a v = Aa E mul [v]_E = (F A)[v]_E = F(A mul [v]_e)$ \
+    $v = E mul [v]_E$, $underbrace(F[Aa v]_F, in K^m) = Aa v = Aa E mul [v]_E = (F A)[v]_E = F(A mul [v]_e)$ \
     $F$ --- базис $==> [Aa v]_f = A mul [v]_E$
 ]
 
@@ -50,8 +49,7 @@
 
 #proof[
     $ w in W ==> w = phi(v) = phi(alpha_1e_1 + ... + alpha_n e_n) = alpha_1phi(e_1) + ... + alpha_n phi(e_n) in Lin(phi(e_1), ..., phi(e_n)). $
-    $ underbrace(alpha_1 phi(e_1) + ... + alpha_n phi(e_n), #[равно тому что снизу]) = 0 $
-    $ phi(underbrace(alpha_1 e_1 + ... + alpha_n e_n, in Ker phi = 0)) ==> alpha_1 e_1 + ... + alpha_n e_n = 0 ==> alpha_1 = ... = alpha_n = 0 $
+    $ alpha_1 phi(e_1) + ... + alpha_n phi(e_n) = phi(alpha_1 e_1 + ... + alpha_n e_n) = 0 ==> alpha_1 e_1 + ... + alpha_n e_n = 0 ==> alpha_1 = ... = alpha_n = 0 $
 ]
 
 #notice[
@@ -62,14 +60,14 @@
     Пусть $E$ --- базис $V$, $n = dim V$, $F$ --- базис $W$, $m = dim W$. Тогда $Hom(V, W) --> M_(m, n)(K)$ --- изоморфизм линейных пространств.    
 ]
 
-#exercise[Доказать #"emoji.finger.m"]
+#exercise[Доказать.]
 
 #follow[
     $dim Hom(V, W) = (dim V) mul (dim W)$.
 ]
 
 #pr[
-    Пусть $Aa in Hom(U, V)$, $Bb in Hom(v, W)$; $E, F, G$ --- базисы $U, V, W$. Тогда $ [Bb Aa]_(E, G) = underbrace([Bb]_(F, G), B) underbrace([Aa]_(E,F), A) $
+    Пусть $Aa in Hom(U, V)$, $Bb in Hom(V, W)$; $E, F, G$ --- базисы $U, V, W$. Тогда $ [Bb Aa]_(E, G) = underbrace([Bb]_(F, G), B) underbrace([Aa]_(E,F), A) $
 ]
 
 #proof[
@@ -102,5 +100,7 @@ $ [Aa]_(E', F') = M_(F --> F')^(-1) mul A mul M_(E --> E') $
 ]
 
 #proof[
-    Любое отображение между базисами в пространстве --- умножение на обратимую матрицу, поэтому для произвольного отображения $Aa$, можно применить PDQ-разложение, перейти в базис где $P$ и $Q$ --- единичные (ну типа, вы поняли) и получить матрицу в виде окаймленной единичной.
+    Пусть $E, F$ - произвольные базисы $V, W$, тогда
+    $ Aa E = F A ==> Aa E = F P D Q ==> Aa (E Q^(-1)) = (F P) D $
+    Тогда в базисах $E Q^(-1), F P$ матрица этого линейного отображения будет единичной окаймленной
 ]
