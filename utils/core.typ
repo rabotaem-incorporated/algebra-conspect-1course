@@ -120,12 +120,12 @@
       // [Value: #lt]
       let th_label = query(selector(<end-of-last-th>).before(loc), loc)
       let last_th_page = if th_label.len() > 0 { 
-        th_label.last().location().position().page
+        th_label.last().location().page()
       } else { 
         -1
       }
 
-      if (glue or lt in glues_to) and last_th_page == loc.position().page { 
+      if (glue or lt in glues_to) and last_th_page == loc.page() { 
         v(-0.4em)
       }
     })
