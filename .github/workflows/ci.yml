@@ -43,7 +43,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: "*.pdf"
-          name: ${{ env.date }}-${{ env.sha }}
+          name: Edition v${{ env.date }}-${{ env.sha }}
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
