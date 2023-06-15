@@ -14,24 +14,17 @@ jobs:
         run: |
           echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
           echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-      - name: Get Typst
+      - name: Get typsted
         uses: robinraju/release-downloader@v1.6
         with:
-          repository: typst/typst
+          repository: rabotaem-incorporated/opinionated-typst
           latest: true
-          filename: typst-x86_64-unknown-linux-musl.tar.xz
-      - name: Unpack the executable
-        run: |
-          tar -xf typst-x86_64-unknown-linux-musl.tar.xz
-          mv typst-x86_64-unknown-linux-musl/typst .
-      - name: Install Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.11
-      - name: Compile the PDFs
+          filename: typst
+      - name: Compile the PDF
         run: |
           chmod +x typst
-          python compile-everything.py "v${{ env.date }}-${{ env.sha }}"
+          ./typst compile main.typ 2> error.log
+          if [[ -s error.log ]]; then echo "Compilation failed"; cat error.log; exit 1; else echo "Compilation successful!"; fi
       - name: Add tag
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.1
@@ -41,7 +34,7 @@ jobs:
       - name: Post the release
         uses: softprops/action-gh-release@v1
         with:
-          files: "*.pdf"
+          files: main.pdf
           name: ${{ env.date }}-${{ env.sha }}
           tag_name: ${{ steps.tag_version.outputs.new_tag }}
         env:

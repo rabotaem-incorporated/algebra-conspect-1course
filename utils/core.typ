@@ -1,3 +1,5 @@
+#import "../config.typ"
+
 #let chapter_state = state("chapter", "")
 
 #let clabel(name) = {
@@ -78,6 +80,9 @@
       #v(1em)
     ]
   }
+
+  show "≥": "⩾"
+  show "≤": "⩽"
    
   [
     #clabel("start")
@@ -205,3 +210,44 @@
 )
 
 #import "shortcuts.typ": *
+
+#let ticket(name) = if config.enable-ticket-references {
+  let ticket-counter = counter("ticket")
+
+  let width = 0.7cm
+  let offset = 0.35cm
+  let color = blue.lighten(60%)
+
+  ticket-counter.step()
+
+  block[
+    #line(length: 100% + offset, stroke: (
+      paint: color,
+      dash: "dashed"
+    ))
+    
+    #place(dy: -5cm)[#hide(name)<ticket>]
+
+    #link(<ticket-reference>, place(
+      dx: offset,
+      end,
+    )[
+      #place(polygon(
+        fill: color.lighten(70%),
+        stroke: color + 1pt,
+        (0pt, 0pt),
+        (0pt, width),
+        (width * 0.5, width * 1.5),
+        (width, width),
+        (width, 0pt),
+      ))
+
+      #place(dy: width * 0.15, block.with(width: width)(
+        align(text(fill: color.darken(30%), weight: "bold")[
+          #text(size: 1.5em, ticket-counter.display())
+          #move(dy: -1.6em, text(size: 0.5em)[билет])
+        ], center)
+      ))
+    ])
+  ]
+}
