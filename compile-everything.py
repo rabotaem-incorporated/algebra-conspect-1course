@@ -54,7 +54,7 @@ for target, config in targets.items():
     with open("config.typ", "w") as config_file:
         config.write_to_file(config_file)
     
-    result = subprocess.run(["typst", "compile", "main.typ", f"{target}__{version_file_suffix}.pdf"])
+    result = subprocess.run(["typst", "compile", "main.typ", f"{target}.pdf"])
 
     if result.returncode != 0:
         print(f"Failed to compile {target}")
