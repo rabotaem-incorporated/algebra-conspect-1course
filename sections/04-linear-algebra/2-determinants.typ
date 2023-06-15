@@ -2,9 +2,11 @@
 
 == Определители
 
-Мы знаем, что матрицы тесно связаны с системами линейных уравнений и мы хотим знать, когда
-системы разрешимы единственным образом, когда не имеют решений, и когда имеют бесконечно
-много решений.
+#ticket[Определение определителя. Определитель транспонированной матрицы]
+
+#notice[
+  Мы знаем, что матрицы тесно связаны с системами линейных уравнений и мы хотим знать, когда системы разрешимы единственным образом, когда не имеют решений, и когда имеют бесконечно много решений.
+]
 
 #def[
   Системы линейных уравнений подразделяются на:
@@ -37,30 +39,43 @@
 ]
 
 #props[
-  + $det(A) = det(A^T)$
-
-  + $A = mat(delim: "[", A_1; dots.v; A_i' + A_i'';  dots.v; A_n) ==> det(A) = det(A_1; dots.v; A_i'; dots.v; A_n) + det(A_1; dots.v; A_i''; dots.v; A_n)$
-
-  + $A = mat(delim: "[", A_1; dots.v; alpha A_i; dots.v; A_n) ==> det(A) = alpha det(A_1; dots.v; A_i; dots.v; A_N)$
-
-  + $A = mat(delim: "[", alpha A_1; dots.v; alpha A_i; dots.v; alpha A_n) ==> det(A) = alpha^n det(A_1; dots.v; A_i; dots.v; A_N)$
-
-  + $A = mat(delim: "[", A_1; dots.v; A_n), A_i = A_j ==> det(A) = 0$
-
-  + $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_j; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_j; dots.v; A_i; dots.v; A_n) ==> det(A) = -det(B)$
-
-  + $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_i + alpha A_j; dots.v; A_n) ==> det(A) = det(B)$
+  1. $det(A) = det(A^T)$
 ]
 
 #proof[
-  1.
   $
-  det(A^T) = 
-  &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(sigma(i) i) &=\
-  &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
-  &sum_(sigma in S_n) sgn sigma^(-1) dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
-  &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma(i)) &= det(A)\
+    det(A^T) = 
+    &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(sigma(i) i) &=\
+    &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
+    &sum_(sigma in S_n) sgn sigma^(-1) dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
+    &sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma(i)) &= det(A)\
   $
+]
 
-  // TODO: Дописать доказательства.
+#ticket[Линейность определителя по строкам и столбцам]
+
+#props[
+  2. $A = mat(delim: "[", A_1; dots.v; A_i' + A_i'';  dots.v; A_n) ==> det(A) = det(A_1; dots.v; A_i'; dots.v; A_n) + det(A_1; dots.v; A_i''; dots.v; A_n)$
+
+  3. $A = mat(delim: "[", A_1; dots.v; alpha A_i; dots.v; A_n) ==> det(A) = alpha det(A_1; dots.v; A_i; dots.v; A_N)$
+
+  4. $A = mat(delim: "[", alpha A_1; dots.v; alpha A_i; dots.v; alpha A_n) ==> det(A) = alpha^n det(A_1; dots.v; A_i; dots.v; A_N)$
+
+  5. $A = mat(delim: "[", A_1; dots.v; A_n), A_i = A_j ==> det(A) = 0$
+]
+
+#proof[
+  TODO
+]
+
+#ticket[Кососимметричность определителя по строкам и столбцам]
+
+#props[
+  6. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_j; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_j; dots.v; A_i; dots.v; A_n) ==> det(A) = -det(B)$
+
+  7. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_i + alpha A_j; dots.v; A_n) ==> det(A) = det(B)$
+]
+
+#proof[
+  TODO
 ]

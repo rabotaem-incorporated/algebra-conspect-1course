@@ -151,7 +151,7 @@
           th_type = th_type_plural
         ]
 
-        #if name_string.starts-with(regex("(об |о |О |об)")) [
+        #if name_string.starts-with(regex("(об |о |О |Об )")) [
           #let name_string = name_string.replace("О ", "о ").replace("Об ", "об ")
           *#th_type #name_string.*  
         ] else [
@@ -221,7 +221,7 @@
   ticket-counter.step()
 
   block[
-    #line(length: 100% + offset, stroke: (
+    #line(length: 100% + width + offset, stroke: (
       paint: color,
       dash: "dashed"
     ))
