@@ -31,6 +31,7 @@ jobs:
       - name: Compile the PDFs
         run: |
           chmod +x typst
+          export PATH=$PATH:$(pwd)
           python compile-everything.py "v${{ env.date }}-${{ env.sha }}"
       - name: Add tag
         id: tag_version
