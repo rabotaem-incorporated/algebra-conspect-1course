@@ -62,20 +62,20 @@
   4. $A = mat(delim: "[", alpha A_1; dots.v; alpha A_i; dots.v; alpha A_n) ==> det(A) = alpha^n det(A_1; dots.v; A_i; dots.v; A_N)$
 
   5. $A = mat(delim: "[", A_1; dots.v; A_n), A_i = A_j ==> det(A) = 0$
+
+  6. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_i + alpha A_j; dots.v; A_n) ==> det(A) = det(B)$
 ]
 
 #proof[
-  TODO
+  #TODO[]
 ]
 
 #ticket[Кососимметричность определителя по строкам и столбцам]
 
 #props[
-  6. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_j; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_j; dots.v; A_i; dots.v; A_n) ==> det(A) = -det(B)$
-
-  7. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_i + alpha A_j; dots.v; A_n) ==> det(A) = det(B)$
+  7. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_j; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_j; dots.v; A_i; dots.v; A_n) ==> det(A) = -det(B)$
 ]
 
 #proof[
-  TODO
+  #TODO[]
 ]

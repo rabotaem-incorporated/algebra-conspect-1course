@@ -1,8 +1,8 @@
 #import "../../utils/core.typ": *
 
-#ticket[Разложение перестановки в произведение транспозиций и элементарных  транспозиций]
-
 == Перестановки
+
+#ticket[Разложение перестановки в произведение транспозиций и элементарных  транспозиций]
 
 #def[
   $M$ --- множество. _Перестановкой_ множества $M$ называется биекция на себя.
@@ -145,8 +145,8 @@
 #proof[
   Рассмотрим
   $
-  A_n &limits(-->)^Phi S_n without A_n & #h(3em) & S_n without A_n &limits(-->)^Psi A_n \
-  sigma & arrow.long.bar sigma (1 2) & & #h(2.7em) sigma & arrow.long.bar sigma(1 2)
+  A_n &limits(-->)^Phi S_n without A_n & #h(3em) S_n without A_n &limits(-->)^Psi A_n \
+  sigma & arrow.long.bar sigma (1 2) & sigma & arrow.long.bar sigma(1 2)
   $
   Заметим, что $ cases(Phi compose Psi = sigma(1 2)(1 2) = id_(A_n), Psi compose Phi = id_(S_n without A_n)) $ Значит $Phi$ --- биекция и $abs(S_n without A_n) = abs(A_n) ==> abs(A_n) = (n!) / 2$.
 ]

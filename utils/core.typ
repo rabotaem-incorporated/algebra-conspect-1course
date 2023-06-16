@@ -74,13 +74,6 @@
     ]
   }
 
-  show heading.where(level: 2): it => {
-    [
-      #it
-      #v(1em)
-    ]
-  }
-
   show "≥": "⩾"
   show "≤": "⩽"
    
@@ -114,12 +107,11 @@
 #let last_theorem = state("last_theorem", none)
 
 #let make_theorem(th_type, th_type_plural: none, color: white, highlight_color: none, glues_to: ()) = {
-  
   if highlight_color == none {
     highlight_color = color.lighten(25%)
   }
 
-  (name: none, plural: false, content, glue: false) => [
+  (name: none, plural: false, content, glue: false) => par[
     #locate(loc => {
       let lt = last_theorem.at(loc)
       // [Value: #lt]
@@ -177,6 +169,15 @@
   ]
 }
 
+#let TODO(content) = rect(
+  stroke: red + 2pt,
+  fill: red.lighten(90%),
+  width: 100%, inset: 0.2cm,
+)[
+  #text(weight: "extrabold")[TODO: ]
+  #sym.space.hair #content
+]
+
 #let th_color = red
 #let oth_color = blue
 #let def_color = orange
@@ -211,43 +212,60 @@
 
 #import "shortcuts.typ": *
 
-#let ticket(name) = if config.enable-ticket-references {
+#let ticket(name, step-fn: none, post-step-fn: none) = if config.enable-ticket-references {
   let ticket-counter = counter("ticket")
 
   let width = 0.7cm
-  let offset = 0.35cm
+  let offset = 0.5cm
   let color = blue.lighten(60%)
 
-  ticket-counter.step()
+  if step-fn != none {
+    ticket-counter.update(step-fn)
+  } else {
+    ticket-counter.step()
+  }
+  
+  block(above: 0.2cm, below: 0.2cm, 
+    rect(stroke: none, width: 100%, par[
+      #align(end, text(size: 0.75em, fill: color.darken(30%))[
+        Билет #ticket-counter.display();.
+        #name.
+      ])
 
-  block[
-    #line(length: 100% + width + offset, stroke: (
-      paint: color,
-      dash: "dashed"
-    ))
-    
-    #place(dy: -5cm)[#hide(name)<ticket>]
+      #v(-0.7em)
 
-    #link(<ticket-reference>, place(
-      dx: offset,
-      end,
-    )[
-      #place(polygon(
-        fill: color.lighten(70%),
-        stroke: color + 1pt,
-        (0pt, 0pt),
-        (0pt, width),
-        (width * 0.5, width * 1.5),
-        (width, width),
-        (width, 0pt),
+      #line(length: 100% + width + offset, stroke: (
+        paint: color,
+        dash: "dashed"
       ))
+      
+      #place(dy: -5cm)[#hide(name)<ticket>]
 
-      #place(dy: width * 0.15, block.with(width: width)(
-        align(text(fill: color.darken(30%), weight: "bold")[
-          #text(size: 1.5em, ticket-counter.display())
-          #move(dy: -1.6em, text(size: 0.5em)[билет])
-        ], center)
-      ))
-    ])
-  ]
+      #link(<ticket-reference>, place(
+        dx: offset,
+        end,
+      )[
+        #place(polygon(
+          fill: color.lighten(70%),
+          stroke: color + 1pt,
+          (0pt, 0pt),
+          (0pt, width),
+          (width * 0.5, width * 1.5),
+          (width, width),
+          (width, 0pt),
+        ))
+
+        #place(dy: width * 0.15, block.with(width: width)(
+          align(text(fill: color.darken(30%), weight: "bold")[
+            #text(size: 1.5em, ticket-counter.display())
+            #move(dy: -1.6em, text(size: 0.5em)[билет])
+          ], center)
+        ))
+      ])
+    ]
+  ))
+
+  if post-step-fn != none {
+    ticket-counter.update(post-step-fn)
+  }
 }

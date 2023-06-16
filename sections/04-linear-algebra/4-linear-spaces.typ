@@ -2,18 +2,21 @@
 
 == Линейные пространства. Основные определния
 
+#ticket[Линейное пространство. Определение, примеры, простейшие свойства]
+
 #def[
   Пусть K --- поле. Говорят, что _линейное пространство_ над полем задано, если заданы:
 
-  - Множество $V$
-  - Операция $V times V limits(-->)^+ V$, называемая сложением
-  - Операция $K times V limits(-->)^dot V$, называемая умножением на скаляр
+  - Множество $V$,
+  - Операция $V times V limits(-->)^+ V$, называемая сложением,
+  - Операция $K times V limits(-->)^dot V$, называемая умножением на скаляр,
 
   такие, что выполняются следющие условия:
-  - $(V, +)$ - абелева группа (4 свойства одновременно)
-  - $forall alpha in K space.quad forall v_1, v_2 space.quad alpha(v_1 + v_2) = alpha v_1 + alpha v_2$
-  - $forall a_1, a_2 in K space forall v in V space (alpha_1 + alpha_2)v = alpha_1v + alpha_2v$
-  - $forall alpha_1, alpha_2 in K space forall v in V: (alpha_1alpha_2)v = alpha_1(alpha_2v)$
+  
+  - $(V, +)$ - абелева группа (4 свойства одновременно),
+  - $forall alpha in K space.quad forall v_1, v_2 space.quad alpha(v_1 + v_2) = alpha v_1 + alpha v_2$,
+  - $forall a_1, a_2 in K space forall v in V space (alpha_1 + alpha_2)v = alpha_1v + alpha_2v$,
+  - $forall alpha_1, alpha_2 in K space forall v in V: (alpha_1alpha_2)v = alpha_1(alpha_2v)$.
 
   Элементы множества $V$ называют _векторами_, элементы множества $K$ --- _скалярами_.
 

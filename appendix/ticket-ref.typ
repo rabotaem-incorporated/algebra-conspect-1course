@@ -1,4 +1,4 @@
-#import "../utils/core.typ"
+#import "../utils/core.typ": *
 
 == Ссылки на билеты <ticket-reference>
 
@@ -7,7 +7,9 @@
 #locate(loc => enum(
     numbering: "1.",
     ..query(selector(<ticket>), loc)
-        .map(ticket-name-label => {
+        .sorted(key: ticket-name-label => {
+            counter("ticket").at(ticket-name-label.location()).first()
+        }).map(ticket-name-label => {
             let ticket-location = ticket-name-label.location()
 
             enum.item(
@@ -21,4 +23,4 @@
         })
 ))
 
-TODO: this
+#TODO[this]
