@@ -175,7 +175,8 @@
   width: 100%, inset: 0.2cm,
 )[
   #text(weight: "extrabold")[TODO: ]
-  #sym.space.hair #content
+  #sym.space.hair 
+  #if content != [] { content } else [ Дописать ]<todo-like>
 ]
 
 #let th_color = red
@@ -209,6 +210,8 @@
     "Свойство", "Свойства", "Замечание"
   )
 )
+
+#let proof-left-to-the-reader = proof.with[Доказательство остается читателю в качестве упражнения. <todo-like> ]
 
 #import "shortcuts.typ": *
 

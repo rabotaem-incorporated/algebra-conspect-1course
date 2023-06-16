@@ -8,7 +8,7 @@ version_file_suffix = sys.argv[1]
 @dataclass
 class Config:
     enable_chapters_from_sem1: bool = True
-    enable_unfinished_chapters: bool = False
+    enable_unfinished_chapters: bool = True
     enable_ticket_references: bool = True
 
     def write_to_file(self, file):

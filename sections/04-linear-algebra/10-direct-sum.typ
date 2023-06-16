@@ -55,9 +55,7 @@
     Тогда совокупность всех $(e_(j l) bar 1 <= j <= k, 1 <= l <= d_j)$ --- базис $V$.
 ]
 
-#proof[
-    Остается читателю в качестве упражения.
-]
+#proof-left-to-the-reader()
 
 #follow[
     $dim(W_1 pc ... pc W_k) = dim W_1 + ... + dim W_k$.

@@ -19,4 +19,4 @@
 #include "sections/05-group-theory/!sec.typ"
 #include "sections/06-field-theory/!sec.typ"
 
-#include "appendix/index.typ"
+#include "appendix.typ"
