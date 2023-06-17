@@ -19,11 +19,11 @@
 #locate(loc => {
     let todos = query(selector(<todo-like>), loc)
 
-    list(..todos.map(el => link(el.location(), {
-        el
+    list(..todos.map(el => {
+        link(el.location(), el)
         box(width: 1fr, repeat[.])
-        [#el.location().page()]
-    })))
+        link(el.location())[#el.location().page()]
+    }))
 })
 
 #if config.enable-ticket-references [
@@ -41,10 +41,10 @@
 
                 enum.item(
                     counter("ticket").at(ticket-location).first(),
-                    link(ticket-location)[
-                        #ticket-name-label.body
+                    [
+                        #link(ticket-location, ticket-name-label.body)
                         #box(width: 1fr, repeat[.])
-                        #ticket-location.page()
+                        #link(ticket-location)[#ticket-location.page()]
                     ]
                 )
             })
