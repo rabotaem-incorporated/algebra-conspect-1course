@@ -17,8 +17,8 @@
   $ det(A) = sum_(sigma in S_n) sgn sigma mul product_(i = 1)^n a_(i sigma(i)) $
   Заметим, что все перестановки которые переводят строки из $B$ в $0$ обращают произведение в 0 и наоборот. Рассмотрим остальные $sigma = pi mul rho$.
   $ det(A) &= 
-  sum_(pi in S_k \ rho in S_(n - k)) sgn(pi) mul sgn(rho) mul a_(1 pi_1) dots a_(k rho_k) mul a_(k + 1 pi_1) dots a_(n rho_(n - k)) = \
-  &= (sum_(pi in S_k) sgn(pi) a_(1 pi_1) dots a_(k rho_k)) mul (sum_(rho in S_(n - k)) sgn(rho) a_(k rho_1) dots a_(n rho_(n - k))) = det(B) mul det(C).
+  sum_(pi in S_k \ rho in S_(n - k)) sgn(pi) mul sgn(rho) mul a_(1 pi_1) dots a_(k pi_k) mul a_(k + 1 rho_1) dots a_(n rho_(n - k)) = \
+  &= (sum_(pi in S_k) sgn(pi) a_(1 pi_1) dots a_(k pi_k)) mul (sum_(rho in S_(n - k)) sgn(rho) a_(k rho_1) dots a_(n rho_(n - k))) = det(B) mul det(C).
   $
 ]
 

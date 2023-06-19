@@ -128,8 +128,12 @@
     })
 
     #last_theorem.update(th_type)
-    // todo: fix plural for theorems
-    // todo: add a no introspection option
+
+    #let th_type = th_type
+    #if plural and th_type_plural != none {
+      th_type = th_type_plural
+    }
+
     #let th_content = [
       #if name != none [
         #let name_string = if type(name) == "string" { 
@@ -137,11 +141,6 @@
         } else { 
           name.text
         }
-
-        #let th_type = th_type
-        #if plural and th_type_plural != none [
-          th_type = th_type_plural
-        ]
 
         #if name_string.starts-with(regex("(об |о |О |Об )")) [
           #let name_string = name_string.replace("О ", "о ").replace("Об ", "об ")

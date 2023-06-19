@@ -44,7 +44,7 @@
 
 #lemma[
   + $0 mul v = overline(0).$
-  + $alpha mul 0 = 0$.
+  + $alpha mul overline(0) = overline(0)$.
   + $alpha v = overline(0) ==> alpha = 0 or v = overline(0)$.
   + $(-1) mul v = -v$.
 ]
