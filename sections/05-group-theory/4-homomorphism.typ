@@ -12,7 +12,7 @@
 ]
 
 #examples[
-    + $GL_n(K) limits(-->)^(det) K^*$
+    + $GL_n (K) limits(-->)^(det) K^*$
 
     + $S_n limits(-->)^sgn ZZ*$
     

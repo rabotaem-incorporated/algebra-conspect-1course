@@ -110,7 +110,7 @@
 
 #notice[
     $ 
-        lambda - "собственное значение" Aa <==> Ker(Aa - lambda epsilon) != 0 <==>\ Aa - lambda epsilon in.not GL(V) <==> [Aa - lambda epsilon]_E in.not GL_n(V) <==> det (([Aa - lambda epsilon]_E)) = 0 iff^((*)) det ((A - lambda E_n)) = 0
+        lambda - "собственное значение" Aa <==> Ker(Aa - lambda epsilon) != 0 <==>\ Aa - lambda epsilon in.not GL(V) <==> [Aa - lambda epsilon]_E in.not GL_n (V) <==> det (([Aa - lambda epsilon]_E)) = 0 iff^((*)) det ((A - lambda E_n)) = 0
     $
     $
         (*): quad [Aa - lambda epsilon_V]_E = [Aa]_E - [lambda epsilon_V]_E = [Aa]_E - lambda E_n.
@@ -127,7 +127,7 @@
 ]
 
 #lemma[
-    Пусть $A' = C^(-1)A C, C in GL_n(K)$. Тогда $xi_(A') = xi_A$
+    Пусть $A' = C^(-1)A C, C in GL_n (K)$. Тогда $xi_(A') = xi_A$
 ]
 
 #proof[
@@ -233,13 +233,13 @@
 #th(name: [Жорданова нормальная форма])[
     $m in NN, space lambda in L$
     $
-        J_m(lambda) = mat(
+        J_m (lambda) = mat(
             lambda, 1, 0, ..., 0;
             0, lambda, 1, ..., 0;
             0, 0, lambda, ..., 0;
             dots.v, dots.v, dots.down, dots.v;
             0, 0, 0, ..., lambda
-        ) in M_m(K)
+        ) in M_m (K)
     $
     Такая матрица называется _Жордановой клеткой_.
 

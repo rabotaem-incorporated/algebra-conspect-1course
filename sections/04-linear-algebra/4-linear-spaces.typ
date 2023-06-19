@@ -13,7 +13,7 @@
 
   такие, что выполняются следющие условия:
   
-  - $(V, +)$ - абелева группа (4 свойства одновременно),
+  - $(V, +)$ - абелева группа (ассоциативность, нейтральный, обратный, коммутативность),
   - $forall alpha in K space.quad forall v_1, v_2 space.quad alpha(v_1 + v_2) = alpha v_1 + alpha v_2$,
   - $forall a_1, a_2 in K space forall v in V space (alpha_1 + alpha_2)v = alpha_1v + alpha_2v$,
   - $forall alpha_1, alpha_2 in K space forall v in V: (alpha_1alpha_2)v = alpha_1(alpha_2v)$.
@@ -24,20 +24,20 @@
 ]
 
 #examples[
-  - $v = M_(m, n)(K)$, $K^n = M_(n, 1)(K)$ --- арифметическое $n$-мерное пространство над $K$ 
+  + $v = M_(m, n)(K)$, $K^n = M_(n, 1)(K)$ --- арифметическое $n$-мерное пространство над $K$ 
     
-  - $V = {vec(alpha, beta, gamma) bar alpha + beta + gamma = 0} subset K^3$
+  + $V = {vec(alpha, beta, gamma) bar alpha + beta + gamma = 0} subset K^3$
   
-  - Не линейное пространство: $V' = {vec(alpha, beta, gamma) bar alpha + beta + gamma = 1} subset K^3$
+  + Не линейное пространство: $V' = {vec(alpha, beta, gamma) bar alpha + beta + gamma = 1} subset K^3$
 
-  - $V = K[x]$
+  + $V = K[x]$
   
-  - $V = C[0, 1]$
+  + $V = C[0, 1]$
 
-  - $K = RR, space.quad v_1 plus.square v_2 = v_1v_2 \
+  + $K = RR, space.quad v_1 plus.square v_2 = v_1v_2 \
     V = RR_+ space.quad alpha dot.square v = v^alpha$
 
-  - $&K = FF_2 = ZZ slash 2 ZZ, space.quad M - "Множество", space.quad V = 2^M.\
+  + $&K = FF_2 = ZZ slash 2 ZZ, space.quad M - "Множество", space.quad V = 2^M.\
       &v_1 + v_2 = v_1 triangle.t.small v_2, space.quad
       1 mul v = v, space.quad 0 mul v = empty.$      
 ]

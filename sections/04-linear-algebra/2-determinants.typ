@@ -23,7 +23,7 @@
     a_(21) x_1 + a_(22) x_2 = b_2,
   ) $
 
-  Оказывается, что она совместима и определенна тогда и только тогда, когда $ a_11 a_22 - a_21 a_12 != 0 $
+  Оказывается, что она совместима и определена тогда и только тогда, когда $ a_11 a_22 - a_21 a_12 != 0 $
 
   Отсюда вытекает понятие определителя матрицы 2 на 2:
 
@@ -31,7 +31,7 @@
 ]
 
 #def[
-  Пусть $A in M_n(K)$, $K$ --- поле, $A = (a_(i j))$
+  Пусть $A in M_n (K)$, $K$ --- поле, $A = (a_(i j))$
 
   _Определителем_ или _детерминантом_ $A$ называется
 
@@ -57,9 +57,9 @@
 #props[
   2. $A = mat(delim: "[", A_1; dots.v; A_i' + A_i'';  dots.v; A_n) ==> det(A) = det(A_1; dots.v; A_i'; dots.v; A_n) + det(A_1; dots.v; A_i''; dots.v; A_n)$
 
-  3. $A = mat(delim: "[", A_1; dots.v; alpha A_i; dots.v; A_n) ==> det(A) = alpha det(A_1; dots.v; A_i; dots.v; A_N)$
+  3. $A = mat(delim: "[", A_1; dots.v; alpha A_i; dots.v; A_n) ==> det(A) = alpha det(A_1; dots.v; A_i; dots.v; A_n)$
 
-  4. $A = mat(delim: "[", alpha A_1; dots.v; alpha A_i; dots.v; alpha A_n) ==> det(A) = alpha^n det(A_1; dots.v; A_i; dots.v; A_N)$
+  4. $A = mat(delim: "[", alpha A_1; dots.v; alpha A_i; dots.v; alpha A_n) ==> det(A) = alpha^n det(A_1; dots.v; A_i; dots.v; A_n)$
 
   5. $A = mat(delim: "[", A_1; dots.v; A_n), A_i = A_j ==> det(A) = 0$
 
