@@ -54,7 +54,7 @@
         $
         $ 
             B mul underbrace(vec(0, 0, dots.v, lambda_1, dots.v, 0, dots.v, lambda_r, dots.v, 0), d) = 0, space
-            A = U mul B ==> U mul B d = 0 ==> A d = 0.
+            A = U B ==> A d = U B d = 0 ==> A d = 0.
         $
         Но тогда $lambda_1 = ... = lambda_n = 0$, что противоречит предположению.
         Значит $rk B >= r = rk A$. Аналогично получается обратное неравенство. Значит $rk A = rk B$.

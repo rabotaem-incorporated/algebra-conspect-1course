@@ -6,8 +6,8 @@
 
 #def[
     Пусть $V, W$ --- линейные пространства над полем $K$. Отображение $Aa: V --> W$ называется линейным, если:
-    + $forall v, v' in V: Aa(v + v') = Aa(v) + Aa(v')$
-    + $forall v in V space forall alpha in K: Aa(alpha v) = alpha Aa(v)$
+    + $forall v, v' in V: Aa(v + v') = Aa v + Aa v'$
+    + $forall v in V space forall alpha in K: Aa(alpha v) = alpha Aa v$
 ]
 
 #example[

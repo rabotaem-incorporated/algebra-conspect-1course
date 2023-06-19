@@ -35,11 +35,11 @@
 #ticket[Изменение координат вектора под действием линейного отображения]
 
 #pr[
-    $Aa: V --> W$, $v in V space [v]_E, A := [Aa]_(E, F)$ --- знаем, тогда $[Aa v]_F =$ ?.
+    $Aa: V --> W$, $v in V space [v]_E, A := [Aa]_(E, F)$ --- знаем, тогда $[Aa v]_F = A mul [v]_E$.
 ]
 #proof[
     $v = E mul [v]_E$, $underbrace(F[Aa v]_F, in K^m) = Aa v = Aa E mul [v]_E = (F A)[v]_E = F(A mul [v]_e)$ \
-    $F$ --- базис $==> [Aa v]_f = A mul [v]_E$
+    $F$ --- базис $==> [Aa v]_F = A mul [v]_E$
 ]
 
 #def[
