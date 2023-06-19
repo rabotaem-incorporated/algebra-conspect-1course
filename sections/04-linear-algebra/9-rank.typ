@@ -103,7 +103,7 @@
 ]
 
 #follow[
-    $ U in GL_n(K), A in M_(m, n)(K) ==> rk(A U) = rk(A) $
+    $ U in GL_n (K), A in M_(m, n)(K) ==> rk(A U) = rk(A) $
 ]
 
 #proof[
@@ -116,10 +116,10 @@
 #ticket[Условия эквивалентные обратимости матрицы]
 
 #pr[
-    Пусть $U in M_n(K)$. Тогда следующие условия равносильны:
-    + $U in GL_n(K).$
-    + $exists V in M_n(K): space U V = E_n.$
-    + $exists V in M_n(K): space V U = E_n.$
+    Пусть $U in M_n (K)$. Тогда следующие условия равносильны:
+    + $U in GL_n (K).$
+    + $exists V in M_n (K): space U V = E_n.$
+    + $exists V in M_n (K): space V U = E_n.$
     + $det(U) != 0.$
     + $rk U = n.$
 ]
@@ -129,8 +129,8 @@
     - "$1 => 2, 3$" --- тривиально.
     - "$2 => 4$" --- $det(U) det(V) = det(U V) = det(E_n) = 1 ==> det(U) != 0$.
     - "$3 => 4$" --- $det(U) det(V) = det(V U) = det(E_n) = 1 ==> det(U) != 0$.
-    - "$1 => 5$" --- $U V = E_n, V in GL_n(K) ==> rk U = rk (U V) = rk E_n = n$.
-    - "$5 => 1$" --- $U = P D Q, rk D = n space "и" space P, Q in GL_n(K)$.
+    - "$1 => 5$" --- $U V = E_n, V in GL_n (K) ==> rk U = rk (U V) = rk E_n = n$.
+    - "$5 => 1$" --- $U = P D Q, rk D = n space "и" space P, Q in GL_n (K)$.
 ]
 
 #ticket[Минорный ранг]
