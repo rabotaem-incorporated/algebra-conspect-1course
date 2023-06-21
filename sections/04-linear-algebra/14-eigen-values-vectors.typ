@@ -22,7 +22,7 @@
     Пусть $Aa$ --- линейный оператор. Вектор $v != 0$ называется _собственным вектором_ оператора $Aa$ если существует скаляр $lambda in K$ такой, что 
     $ A v = lambda v. $
 
-    Такие скаляры $lambda$ называют _собственными значениями_, или _собственными числами_ оператора $Aa$. То есть $lambda$ является собственным значением, если найдется ненулевой $v$ такой, что $Aa v = lambda v$. Или, $lambda$ является собственным значением если $V_lambda = {v in V bar Aa v = lambda v} != 0.$ Или если $(Aa - lambda epsilon_V)(v) != 0$. Или если $Ker (Aa - lambda epsilon_V) != 0$.
+    Такие скаляры $lambda$ называют _собственными значениями_, или _собственными числами_ оператора $Aa$. То есть $lambda$ является собственным значением, если найдется ненулевой $v$ такой, что $Aa v = lambda v$. Или, $lambda$ является собственным значением, если $V_lambda = {v in V bar Aa v = lambda v} != 0.$ Или, если $(Aa - lambda epsilon_V)(v) != 0$. Или, если $Ker (Aa - lambda epsilon_V) != 0$.
 
 
     $V_lambda$ называется _собственным подпростантсвом_, принадлежащим собственному значению $lambda$. Собственные вектора являются элементами таких пространств.
@@ -81,12 +81,12 @@
     Пусть $lambda_1, ..., lambda_m$ --- все собственные значение оператора $Aa$; $n = dim(V)$.
 
     + $g_(lambda_1) + ... + g_(lambda_m) <= n$
-    + $Aa$ --- диагоназируем $<==> g_(lambda_1) + ... g_(lambda_m) = n$
+    + $Aa$ --- диагоназируем $<==> g_(lambda_1) + ...+ g_(lambda_m) = n$
 ]
 
 #proof[
     + #h(1fr) $
-        V > V_lambda_1 pc ... pc V_lambda_m ==> dim V &>=  dim(V_lambda_1 pc ... pc V_lambda_m) &=\ = dim V_lambda_1 + ... + dim V_lambda_m &= g_lambda_1 + ... + g_lambda_m
+        V > V_lambda_1 pc ... pc V_lambda_m ==> dim V &>=  dim(V_lambda_1 pc ... pc V_lambda_m) &=\ = dim V_lambda_1 + ... + dim V_lambda_m &= g_lambda_1 + ... + g_lambda_m.
     $
 
     + #[Можно считать 
@@ -110,7 +110,7 @@
 
 #notice[
     $ 
-        lambda - "собственное значение" Aa <==> Ker(Aa - lambda epsilon) != 0 <==>\ Aa - lambda epsilon in.not GL(V) <==> [Aa - lambda epsilon]_E in.not GL_n (V) <==> det (([Aa - lambda epsilon]_E)) = 0 iff^((*)) det ((A - lambda E_n)) = 0
+        lambda - "собственное значение" Aa <==> Ker(Aa - lambda epsilon) != 0 <==>\ Aa - lambda epsilon in.not GL(V) <==> [Aa - lambda epsilon]_E in.not GL_n (V) <==> det(([Aa - lambda epsilon]_E)) = 0 iff^((*)) det((A - lambda E_n)) = 0
     $
     $
         (*): quad [Aa - lambda epsilon_V]_E = [Aa]_E - [lambda epsilon_V]_E = [Aa]_E - lambda E_n.

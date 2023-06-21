@@ -27,8 +27,8 @@
 
 #def[
     Пусть $phi : G --> G'$ --- гомоморфизм. Тогда:
-    - $Ker(phi) = {g in G bar phi(g) = e}$ --- _ядро гомоморфизма_.
-    - $Im(phi) = {phi(g) bar g in G}$ --- _образ гомоморфизма_.
+    - $Ker phi = {g in G bar phi(g) = e}$ --- _ядро гомоморфизма_.
+    - $Im phi = {phi(g) bar g in G}$ --- _образ гомоморфизма_.
 ]
 
 #lemma[
@@ -156,7 +156,7 @@
 ]
 
 #example[
-    Пусть $CC^* limits(-->)^phi RR^*$: $z maps abs(z)$. Тогда $Ker phi = RR^*_+ iso RR$ (например, через $ln$). Обозначается такое ядро $TT$, оно равно ${z in C^* bar abs(z) = 1}$. Значит $CC^* fg TT iso RR^*$ по теореме о гомоморфизме.
+    Пусть $CC^* limits(-->)^phi RR^*_+$: $z maps abs(z)$. Такое ядро $Ker phi$ обозначается $TT$, оно равно ${z in C^* bar abs(z) = 1}$. Значит $CC^* fg TT iso RR^*$ по теореме о гомоморфизме.
 
     А еще можно сказать, что $TT iso RR fg ZZ$.
 ]

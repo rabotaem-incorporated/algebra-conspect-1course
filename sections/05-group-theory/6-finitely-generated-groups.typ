@@ -20,7 +20,7 @@
 #th[
     Пусть $G$ --- конечная абелева группа. Тогда
     $
-        G iso product_(i = 1)^m(ZZ fg p_i^(l_i) ZZ), #[где $p_i$ --- простое; $l_i in N$]
+        G iso product_(i = 1)^m(ZZ fg p_i^(l_i) ZZ), #[где $p_i$ --- простое; $l_i in NN$]
     $
     Такое разложение единственно с точностью до порядка множителей.
 
@@ -50,6 +50,8 @@
         {g in G bar p g = 0} supset {(overline(p^(l_1-1) a), overline(p^(l_2-1) b), 0, ..., 0) bar 0 <= a <= p-1, 0 <= b <= p - 1} \
         ==> abs({g in G bar p g = 0})_(>= p^2) = {x in G bar x^p = 1} subset {x in K bar f(x) = 0}, f = x^p - 1
     $
+
+    #TODO[починить и объяснить]
 ]
 
 #th[

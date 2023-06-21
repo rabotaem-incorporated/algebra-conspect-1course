@@ -85,8 +85,8 @@
 
 #proof[
     $ abs(G) = limits(sum)_(M in G fg H) abs(M) = (G : H) abs(H). $
-    Пояснение: $ M = g H, space H &--> g H space #[--- биекция]\
-    h &maps g h \ g h_1 = g h_2 ==> h_1 = h_2 ==> abs(M) = abs(H) $
+    Пояснение: $ M = g H, space H &--> g H space #[--- биекция] \ h &maps g h $ 
+    $ g h_1 = g h_2 ==> h_1 = h_2 ==> abs(M) = abs(H) $
 ]
 
 #follow[
@@ -116,6 +116,6 @@
     ]
     5. #[
         $g in G, space g != e$\
-        $ord(g) bar p, ord g != 1 ==> ord g = p ==> abs(gen(g)) = p ==> gen(p) = G$
+        $ord(g) bar p, ord g != 1 ==> ord g = p ==> abs(gen(g)) = p ==> gen(g) = G$
     ]
 ]

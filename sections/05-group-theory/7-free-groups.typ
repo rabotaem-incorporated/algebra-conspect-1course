@@ -179,7 +179,7 @@
     По теореме о гомоморфизме 
     $
         G = Im phi &iso F fg H \
-        H &= ker phi
+        H &= Ker phi
     $
 ]
 
