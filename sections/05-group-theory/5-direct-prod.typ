@@ -103,7 +103,7 @@
 #def[
     Пусть $forall g quad exists! h_1 in H_1, h_2 in H_2: g = h_1 h_2$, $H_1 nsubg G$. Тогда $G$ называется _полупрямым произведением_ $H_1$ и $H_2$.
 
-    Обозначается $G = H_1 times.three.l H_2$, (если $H_1 nsubg G$) или $G = H_1 times.three.r H_2$, (если $H_2 nsubg G$) и $G = H_1 times H_2$, (если выполняется оба условия $<==>$ произведение прямое). 
+    Обозначается $G = H_1 times.three.l H_2$ если $H_1 nsubg G$ или $G = H_1 times.three.r H_2$ если $H_2 nsubg G$ и $G = H_1 times H_2$ если выполняется оба условия, что то же самое, что произведение прямое. 
 ]
 
 #examples[
