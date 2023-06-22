@@ -98,8 +98,8 @@
     #align(center)[#commutative_diagram(
         node((0, 0), [$V$]),
         node((0, 1), [$W$]),
-        node((1, 0), [$K^(dim V)$]),
-        node((1, 1), [$K^(dim W)$]),
+        node((1, 0), [$K^(dim V) (E)$]),
+        node((1, 1), [$K^(dim W) (F)$]),
         arr((0, 0), (0, 1), [$Aa$]),
         arr((0, 0), (1, 0), [$[v]_E$], "bij"),
         arr((0, 1), (1, 1), [$[Aa v]_F$], label_pos: 1.5em, "bij"),
@@ -111,12 +111,12 @@
     Аналогично координаты $Aa v$ в базисе $F$ можно превратить в $Aa v$, а затем записать этот вектор в координатах в базисе $F'$.
 
     #align(center)[#commutative_diagram(
-        node((1, 0), [$K^(dim V)$]),
+        node((1, 0), [$K^(dim V) (E')$]),
         node((0, 1), [$V$]),
         node((0, 2), [$W$]),
-        node((1, 1), [$K^(dim V)$]),
-        node((1, 2), [$K^(dim W)$]),
-        node((1, 3), [$W$]),
+        node((1, 1), [$K^(dim V) (E)$]),
+        node((1, 2), [$K^(dim W) (F)$]),
+        node((1, 3), [$K^(dim W) (F')$]),
         arr((1, 0), (0, 1), [$[v]_(E')$], "bij", curve: 30deg, label_pos: -1.2em),
         arr((0, 1), (0, 2), [$Aa$]),
         arr((0, 1), (1, 1), [$[v]_E$], "bij"),
