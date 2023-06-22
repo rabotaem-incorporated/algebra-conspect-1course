@@ -147,7 +147,7 @@ j-ой строке).
 ]
 
 #proof[
-  $ (A mul adj(A))_(i j) = a_(i 1) A_(j 1) + a_(i 2) A_(j 2) + ... + a_(i n) A_(j n) = cases(det(A) &\, space "если" i = j, 0 &\, space "иначе") $
+  $ (A mul adj(A))_(i j) = a_(i 1) A_(j 1) + a_(i 2) A_(j 2) + ... + a_(i n) A_(j n) = cases(det(A)\, & space "если" i = j\,, 0\, & space "иначе".) $
 
   Для $adj(A) mul A$, аналогично, только с разложением по столбцу.
 ]

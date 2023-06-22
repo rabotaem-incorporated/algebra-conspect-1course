@@ -17,7 +17,7 @@
 ]
 
 #example[
-  $ V = {vec(alpha, beta, gamma) bar alpha+beta+gamma = 0} = {vec(alpha, beta, -alpha-beta) bar alpha, beta in K} $
+  $ V = {vec(alpha, beta, gamma) bar alpha+beta+gamma = 0} = {vec(alpha, beta, -alpha-beta) bar alpha, beta in K} = Lin(vec(1, 0, -1), vec(0, 1, -1)). $
 ]
 
 #def[
@@ -34,7 +34,7 @@
   - "$subset$": 
   $ 
     w in W ==> \ w = alpha_1v_1 + ... + alpha_m v_m, space v_m = beta_1 v_1 + ... + beta_(m-1)v_(m-1) ==> \
-    w = alpha_1v_1 + ... + alpha_(m-1)alpha_(m-1) + alpha_m(beta_1 + ... + beta_(m-1)v_(m-1)) =\ (alpha_1 + a_m beta_1)v_1 + ... + (alpha_(m-1) + alpha_m beta_(m-1))v_(m-1) in Lin(v_1, ..., v_(m-1))
+    w = alpha_1v_1 + ... + alpha_(m-1)alpha_(m-1) + alpha_m (beta_1 + ... + beta_(m-1)v_(m-1)) =\ (alpha_1 + a_m beta_1)v_1 + ... + (alpha_(m-1) + alpha_m beta_(m-1))v_(m-1) in Lin(v_1, ..., v_(m-1))
   $
 ]
 

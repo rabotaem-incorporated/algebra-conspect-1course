@@ -92,7 +92,7 @@
 #follow[
     + Если $abs(G) < oo$ и $H < G$, то $abs(G) dots.v abs(H)$.
     
-    + Если $abs(G) < oo$ и $g in G$, то $ord g = abs(gen(g))$.
+    + Если $abs(G) < oo$ и $g in G$, то $abs(gen(g)) dots.v abs(G)$.
     
     + Если $abs(G) < oo$ и $g in G$, то $g^(abs(G)) = e$.
     
