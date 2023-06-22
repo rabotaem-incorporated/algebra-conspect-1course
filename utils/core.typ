@@ -123,7 +123,11 @@
       }
 
       if (glue or lt in glues_to) and last_th_page == loc.page() { 
-        v(-0.4em)
+        if not config.monochrome {
+          v(-0.4em)
+        } else {
+          v(-0.4em + 1pt)
+        }
       }
     })
 
@@ -160,8 +164,17 @@
       outset: .4em,
       inset: .4em,
       width: 100%,
-      fill: color.lighten(90%), 
-      stroke: (left: highlight_color, ),
+      fill: if not config.monochrome { color.lighten(90%) } else { none }, 
+      stroke: if not config.monochrome {
+        (left: highlight_color, )
+      } else {
+        (
+          left: highlight_color + 2pt,
+          right: highlight_color + 1pt,
+          top: highlight_color + 1pt,
+          bottom: highlight_color + 1pt,
+        )
+      },
     )
 
     #th_block(th_content)
@@ -178,9 +191,10 @@
   #if content != [] { content } else [ Дописать ]<todo-like>
 ]
 
-#let th_color = red
-#let oth_color = blue
-#let def_color = orange
+#let th_color = if not config.monochrome { red } else { luma(20%) }
+#let oth_color = if not config.monochrome { blue } else { luma(30%) }
+#let def_color = if not config.monochrome { orange } else { luma(40%) }
+#let proof_color = if not config.monochrome { gray } else { luma(80%) }
 
 #let th = make_theorem("Теорема", color: th_color)
 #let lemma = make_theorem("Лемма", color: th_color)
@@ -192,18 +206,18 @@
 #let def = make_theorem("Определение", color: def_color)
 #let prop = make_theorem("Свойство", th_type_plural: "Свойства", color: oth_color)
 #let props = prop.with(plural: true)
-#let notice = make_theorem("Замечание", highlight_color: gray)
+#let notice = make_theorem("Замечание", highlight_color: proof_color)
 #let example = make_theorem("Пример", th_type_plural: "Примеры", 
-    highlight_color: orange.lighten(25%), glues_to: (
+    highlight_color: def_color.lighten(25%), glues_to: (
     "Теорема", "Лемма", "Предложение", "Следствие", 
     "Свойство", "Свойства", "Замечание", "Определение",
     "Доказательство", "Обозначение",
 ))
 #let examples = example.with(plural: true)
-#let exercise = make_theorem("Упражнение", highlight_color: gray)
+#let exercise = make_theorem("Упражнение", highlight_color: proof_color)
 #let denote = make_theorem("Обозначение", color: def_color)
 
-#let proof = make_theorem("Доказательство", highlight_color: gray, 
+#let proof = make_theorem("Доказательство", highlight_color: proof_color, 
   glues_to: (
     "Теорема", "Лемма", "Предложение", "Следствие", 
     "Свойство", "Свойства", "Замечание"
@@ -219,7 +233,7 @@
 
   let width = 0.7cm
   let offset = 0.5cm
-  let color = blue.lighten(60%)
+  let color = if not config.monochrome { blue.lighten(60%) } else { gray }
 
   if step-fn != none {
     ticket-counter.update(step-fn)
