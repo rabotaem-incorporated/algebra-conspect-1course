@@ -71,7 +71,7 @@
 
 #pr[
     Пусть $E, F$ --- базисы пространства $V$, $dim(V) = n < oo$, $C = M_(E arrow F)$. Тогда
-    $ [Aa]_E = C mul [Aa]_F mul C^(-1) $
+    $ [Aa]_F = C^(-1) mul [Aa]_E mul C $
 ]
 
 #proof[
