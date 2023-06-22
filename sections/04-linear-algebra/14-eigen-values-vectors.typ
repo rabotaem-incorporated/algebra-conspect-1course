@@ -213,7 +213,7 @@
 #proof[
     \ $1 ==> 2$
     $
-        g_(lambda_1) + ... + g_(lambda_m) = n, xi_(d i a g(alpha_1, ..., alpha_n)) = plus.minus product_(i=1)^n(x- a_i) \
+        g_(lambda_1) + ... + g_(lambda_m) = n, xi_(d i a g(alpha_1, ..., alpha_n)) = plus.minus product_(i=1)^n (x- a_i) \
         a_(lambda_1) + ... + a_(lambda_m) \
         g_(lambda_j) <= a_(lambda_j) ==> forall j: g_(lambda_j) = a_(lambda_j)
     $
