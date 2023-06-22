@@ -255,7 +255,7 @@
         dash: "dashed"
       ))
       
-      #place(dy: -5cm)[#hide(name)<ticket>]
+      #place(dy: -1cm)[#hide(name)<ticket>]
 
       #link(<ticket-reference>, place(
         dx: offset,
