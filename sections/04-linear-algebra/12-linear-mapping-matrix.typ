@@ -135,20 +135,21 @@
     $
 
     #align(center)[#commutative_diagram(
-        node((1, 0), $K^(dim V)$),
+        node((1, 0), $K^(dim V) (E')$),
         node((0, 1), $V$),
         node((0, 2), $W$),
-        node((1, 1), $K^(dim V)$),
-        node((1, 2), $K^(dim W)$),
-        node((1, 3), $K^(dim W)$),
+        node((1, 1), $K^(dim V) (E)$),
+        node((1, 2), $K^(dim W) (F)$),
+        node((1, 3), $K^(dim W) (F')$),
         arr((1, 0), (0, 1), $[v]_(E')$, "bij", curve: 30deg, label_pos: -1.2em),
         arr((0, 1), (0, 2), $Aa$),
         arr((0, 1), (1, 1), $[v]_E$, "bij"),
         arr((0, 2), (1, 2), $[Aa v]_F$, label_pos: 1.5em, "bij"),
         arr((1, 1), (1, 2), $A times$),
         arr((0, 2), (1, 3), $[Aa v]_(F')$, "bij", curve: 30deg, label_pos: -1.5em),
-        arr((1, 0), (1, 1), $M_(E -> E') times$, "bij", curve: -10deg),
-        arr((1, 2), (1, 3), $M_(F' -> F) times$, "bij", curve: -10deg),
+        arr((1, 0), (1, 1), $M_(E -> E') times$, curve: -20deg, label_pos: 0.5em),
+        arr((1, 3), (1, 2), $M_(F' -> F) times$, curve: +20deg, label_pos: -0.5em),
+        arr((1, 2), (1, 3), $M_(F -> F') times$, curve: +20deg, label_pos: -1em),
     )]
 
     Прочитаем то что снизу, и получим что хотим.
