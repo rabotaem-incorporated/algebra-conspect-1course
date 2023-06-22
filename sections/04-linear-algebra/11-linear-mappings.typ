@@ -40,9 +40,9 @@
     $Im Aa < W$, $Ker Aa < V$
 ]
 
-#proof[    
-    $0 in Aa(0) in Im Aa$, $A(0) = 0 ==> 0 in Ker Aa$.
-    $Aa(v_1) + Aa(v_2) = Aa(v_1 + v_2) in Im Aa$, $alpha mul Aa v = Aa(alpha v) in Im Aa$
+#proof[
+    В образе лежит линейная комбинация: $ alpha underbrace(Aa v, in Im Aa) + beta underbrace(Aa u, in Im Aa) = Aa(alpha v + beta u) in Im Aa. $
+    В ядре лежит линейная комбинация: $ Aa v = 0 and Aa u = 0 ==> Aa(alpha v + beta u) = 0 ==> alpha v + beta u in Ker Aa. $
 ]
 
 #notice[

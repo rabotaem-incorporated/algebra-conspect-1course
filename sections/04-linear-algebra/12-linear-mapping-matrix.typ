@@ -162,7 +162,7 @@
     $ [Aa]_(E, F) = A, [Aa]_(E', F') = ? $
     $ Aa = Id_W compose Aa compose Id_V $
     $ [Aa]_(E', F') = [Id_W]_(F, F') mul A mul [Id_v]_(E', E) = M_(F' --> F) mul A mul M_(E --> E') $
-    $ [Aa]_(E', F') = M_(F --> F')^(-1) mul A mul M_(E --> E') $
+    $ [Aa]_(E', F') = M_(F' --> F) mul A mul M_(E --> E') $
 
     #align(center)[#commutative_diagram(
         node((0, 0), [$V$]),
@@ -183,5 +183,5 @@
 #proof[
     Пусть $E, F$ - произвольные базисы $V, W$, тогда
     $ Aa E = F A ==> Aa E = F P D Q ==> Aa (E Q^(-1)) = (F P) D $
-    Тогда в базисах $E Q^(-1), F P$ матрица этого линейного отображения будет единичной окаймленной
+    Тогда в базисах $E Q^(-1), F P$ матрица этого линейного отображения будет единичной окаймленной.
 ]

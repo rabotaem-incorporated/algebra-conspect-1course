@@ -78,7 +78,7 @@
 ]
 
 #pr[
-    Пусть $lambda_1, ..., lambda_m$ --- все собственные значение оператора $Aa$; $n = dim(V)$.
+    Пусть $lambda_1, ..., lambda_m$ --- все собственные значение оператора $Aa$; $n = dim V$.
 
     + $g_(lambda_1) + ... + g_(lambda_m) <= n$
     + $Aa$ --- диагоназируем $<==> g_(lambda_1) + ...+ g_(lambda_m) = n$
@@ -110,7 +110,7 @@
 
 #notice[
     $ 
-        lambda - "собственное значение" Aa <==> Ker(Aa - lambda epsilon) != 0 <==>\ Aa - lambda epsilon in.not GL(V) <==> [Aa - lambda epsilon]_E in.not GL_n (V) <==> det(([Aa - lambda epsilon]_E)) = 0 iff^((*)) det((A - lambda E_n)) = 0
+        lambda - "собственное значение" Aa <==> Ker(Aa - lambda epsilon) != 0 <==>\ Aa - lambda epsilon in.not GL(V) <==> [Aa - lambda epsilon]_E in.not GL_n (V) <==> det([Aa - lambda epsilon]_E) = 0 iff^((*)) det((A - lambda E_n)) = 0
     $
     $
         (*): quad [Aa - lambda epsilon_V]_E = [Aa]_E - [lambda epsilon_V]_E = [Aa]_E - lambda E_n.
@@ -122,18 +122,18 @@
 
     $
         abs(A - x mul E_n) &= (a_(1 1) - x)...(a_(n n) - x) + 
-        #[многочлены степени $<= n-2$] \ &= (-1)^n x^n + (-1)^(n-1)(underbrace(a_(1 1) + a_(2 2) + ... + a_(n n), #[$Tr A$ --- След матрицы $A$]))x^(n-1) + ... + abs(A)
+        #[многочлены степени $<= n-2$] \ &= (-1)^n x^n + (-1)^(n-1)(underbrace(a_(1 1) + a_(2 2) + ... + a_(n n), #[$Tr A$ --- След матрицы $A$]))x^(n-1) + ... + det(A)
     $
 ]
 
 #lemma[
-    Пусть $A' = C^(-1)A C, C in GL_n (K)$. Тогда $xi_(A') = xi_A$
+    Пусть $A' = C^(-1)A C, C in GL_n (K)$. Тогда $xi_(A') = xi_A$.
 ]
 
 #proof[
     $
         xi_(A') = abs(A' - x mul E_n) = abs(C^(-1) A C - x mul C C^(-1)) = abs(C^(-1) A C - C^(-1)( x C)) = \
-        abs(C^(-1)(A - x E_n)C) = abs(C)^(-1) mul abs(A - X E_n) mul abs(C) = xi_A.
+        abs(C^(-1)(A - x E_n)C) = abs(C)^(-1) mul abs(A - x E_n) mul abs(C) = xi_A.
     $
 ]
 
@@ -185,7 +185,7 @@
 #let line_begin(ident) = [#box()#label("line_begin_" + ident)]
 
 #proof[
-    Пусть $e_1, ..., e_g$ --- базис $V_lambda$, $e_(g+1), ..., e_n$ --- дополнение до базиса $E$ пространства $V$
+    Пусть $e_1, ..., e_g$ --- базис $V_lambda$, $e_(g+1), ..., e_n$ --- дополнение до базиса $E$ пространства $V$.
     $
         [A]_E = mat(
             lambda, 0, ..., 0, limits(#hide("A"))^#line_begin("B"), dots.v, dots.v;
@@ -197,7 +197,7 @@
             )
     $ 
     $
-    xi_(Aa) = ... = abs((lambda - x) E_g) mul abs(*) = (lambda - x)^g mul (...) ==> a_lambda >= g
+    xi_(Aa) = ... = abs((lambda - x) E_g) mul abs(*) = (lambda - x)^g mul (...) ==> a_lambda >= g_lambda.
     $
 ]
 
@@ -213,7 +213,7 @@
 #proof[
     \ $1 ==> 2$
     $
-        g_(lambda_1) + ... + g_(lambda_m) = n, xi_(d i a g(alpha_1, ..., alpha_n)) = plus.minus product_(i=1)^n (x- a_i) \
+        g_(lambda_1) + ... + g_(lambda_m) = n, xi_(diag(alpha_1, ..., alpha_n)) = plus.minus product_(i=1)^n (x- a_i) \
         a_(lambda_1) + ... + a_(lambda_m) \
         g_(lambda_j) <= a_(lambda_j) ==> forall j: g_(lambda_j) = a_(lambda_j)
     $
@@ -234,11 +234,12 @@
     $m in NN, space lambda in L$
     $
         J_m (lambda) = mat(
-            lambda, 1, 0, ..., 0;
-            0, lambda, 1, ..., 0;
-            0, 0, lambda, ..., 0;
-            dots.v, dots.v, dots.down, dots.v;
-            0, 0, 0, ..., lambda
+            lambda, 1, 0, ..., 0, 0;
+            0, lambda, 1, ..., 0, 0;
+            0, 0, lambda, ..., 0, 0;
+            dots.v, dots.v, dots.v, dots.down, dots.v, dots.v;
+            0, 0, 0, ..., lambda, 1;
+            0, 0, 0, ..., 0, lambda;
         ) in M_m (K)
     $
     Такая матрица называется _Жордановой клеткой_.
@@ -249,7 +250,7 @@
 ]
 
 #proof[
-    Без доказательства
+    Без доказательства.
 ]
 
 
