@@ -133,5 +133,5 @@
 
 #proof[
     + "$subset$": Пусть $H < G$, $H supset M$. Тогда $M^(-1) subset H$, значит $M union M^(-1) subset H ==> gen(M) subset H$.
-    + "$supset$": $gen(M) < G, space gen(M) supset M ==>  limits(sect.big)_(H < G \ H supset M) subset gen(M)$
+    + "$supset$": $gen(M) < G, space gen(M) supset M ==>  limits(sect.big)_(H < G \ H supset M) H subset gen(M)$
 ]

@@ -89,10 +89,10 @@
     $ g h_1 = g h_2 ==> h_1 = h_2 ==> abs(M) = abs(H) $
 ]
 
-#follow[
+#follow(plural: true)[
     + Если $abs(G) < oo$ и $H < G$, то $abs(G) dots.v abs(H)$.
     
-    + Если $abs(G) < oo$ и $g in G$, то $abs(gen(g)) dots.v abs(G)$.
+    + Если $abs(G) < oo$ и $g in G$, то $abs(G) dots.v abs(gen(g))$.
     
     + Если $abs(G) < oo$ и $g in G$, то $g^(abs(G)) = e$.
     

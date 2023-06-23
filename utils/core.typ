@@ -201,6 +201,7 @@
 #let pr = make_theorem("Предложение", color: oth_color)
 #let follow = make_theorem(
   "Следствие", color: oth_color,
+  th_type_plural: "Следствия",
   glues_to: ("Теорема", "Лемма", "Доказательство")
 )
 #let def = make_theorem("Определение", color: def_color)
