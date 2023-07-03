@@ -6,7 +6,7 @@
 
 ### Короткая версия
 
-[PDF тут](https://github.com/rabotaem-incorporated/algebra-conspect-2sem/releases/latest), качаете и читаете
+[PDF тут](https://github.com/rabotaem-incorporated/algebra-conspect-1course/releases/latest), качаете и читаете
 
 ### Подробная версия
 
@@ -16,7 +16,7 @@
 2. Если до экзамена осталось меньше двух дней, этот конспект вам не поможет.
 3. "между одной неделей и двумя днями пригодно к использованию так сказать" - @frungl
 
-Теперь выйдите на улицу, потрогайте траву, вернитесь домой, скиньте эквивалент 30 долларов в dogecoin на мой кошелек и скачайте последний релиз [отсюда](https://github.com/rabotaem-incorporated/algebra-conspect-2sem/releases/latest).
+Теперь выйдите на улицу, потрогайте траву, вернитесь домой, скиньте эквивалент 30 долларов в dogecoin на мой кошелек и скачайте последний релиз [отсюда](https://github.com/rabotaem-incorporated/algebra-conspect-1course/releases/latest).
 
 ## О списке билетов
 
