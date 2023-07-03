@@ -8,8 +8,9 @@ version_file_suffix = sys.argv[1]
 @dataclass
 class Config:
     enable_chapters_from_sem1: bool = True
-    enable_unfinished_chapters: bool = True
-    enable_ticket_references: bool = True
+    enable_chapters_from_sem2: bool = True
+    enable_unfinished_chapters: bool = False
+    enable_ticket_references: bool = False
     monochrome: bool = False
 
     def write_to_file(self, file):
@@ -26,45 +27,76 @@ class Config:
 
 
 targets = {
-    "algebra-all-with-tickets": Config(
-        enable_chapters_from_sem1=True,
-    ),
-    
     "algebra-all": Config(
-        enable_chapters_from_sem1=True,
-        enable_ticket_references=False,
+        enable_chapters_from_sem1 = True,
+        enable_chapters_from_sem2 = True,
+        enable_unfinished_chapters = True,
+        enable_ticket_references = False,
+        monochrome = False,
+    ),
+
+    "algebra-sem1": Config(
+        enable_chapters_from_sem1 = True,
+        enable_chapters_from_sem2 = False,
+        enable_unfinished_chapters = True,
+        enable_ticket_references = False,
+        monochrome = False,
+    ),
+
+    "algebra-sem2": Config(
+        enable_chapters_from_sem1 = False,
+        enable_chapters_from_sem2 = True,
+        enable_unfinished_chapters = True,
+        enable_ticket_references = False,
+        monochrome = False,
+    ),
+
+    "algebra-all-with-tickets": Config(
+        enable_chapters_from_sem1 = True,
+        enable_chapters_from_sem2 = True,
+        enable_unfinished_chapters = False,
+        enable_ticket_references = True,
+        monochrome = False,
+    ),
+
+    "algebra-sem1-with-tickets": Config(
+        enable_chapters_from_sem1 = True,
+        enable_chapters_from_sem2 = False,
+        enable_unfinished_chapters = False,
+        enable_ticket_references = True,
+        monochrome = False,
     ),
 
     "algebra-sem2-with-tickets": Config(
-        enable_chapters_from_sem1=False,
+        enable_chapters_from_sem1 = False,
+        enable_chapters_from_sem2 = True,
+        enable_unfinished_chapters = False,
+        enable_ticket_references = True,
+        monochrome = False,
     ),
 
-    "algebra-sem2-only": Config(
-        enable_chapters_from_sem1=False,
-        enable_ticket_references=False,
+    "algebra-all-with-tickets-monochrome": Config(
+        enable_chapters_from_sem1 = True,
+        enable_chapters_from_sem2 = True,
+        enable_unfinished_chapters = False,
+        enable_ticket_references = True,
+        monochrome = True,
     ),
 
-
-    "monochrome-algebra-all-with-tickets": Config(
-        enable_chapters_from_sem1=True,
-        monochrome=True,
-    ),
-    
-    "monochrome-algebra-all": Config(
-        enable_chapters_from_sem1=True,
-        enable_ticket_references=False,
-        monochrome=True,
+    "algebra-sem1-with-tickets-monochrome": Config(
+        enable_chapters_from_sem1 = True,
+        enable_chapters_from_sem2 = False,
+        enable_unfinished_chapters = False,
+        enable_ticket_references = True,
+        monochrome = True,
     ),
 
-    "monochrome-algebra-sem2-with-tickets": Config(
-        enable_chapters_from_sem1=False,
-        monochrome=True,
-    ),
-
-    "monochrome-algebra-sem2-only": Config(
-        enable_chapters_from_sem1=False,
-        enable_ticket_references=False,
-        monochrome=True,
+    "algebra-sem2-with-tickets-monochrome": Config(
+        enable_chapters_from_sem1 = False,
+        enable_chapters_from_sem2 = True,
+        enable_unfinished_chapters = False,
+        enable_ticket_references = True,
+        monochrome = True,
     ),
 }
 
