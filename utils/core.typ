@@ -168,7 +168,6 @@
         ] else [
           *#th_type (#name).* 
         ]
-
       ] else [
         *#th_type.*
       ]
