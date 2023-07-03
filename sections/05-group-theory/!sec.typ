@@ -1,10 +1,10 @@
 = Теория групп
 
-#include "1-group-theory.typ"
-#include "2-related-classes.typ"
-#include "3-factor-groups.typ"
-#include "4-homomorphism.typ"
-#include "5-direct-prod.typ"
-#include "6-finitely-generated-groups.typ"
-#include "7-free-groups.typ"
-#include "8-group-on-set.typ"
+#include "01-group-theory.typ"
+#include "02-related-classes.typ"
+#include "03-factor-groups.typ"
+#include "04-homomorphism.typ"
+#include "05-direct-prod.typ"
+#include "06-finitely-generated-groups.typ"
+#include "07-free-groups.typ"
+#include "08-group-on-set.typ"

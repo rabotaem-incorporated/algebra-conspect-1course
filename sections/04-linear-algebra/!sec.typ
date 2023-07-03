@@ -3,17 +3,17 @@
 = Линейная алгебра
 
 #if config.enable-chapters-from-sem1 [
-    #include "1-matrices.typ"
-    #include "2-elementary-things.typ"
+    #include "01-matrices.typ"
+    #include "02-elementary-things.typ"
 ]
 
-#include "3-permutations-cont.typ"
-#include "4-determinants.typ"
-#include "5-determinants-more-props.typ"
-#include "6-linear-spaces.typ"
-#include "7-linear-subspaces.typ"
-#include "8-linear-dep-and-indep.typ"
-#include "9-basis.typ"
+#include "03-permutations-cont.typ"
+#include "04-determinants.typ"
+#include "05-determinants-more-props.typ"
+#include "06-linear-spaces.typ"
+#include "07-linear-subspaces.typ"
+#include "08-linear-dep-and-indep.typ"
+#include "09-basis.typ"
 #include "10-coords.typ"
 #include "11-rank.typ"
 #include "12-direct-sum.typ"
