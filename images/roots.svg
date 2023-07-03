@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg height="600" width="600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <marker id="mrk" viewBox="0 0 10 10" refX="5" refY="5" markerUnits="strokeWidth" markerWidth="10" markerHeight="10" orient="auto">
+   <path d="M 0 0 L 10 10 M 0 10 L 10 0" stroke="red"/>
+  </marker>
+ </defs>
+ <g fill="none" id="main" stroke="grey" stroke-width="0.1" transform="matrix(20,0,0,20,270,350)">
+  <circle x="0" y="0" r="10"/>
+  <g id="absz">
+   <line x1="-13" x2="15" y1="0" y2="0"/>
+   <path d="M 15,0 L 14 0.3 L 14 -0.3 z" fill="grey"/>
+   <line id="xt" x1="-10" y1="-1" x2="-10" y2="1" stroke="black"/>
+   <g id="gxt">
+    <use transform="translate(20,0)" xlink:href="#xt"/>
+   </g>
+  </g>
+  <use transform="rotate(-90)" xlink:href="#absz"/>
+  <line id="sekante" stroke="navy" x1="10" y1="0" x2="3.09017" y2="-9.51056" marker-end="url(#mrk)"/>
+  <use transform="rotate(72)" xlink:href="#sekante"/>
+  <use transform="rotate(144)" xlink:href="#sekante"/>
+  <use transform="rotate(216)" xlink:href="#sekante"/>
+  <use transform="rotate(288)" xlink:href="#sekante"/>
+ </g>
+ <g font-family="Verdana,sans-serif" font-size="10pt">
+  <text transform="matrix(2,0,0,2,480,345)">A</text>
+  <text transform="matrix(2,0,0,2,340,150)">B</text>
+  <text transform="matrix(2,0,0,2,070,230)">C</text>
+  <text transform="matrix(2,0,0,2,070,480)">D</text>
+  <text transform="matrix(2,0,0,2,340,570)">E</text>
+  <text transform="matrix(2,0,0,2,030,380)">−1</text>
+  <text transform="matrix(2,0,0,2,280,380)">0</text>
+  <text transform="matrix(2,0,0,2,480,380)">+1</text>
+  <text transform="matrix(2,0,0,2,230,140)">+1</text>
+  <text transform="matrix(2,0,0,2,245,340)">0</text>
+  <text transform="matrix(2,0,0,2,230,580)">−1</text>
+  <text transform="matrix(2,0,0,2,560,340)" fill="grey">Re</text>
+  <text transform="matrix(2,0,0,2,250,040)" fill="grey">Im</text>
+ </g>
+</svg>

@@ -12,6 +12,7 @@
   name: none,
   short-name: none,
   lector: none,
+  info: none,
   document_body,
 ) = {
   set page(
@@ -49,6 +50,13 @@
       })
     ]
   )
+
+  show outline.entry.where(
+    level: 1
+  ): it => {
+    v(12pt, weak: true)
+    strong(it)
+  }
   
   set text(
     lang: "ru",
@@ -96,6 +104,14 @@
           Лектор: #lector
         ]
       }
+    ]
+    #align(center + bottom)[
+      #text(
+        size: 20pt,
+        weight: "semibold",
+      )[
+        #info
+      ]
     ]
 
     //#set par(justify: true)

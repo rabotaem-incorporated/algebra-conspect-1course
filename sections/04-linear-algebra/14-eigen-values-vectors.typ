@@ -118,7 +118,7 @@
 ]
 
 #def[
-    Для какого-то $Aa = End V$ можно записать собственные числа как корни _характеристического многочлена матрицы A_, $xi_A = det((A - x mul E_n)) in K[x] subset K(x)$.
+    Для какого-то $Aa = End V$ можно записать собственные числа как корни _характеристического многочлена матрицы A_, $chi_A = det((A - x mul E_n)) in K[x] subset K(x)$.
 
     $
         abs(A - x mul E_n) &= (a_(1 1) - x)...(a_(n n) - x) + 
@@ -127,35 +127,35 @@
 ]
 
 #lemma[
-    Пусть $A' = C^(-1)A C, C in GL_n (K)$. Тогда $xi_(A') = xi_A$.
+    Пусть $A' = C^(-1)A C, C in GL_n (K)$. Тогда $chi_(A') = chi_A$.
 ]
 
 #proof[
     $
-        xi_(A') = abs(A' - x mul E_n) = abs(C^(-1) A C - x mul C C^(-1)) = abs(C^(-1) A C - C^(-1)( x C)) = \
-        abs(C^(-1)(A - x E_n)C) = abs(C)^(-1) mul abs(A - x E_n) mul abs(C) = xi_A.
+        chi_(A') = abs(A' - x mul E_n) = abs(C^(-1) A C - x mul C C^(-1)) = abs(C^(-1) A C - C^(-1)( x C)) = \
+        abs(C^(-1)(A - x E_n)C) = abs(C)^(-1) mul abs(A - x E_n) mul abs(C) = chi_A.
     $
 ]
 
 #follow[
-    Характеристический многочлен оператора $xi_([Aa]_E)$ не зависит от выбора базиса $E$.
+    Характеристический многочлен оператора $chi_([Aa]_E)$ не зависит от выбора базиса $E$.
 ]
 
 #def[
-    _Характеристический многочлен оператора $Aa$_ --- $xi_Aa = xi_([Aa]_E)$, в каком-то базисе $E$.
+    _Характеристический многочлен оператора $Aa$_ --- $chi_Aa = chi_([Aa]_E)$, в каком-то базисе $E$.
 ]
 
 #pr[
-    $lambda$ --- собственное значение $Aa$ тогда, и только тогда, когда $xi_Aa(lambda) = 0$.
+    $lambda$ --- собственное значение $Aa$ тогда, и только тогда, когда $chi_Aa(lambda) = 0$.
 ]
 
 #proof[
     $
-        Ker (A - lambda E_n) != 0 <==> abs(A - lambda E_n) = 0 <==> xi_Aa(lambda) = 0.
+        Ker (A - lambda E_n) != 0 <==> abs(A - lambda E_n) = 0 <==> chi_Aa(lambda) = 0.
     $
 ]
 #def[
-    _Алгебраической крастностью_ собственного значения $lambda$ называют кратностью $lambda$ как корня $xi_(Aa)$
+    _Алгебраической крастностью_ собственного значения $lambda$ называют кратностью $lambda$ как корня $chi_(Aa)$
  ]
 
 #notice(name: [Не особо важно, просто для понимания])[
@@ -197,7 +197,7 @@
             )
     $ 
     $
-    xi_(Aa) = ... = abs((lambda - x) E_g) mul abs(*) = (lambda - x)^g mul (...) ==> a_lambda >= g_lambda.
+    chi_(Aa) = ... = abs((lambda - x) E_g) mul abs(*) = (lambda - x)^g mul (...) ==> a_lambda >= g_lambda.
     $
 ]
 
@@ -207,13 +207,13 @@
 #pr[
     Для оператора $Aa in End(V)$ эквивалентны:
     + $Aa$ -- диаг-м
-    + $xi_(Aa)$ расскладывается на линейные множетили, и для всех собственных значений $lambda$ выполняется $g_lambda = a_lambda$ 
+    + $chi_(Aa)$ расскладывается на линейные множетили, и для всех собственных значений $lambda$ выполняется $g_lambda = a_lambda$ 
 ]
 
 #proof[
     \ $1 ==> 2$
     $
-        g_(lambda_1) + ... + g_(lambda_m) = n, xi_(diag(alpha_1, ..., alpha_n)) = plus.minus product_(i=1)^n (x- a_i) \
+        g_(lambda_1) + ... + g_(lambda_m) = n, chi_(diag(alpha_1, ..., alpha_n)) = plus.minus product_(i=1)^n (x- a_i) \
         a_(lambda_1) + ... + a_(lambda_m) \
         g_(lambda_j) <= a_(lambda_j) ==> forall j: g_(lambda_j) = a_(lambda_j)
     $

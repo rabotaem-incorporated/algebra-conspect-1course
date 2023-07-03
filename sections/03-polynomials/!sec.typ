@@ -1,5 +1,9 @@
-#import "../../utils/core.typ": *
+#import "../../config.typ"
 
-= Многочлены
+#if config.enable-chapters-from-sem1 and config.enable-unfinished-chapters [
+    #import "../../utils/core.typ": *
 
-#TODO[Вся третья глава]
+    = Многочлены
+
+    #TODO[Вся третья глава]
+]

@@ -34,11 +34,11 @@
 #let St = math.op("St")
 #let char = math.op("char")
 #let Irr = math.op("Irr")
+#let arg = math.op("arg")
 
 // letters
 #let Aa = math.cal($A$)
 #let Bb = math.cal($B$)
-#let xi = math.chi
 
 // functions
 
