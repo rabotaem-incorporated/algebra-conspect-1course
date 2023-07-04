@@ -133,7 +133,7 @@
 
 #pr[
     + $arg overline(z) = -arg z$
-    + $z in RR <==> arg z = k \pi, space k in ZZ$
+    + $z in RR <==> arg z = k pi, space k in ZZ$
     + $arg(z_1 z_2) = arg z_1 + arg z_2$
     + Пусть $z_2 eq.not 0 ==> arg (z_1)/(z_2) = arg z_1 - arg z_2$
 ]
