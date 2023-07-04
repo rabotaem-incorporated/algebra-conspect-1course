@@ -107,8 +107,9 @@
     ]
     #align(center + bottom)[
       #text(
-        size: 20pt,
-        weight: "semibold",
+        size: 18pt,
+        style: "italic",
+        weight: 500
       )[
         #info
       ]
