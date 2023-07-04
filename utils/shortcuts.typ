@@ -25,6 +25,7 @@
 #let GL = math.op("GL")
 #let Hom = math.op("Hom")
 #let Ker = math.op("Ker")
+#let Re = math.op("Re")
 #let Im = math.op("Im")
 #let Id = math.op("Id")
 #let End = math.op("End")
