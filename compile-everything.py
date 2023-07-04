@@ -9,7 +9,6 @@ version_file_suffix = sys.argv[1]
 class Config:
     enable_chapters_from_sem1: bool = True
     enable_chapters_from_sem2: bool = True
-    enable_unfinished_chapters: bool = False
     enable_ticket_references: bool = False
     monochrome: bool = False
 
@@ -30,7 +29,6 @@ targets = {
     "algebra-all": Config(
         enable_chapters_from_sem1 = True,
         enable_chapters_from_sem2 = True,
-        enable_unfinished_chapters = True,
         enable_ticket_references = False,
         monochrome = False,
     ),
@@ -38,7 +36,6 @@ targets = {
     "algebra-sem1": Config(
         enable_chapters_from_sem1 = True,
         enable_chapters_from_sem2 = False,
-        enable_unfinished_chapters = True,
         enable_ticket_references = False,
         monochrome = False,
     ),
@@ -46,7 +43,6 @@ targets = {
     "algebra-sem2": Config(
         enable_chapters_from_sem1 = False,
         enable_chapters_from_sem2 = True,
-        enable_unfinished_chapters = True,
         enable_ticket_references = False,
         monochrome = False,
     ),
@@ -54,7 +50,6 @@ targets = {
     "algebra-all-with-tickets": Config(
         enable_chapters_from_sem1 = True,
         enable_chapters_from_sem2 = True,
-        enable_unfinished_chapters = False,
         enable_ticket_references = True,
         monochrome = False,
     ),
@@ -62,7 +57,6 @@ targets = {
     "algebra-sem1-with-tickets": Config(
         enable_chapters_from_sem1 = True,
         enable_chapters_from_sem2 = False,
-        enable_unfinished_chapters = False,
         enable_ticket_references = True,
         monochrome = False,
     ),
@@ -70,7 +64,6 @@ targets = {
     "algebra-sem2-with-tickets": Config(
         enable_chapters_from_sem1 = False,
         enable_chapters_from_sem2 = True,
-        enable_unfinished_chapters = False,
         enable_ticket_references = True,
         monochrome = False,
     ),
@@ -78,7 +71,6 @@ targets = {
     "algebra-all-with-tickets-monochrome": Config(
         enable_chapters_from_sem1 = True,
         enable_chapters_from_sem2 = True,
-        enable_unfinished_chapters = False,
         enable_ticket_references = True,
         monochrome = True,
     ),
@@ -86,7 +78,6 @@ targets = {
     "algebra-sem1-with-tickets-monochrome": Config(
         enable_chapters_from_sem1 = True,
         enable_chapters_from_sem2 = False,
-        enable_unfinished_chapters = False,
         enable_ticket_references = True,
         monochrome = True,
     ),
@@ -94,7 +85,6 @@ targets = {
     "algebra-sem2-with-tickets-monochrome": Config(
         enable_chapters_from_sem1 = False,
         enable_chapters_from_sem2 = True,
-        enable_unfinished_chapters = False,
         enable_ticket_references = True,
         monochrome = True,
     ),
