@@ -7,6 +7,9 @@
     #include "02-elementary-things.typ"
 ]
 
+<tickets-div>
+#counter("ticket").update(0)
+
 #if config.enable-chapters-from-sem2 [
     #include "03-permutations-cont.typ"
     #include "04-determinants.typ"

@@ -5,7 +5,7 @@
     let numbers = numbers.pos()
     if numbers.len() < 2 {
         none
-    } else {
+    } else if numbers.len() == 2 {
         numbering("A.", numbers.at(1))
     }
 })
@@ -31,22 +31,48 @@
 
     Обращаю внимание, что границы билетов расставлены субъективным образом. Если хотите исправить, просто сделайте PR.
 
-    #locate(loc => enum(
-        numbering: "1.",
-        ..query(selector(<ticket>), loc)
-            .sorted(key: ticket-name-label => {
-                counter("ticket").at(ticket-name-label.location()).first()
-            }).map(ticket-name-label => {
-                let ticket-location = ticket-name-label.location()
+    #if config.enable-chapters-from-sem1 []
+        === Первого семестра
 
-                enum.item(
-                    counter("ticket").at(ticket-location).first(),
-                    [
-                        #link(ticket-location, ticket-name-label.body)
-                        #box(width: 1fr, repeat[.])
-                        #link(ticket-location)[#ticket-location.page()]
-                    ]
-                )
-            })
-    ))
+        #locate(loc => enum(
+            numbering: "1.",
+            ..query(selector(<ticket>).before(<tickets-div>), loc)
+                .sorted(key: ticket-name-label => {
+                    counter("ticket").at(ticket-name-label.location()).first()
+                }).map(ticket-name-label => {
+                    let ticket-location = ticket-name-label.location()
+
+                    enum.item(
+                        counter("ticket").at(ticket-location).first(),
+                        [
+                            #link(ticket-location, ticket-name-label.body)
+                            #box(width: 1fr, repeat[.])
+                            #link(ticket-location)[#ticket-location.page()]
+                        ]
+                    )
+                })
+        ))
+    ]
+    #if config.enable-chapters-from-sem2 [
+        === Второго семестра
+
+        #locate(loc => enum(
+            numbering: "1.",
+            ..query(selector(<ticket>).after(<tickets-div>), loc)
+                .sorted(key: ticket-name-label => {
+                    counter("ticket").at(ticket-name-label.location()).first()
+                }).map(ticket-name-label => {
+                    let ticket-location = ticket-name-label.location()
+
+                    enum.item(
+                        counter("ticket").at(ticket-location).first(),
+                        [
+                            #link(ticket-location, ticket-name-label.body)
+                            #box(width: 1fr, repeat[.])
+                            #link(ticket-location)[#ticket-location.page()]
+                        ]
+                    )
+                })
+        ))
+    ]
 ]
