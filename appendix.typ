@@ -31,7 +31,7 @@
 
     Обращаю внимание, что границы билетов расставлены субъективным образом. Если хотите исправить, просто сделайте PR.
 
-    #if config.enable-chapters-from-sem1 []
+    #if config.enable-chapters-from-sem1 [
         === Первого семестра
 
         #locate(loc => enum(
