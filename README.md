@@ -47,5 +47,3 @@ typst compile main.typ
 ## Licensing
 
 See [LICENSE](LICENSE).
-
-The [commutative diagram library](https://gitlab.com/giacomogallina/typst-cd/-/tree/main/) is provided under the MIT license.

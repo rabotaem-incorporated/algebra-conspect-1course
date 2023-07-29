@@ -100,9 +100,9 @@
 
 
 #example[
-    #import "../../utils/cd/cd.typ": *
+    #import "../../packages/commute.typ": *
 
-    #align(center)[#commutative_diagram(
+    #align(center)[#commutative-diagram(
         node((0, 1), $FF_4096$),
         node((1, 0), $FF_64$),
         node((1, 2), $FF_16$),

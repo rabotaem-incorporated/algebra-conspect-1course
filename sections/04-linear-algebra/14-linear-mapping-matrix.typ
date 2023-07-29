@@ -104,13 +104,13 @@
 ]
 
 
-#import "../../utils/cd/cd.typ": *
+#import "../../packages/commute.typ": *
 
 #proof[
     Пусть матрица $[Aa]_(E, F)$ --- это какая-то матрица $A$. Пусть дан вектор $v in V$.
     Его можно записать в координатах $E$, домножить на матрицу $A$, получив координаты $Aa v$ в базисе $F$, и записать обратно в базисе $F$, получив $[Aa v]_F$.
 
-    #align(center)[#commutative_diagram(
+    #align(center)[#commutative-diagram(
         node((0, 0), [$V$]),
         node((0, 1), [$W$]),
         node((1, 0), [$K^(dim V) (E)$]),
@@ -125,7 +125,7 @@
     Из координат вектора в $E'$ можно восстановить вектор $v$, а затем перевести его в базис $E$.
     Аналогично координаты $Aa v$ в базисе $F$ можно превратить в $Aa v$, а затем записать этот вектор в координатах в базисе $F'$.
 
-    #align(center)[#commutative_diagram(
+    #align(center)[#commutative-diagram(
         node((1, 0), [$K^(dim V) (E')$]),
         node((0, 1), [$V$]),
         node((0, 2), [$W$]),
@@ -149,7 +149,7 @@
         [E' [v]_(E')]_E = M_(E -> E') [v]_(E').
     $
 
-    #align(center)[#commutative_diagram(
+    #align(center)[#commutative-diagram(
         node((1, 0), $K^(dim V) (E')$),
         node((0, 1), $V$),
         node((0, 2), $W$),
@@ -179,7 +179,7 @@
     $ [Aa]_(E', F') = [Id_W]_(F, F') mul A mul [Id_v]_(E', E) = M_(F' --> F) mul A mul M_(E --> E') $
     $ [Aa]_(E', F') = M_(F' --> F) mul A mul M_(E --> E') $
 
-    #align(center)[#commutative_diagram(
+    #align(center)[#commutative-diagram(
         node((0, 0), [$V$]),
         node((0, 1), [$W$]),
         node((1, 0), [$V$]),

@@ -1,5 +1,5 @@
 #import "../../utils/core.typ": *
-#import "../../utils/cd/cd.typ": *
+#import "../../packages/commute.typ": *
 
 == Гомоморфизмы
 
@@ -121,7 +121,7 @@
 #notice[
     Пусть $wave(phi)$ --- как выше. Тогда $phi = i_H compose wave(phi) compose pi_H$
     
-    #align(center)[#commutative_diagram(
+    #align(center)[#commutative-diagram(
         node((0, 0), $G$),
         node((0, 2), $G'$),
         node((1, 0), $G fg H$),

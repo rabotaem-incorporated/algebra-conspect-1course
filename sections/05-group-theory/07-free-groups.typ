@@ -120,9 +120,9 @@
     
     Тогда можно показать, что $Phi$ - это композиция двух гомоморфизмов: факторизации по вставке и некоторого $phi'$, который переводит свободные образующие $f_i$ в $g_i$.
 
-    #import "../../utils/cd/cd.typ": *
+    #import "../../packages/commute.typ": *
     
-    #align(center)[#commutative_diagram(
+    #align(center)[#commutative-diagram(
         node((0, 0), $W$),
         node((0, 1), $F$),
         node((1, 1), $G$),
