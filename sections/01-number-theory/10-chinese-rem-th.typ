@@ -7,13 +7,13 @@
 
     +   $exists x_0 in ZZ$: 
         $cases(
-            x_0 equiv(m_1) a_1,
-            x_0 equiv(m_2) a_2
+            x_0 equiv_(m_1) a_1,
+            x_0 equiv_(m_2) a_2
         )$
     
     +   Пусть $x_0$ удовлетворяет системе выше, тогда:
     
-        $x in ZZ$, где $x$ удовлетворяет системе выше $<==> x equiv(m_1 m_2) x_0$
+        $x in ZZ$, где $x$ удовлетворяет системе выше $<==> x equiv_(m_1 m_2) x_0$
 ]
 
 #proof[
@@ -25,21 +25,21 @@
 
     +
         "$arrow.l.double$":
-        $x equiv(m_1m_2) x_0 ==> 
+        $x equiv_(m_1m_2) x_0 ==> 
         cases(
-            x equiv(m_1) x_0,
-            x equiv(m_2) x_0
+            x equiv_(m_1) x_0,
+            x equiv_(m_2) x_0
         ) ==>
         cases(
-            x equiv(m_1) a_1,
-            x equiv(m_2) a_2
+            x equiv_(m_1) a_1,
+            x equiv_(m_2) a_2
         )$
 
         "$arrow.r.double$":
         $x$ удовлетворяет системе из теоремы $==>
         cases(
-            x equiv(m_1) x_0,
-            x equiv(m_2) x_0
+            x equiv_(m_1) x_0,
+            x equiv_(m_2) x_0
         ) ==>
         cases(
             m_1 divides (x - x_0),
@@ -68,10 +68,10 @@
     "при подстановке одинаковых классов":
 
     Пусть $[a]_(m_1m_2) = [a']_(m_1m_2) ==>$
-    $a equiv(m_1m_2) a' ==>$
+    $a equiv_(m_1m_2) a' ==>$
     $cases(
-        a equiv(m_1) a',
-        a equiv(m_2) a'
+        a equiv_(m_1) a',
+        a equiv_(m_2) a'
     ) ==> ([a]_(m_1), [a]_(m_2)) = ([a']_(m_1), [a']_(m_2))$
 
     "сложения":
@@ -101,8 +101,8 @@
 
     По китайской теореме об остатках $forall a_1, a_2 in ZZ space exists a in ZZ: 
     cases(
-        a equiv(m_1) a_1,
-        a equiv(m_2) a_2
+        a equiv_(m_1) a_1,
+        a equiv_(m_2) a_2
     )$
 
     Таким образом $phi$ --- биекция.

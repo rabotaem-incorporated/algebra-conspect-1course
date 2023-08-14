@@ -9,7 +9,7 @@
 #let sim = sym.zws + sym.tilde + sym.zws
 #let pc = sym.plus.circle
 #let nsubg = sym.triangle.l.small
-#let iso = sym.tilde.eqq
+#let iso = sym.tilde.equiv
 #let fg = sym.slash
 
 // operators
@@ -47,7 +47,6 @@
 #let adj(A) = math.accent(A, "~")
 #let wave(x) = math.accent(x, "~")
 #let factor(first, second) = $first\/second$
-#let equiv(mod) = $limits(ident)_(mod)$
 #let mrow(mtx, idx) = $mtx[idx,]$
 #let mcol(mtx, idx) = $mtx[,idx]$
 #let gen(..elem) = $lr(angle.l #elem.pos().join($,$) angle.r)$

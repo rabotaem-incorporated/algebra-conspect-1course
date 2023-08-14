@@ -186,12 +186,12 @@
 #example[
     $x^2 - 1$ имеет $4$ корня в $factor(ZZ, 8 ZZ)$ или в $factor(ZZ, 5 ZZ)$
     $ 
-        x^2 equiv(77) 1 <==> display(cases(
-            x^2 equiv(7) 1,
-            x^2 equiv(11) 1
+        x^2 equiv_(77) 1 <==> display(cases(
+            x^2 equiv_(7) 1,
+            x^2 equiv_(11) 1
         )) <==> display(cases(
-            x equiv(7) 1 " или " x equiv(7) -1,
-            x equiv(11) 1 " или " x equiv(11) -1
+            x equiv_(7) 1 " или " x equiv_(7) -1,
+            x equiv_(11) 1 " или " x equiv_(11) -1
         ))
      $
 ]
@@ -213,5 +213,5 @@
 #example[
     $R = factor(ZZ, 3 ZZ)$, $f = X, g = X^3$
 
-    $forall A in ZZ: a^3 equiv(3) a ==> forall alpha in factor(ZZ, 3 ZZ): f(alpha) = g(alpha)$
+    $forall A in ZZ: a^3 equiv_(3) a ==> forall alpha in factor(ZZ, 3 ZZ): f(alpha) = g(alpha)$
 ]

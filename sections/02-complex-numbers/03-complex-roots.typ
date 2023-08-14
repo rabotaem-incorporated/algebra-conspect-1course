@@ -41,7 +41,7 @@
         
         $(k)/(n) = (l)/(n) + s, space s in ZZ <==> k = l + n s, space s in ZZ <==> $
         
-        $k equiv(n) l <==> z in \{z_0, z_1, ..., z_(n-1)\}$
+        $k equiv_(n) l <==> z in \{z_0, z_1, ..., z_(n-1)\}$
     ]
 ]
 

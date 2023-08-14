@@ -105,7 +105,7 @@
 ]
 
 #pr[
-    Пусть $a_1, a_2, b in ZZ: space a_1 equiv(b) a_2$
+    Пусть $a_1, a_2, b in ZZ: space a_1 equiv_(b) a_2$
     
     Тогда $gcd(a_1, b)$ = $gcd(a_2, b)$.
 ]

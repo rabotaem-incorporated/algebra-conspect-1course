@@ -21,7 +21,7 @@
     
     +   $a divides b c, space  a bot b ==> a divides c$.
     
-    +   $a x equiv(m) a y, space  a bot m ==> x equiv(m) y$.
+    +   $a x equiv_(m) a y, space  a bot m ==> x equiv_(m) y$.
     
     +   $gcd(a, b) = d ==> a = d a', space  b = d b', space  a' bot b'$.
 ]
@@ -53,7 +53,7 @@
         
             $a divides a c m, space a divides b c n ==> a divides c$.
         
-        +   $m divides (a x - a y), space  a bot m ==> m divides (x - y) ==> x equiv(m) y$.
+        +   $m divides (a x - a y), space  a bot m ==> m divides (x - y) ==> x equiv_(m) y$.
         
         +   $d divides a, space  d divides b ==> cases(
                 a = d a',

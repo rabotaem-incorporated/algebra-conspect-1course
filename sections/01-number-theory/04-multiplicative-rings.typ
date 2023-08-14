@@ -5,7 +5,7 @@
 #def[
     Множество классов вычетов по модулю $m$ --- это множество всех вычетов по модулю $m$.
 
-    Обозначается как $factor(ZZ, m ZZ) <==> factor(ZZ, m) <==> factor(Z, equiv(m))$
+    Обозначается как $factor(ZZ, m ZZ) <==> factor(ZZ, m) <==> factor(Z, equiv_(m))$
 ]
 
 #th[
@@ -19,9 +19,9 @@
 #proof[
     + Пусть $a in ZZ$, $(!) space overline(a) = overline(r), space.quad 0 <= r < m$
 
-        + Случай $a >= 0$:  Пусть $r$ --- наименьшее число, такое что $r >= 0$ и $a equiv(m) r$.
+        + Случай $a >= 0$:  Пусть $r$ --- наименьшее число, такое что $r >= 0$ и $a equiv_(m) r$.
            
-           Если $r >= m$, то $r - m equiv(m) a$, $r - m >= 0$, $r - m < r$. 
+           Если $r >= m$, то $r - m equiv_(m) a$, $r - m >= 0$, $r - m < r$. 
            То есть $r - m$ подходит под условие для $r$ и меньше. 
            Противоречие с выбором $r$.
            
@@ -57,13 +57,13 @@
 
     В $factor(ZZ, b ZZ)$ рассмотрим $overline(a) in {overline(0), overline(1), ..., overline(b-1)}$, тогда по теореме выше найдется $0 <= r < b$ для которого $overline(a) = overline(r)$:
     $
-        a equiv(b) r <==> a = b q + r, space.quad q in ZZ.
+        a equiv_(b) r <==> a = b q + r, space.quad q in ZZ.
     $
 
     "Единственность":
     Пусть нашлось два таких $q, q' in ZZ$ и $r, r' in ZZ$ для которых $a = b q + r$, $a = b q' + r'$. Тогда
     $
-        b q + r equiv(b) b q' + r' <==> r equiv(b) r' limits(<==>)^(0 <= r, r' < b) r = r' ==> b q = b q' <==> q = q'.
+        b q + r equiv_(b) b q' + r' <==> r equiv_(b) r' limits(<==>)^(0 <= r, r' < b) r = r' ==> b q = b q' <==> q = q'.
     $
     Напомню, что вторая равносильнось выполняется благодаря единственности класса вычетов $overline(r)$.
 ]
@@ -95,15 +95,15 @@
     $
     распишем условия через сравнения по модулю:
     $
-        overline(a) = overline(a'), space overline(b) = overline(b') => a equiv(m) a', space b equiv(m) b'
+        overline(a) = overline(a'), space overline(b) = overline(b') => a equiv_(m) a', space b equiv_(m) b'
     $
     Воспользуемся свойствами сравнения:
     $
-        a equiv(m) a', space b equiv(m) b' ==> a + b equiv(m) a' + b', space a dot.c b equiv(m) a' dot.c b'
+        a equiv_(m) a', space b equiv_(m) b' ==> a + b equiv_(m) a' + b', space a dot.c b equiv_(m) a' dot.c b'
     $
     И перейдем обратно к классам:
     $
-        a + b equiv(m) a' + b', space a dot.c b equiv(m) a' dot.c b' ==> overline(a + b) = overline(a' + b'), space overline(a dot.c b) = overline(a' dot.c b')
+        a + b equiv_(m) a' + b', space a dot.c b equiv_(m) a' dot.c b' ==> overline(a + b) = overline(a' + b'), space overline(a dot.c b) = overline(a' dot.c b')
     $
 ]
 

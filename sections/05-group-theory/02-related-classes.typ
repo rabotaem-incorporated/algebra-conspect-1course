@@ -101,7 +101,7 @@
 
         Пусть $(a, m) = 1, m in NN, a in ZZ$. Тогда 
         $
-            a^(phi(m)) equiv(m) 1.
+            a^(phi(m)) equiv_(m) 1.
         $
     ]
 

@@ -10,7 +10,7 @@
     
     $[a]_m in (factor(ZZ, m ZZ))^* <==> exists [b]_m: space [a]_m dot.c [b]_m = [1]_m <==>$
     
-    $exists b in ZZ: space a b equiv(m) 1 <==>$
+    $exists b in ZZ: space a b equiv_(m) 1 <==>$
     
     $exists b, c in ZZ: space a b = 1 + m c <==>$
     
@@ -93,10 +93,10 @@
 
     Проверка корректности:
 
-    $[a]_(m n) = [a']_(m n) ==> a equiv(m n) a' ==>
+    $[a]_(m n) = [a']_(m n) ==> a equiv_(m n) a' ==>
     cases(
-        a equiv(m) a',
-        a equiv(n) a'
+        a equiv_(m) a',
+        a equiv_(n) a'
     ) ==>
     cases(
         [a]_m = [a']_m,
@@ -113,7 +113,7 @@
         [a]_m = [b]_m,
         [a]_n = [b]_n
     )
-    limits(==>)^(m bot n) a equiv(m n) b ==> [a]_(m n) = [b]_(m n)$
+    limits(==>)^(m bot n) a equiv_(m n) b ==> [a]_(m n) = [b]_(m n)$
 
     Сюръективность:
 
@@ -121,8 +121,8 @@
 
     $m bot n limits(==>)^("КТО") exists a:
     cases(
-        a equiv(m) b,
-        a equiv(n) c
+        a equiv_(m) b,
+        a equiv_(n) c
     )$
 
     $cases(
@@ -188,7 +188,7 @@
 ]
 
 #th(name: "Теорема Эйлера")[
-    Пусть $m in NN, space  a in ZZ, space  a bot m ==> a^(phi(m)) equiv(m) 1$.
+    Пусть $m in NN, space  a in ZZ, space  a bot m ==> a^(phi(m)) equiv_(m) 1$.
 ]
 
 #proof[
@@ -205,25 +205,25 @@
     
     $[a]_m^(phi(m)) A_1 A_2 ... A_(phi(m)) = [1]_m A_1 A_2 ... A_(phi(m)) limits(==>)^("2 из леммы")$
     
-    $[a]_m^(phi(m)) = [1]_m ==> [a^(phi(m))]_m = [1]_m ==> a^(phi(m)) equiv(m) 1$
+    $[a]_m^(phi(m)) = [1]_m ==> [a^(phi(m))]_m = [1]_m ==> a^(phi(m)) equiv_(m) 1$
 ]
 
 #th(name: "Малая теорема Ферма")[
-    Пусть $p in PP, space  a in ZZ ==> a^p equiv(p) a$
+    Пусть $p in PP, space  a in ZZ ==> a^p equiv_(p) a$
 ]
 
 #proof[
 
-    $(a, p) = 1 ==> a^(p-1) equiv(p) 1 ==> a^(p-1) dot.c a equiv(p) 1 dot.c a ==> a^p equiv(p) a$
+    $(a, p) = 1 ==> a^(p-1) equiv_(p) 1 ==> a^(p-1) dot.c a equiv_(p) 1 dot.c a ==> a^p equiv_(p) a$
 
-    $(a, p) eq.not 1 ==> a equiv(p) 0 ==> cases(
-        a^p equiv(p) 0,
-        a equiv(p) 0
-    ) ==> a^p equiv(p) a$
+    $(a, p) eq.not 1 ==> a equiv_(p) 0 ==> cases(
+        a^p equiv_(p) 0,
+        a equiv_(p) 0
+    ) ==> a^p equiv_(p) a$
 ]
 
 #th(name: "Теорема Вильсона")[
-    $p in PP ==> (p-1)! equiv(p) -1$
+    $p in PP ==> (p-1)! equiv_(p) -1$
 ]
 
 #proof[
