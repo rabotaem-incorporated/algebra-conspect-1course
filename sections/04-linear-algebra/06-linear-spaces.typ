@@ -13,7 +13,7 @@
 
   такие, что выполняются следющие условия:
   
-  - $(V, +)$ - абелева группа (ассоциативность, нейтральный, обратный, коммутативность),
+  - $(V, +)$ --- абелева группа (ассоциативность, нейтральный, обратный, коммутативность),
   - $forall alpha in K space forall v_1, v_2 quad alpha(v_1 + v_2) = alpha v_1 + alpha v_2$,
   - $forall a_1, a_2 in K space forall v in V quad (alpha_1 + alpha_2)v = alpha_1v + alpha_2v$,
   - $forall alpha_1, alpha_2 in K space forall v in V quad (alpha_1alpha_2)v = alpha_1(alpha_2v)$.

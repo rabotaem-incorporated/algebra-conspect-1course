@@ -119,7 +119,12 @@
 ]
 
 #notice[
-    Пусть $wave(phi)$ --- как выше. Тогда $phi = i_H compose wave(phi) compose pi_H$
+    Пусть $wave(phi)$ --- как выше. Тогда $phi = i_H compose wave(phi) compose pi_H$, где:
+
+    $
+        i_(H'): H' < G', H' --> G': h' maps h' #[--- проекция подгруппы на группу]\
+        pi_H: H nsubg G, G --> G fg H: g maps g H #[--- проекция группы на подгруппу]
+    $
     
     #align(center)[#commutative-diagram(
         node((0, 0), $G$),

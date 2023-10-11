@@ -45,9 +45,9 @@
 #proof[
   $
     det(A^T) = 
-    sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(sigma(i) i) &=\
-    sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
-    sum_(sigma in S_n) sgn sigma^(-1) dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
+    sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(underbrace(sigma(i) i, #[отраженные\ координаты])) &=\
+    sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(underbrace(i sigma^(-1)(i), #[то же самое\ в другом порядке])) &=\
+    sum_(sigma in S_n) sgn underbrace(sigma^(-1), #[то же самое\ в другом порядке]) dot.c product_(i = 1)^n a_(i sigma^(-1)(i)) &=\
     sum_(sigma in S_n) sgn sigma dot.c product_(i = 1)^n a_(i sigma(i)) &= det(A).\
   $
 ]
@@ -60,22 +60,30 @@
   3. $A = mat(delim: "[", A_1; dots.v; alpha A_i; dots.v; A_n) ==> det(A) = alpha det(A_1; dots.v; A_i; dots.v; A_n)$
 
   4. $A = mat(delim: "[", alpha A_1; dots.v; alpha A_i; dots.v; alpha A_n) ==> det(A) = alpha^n det(A_1; dots.v; A_i; dots.v; A_n)$
-
-  5. $A = mat(delim: "[", A_1; dots.v; A_n), A_i = A_j ==> det(A) = 0$
-
-  6. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_i + alpha A_j; dots.v; A_n) ==> det(A) = det(B)$
 ]
 
 #proof[
-  #TODO[]
+  2. суммируем два определителя по $a_(i phi(i))$
+
+  3. выносим $alpha$ за знак суммы из $a_(i phi(i))$
+
+  4. через пункт 3
 ]
 
 #ticket[Кососимметричность определителя по строкам и столбцам]
 
 #props[
+  5. $A = mat(delim: "[", A_1; dots.v; A_n), A_i = A_j ==> det(A) = 0$
+
+  6. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_i + alpha A_j; dots.v; A_n) ==> det(A) = det(B)$
+
   7. $A = mat(delim: "[", A_1; dots.v; A_i; dots.v; A_j; dots.v; A_n), B = mat(delim: "[", A_1; dots.v; A_j; dots.v; A_i; dots.v; A_n) ==> det(A) = -det(B)$
 ]
 
 #proof[
-  #TODO[]
+  5. на любую перестановку $phi$ найдется парная, где поменяны $i$ и $j$, и определитель будет противоположным
+
+  6. $ det(B) = det(A) + alpha dot det(mat(delim: "[", A_1; dots.v; A_j; dots.v; A_j; dots.v; A_n)) = det(A) $
+
+  7. аналогично пункту 5
 ]

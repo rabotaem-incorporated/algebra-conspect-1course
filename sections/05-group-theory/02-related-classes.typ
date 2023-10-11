@@ -27,7 +27,7 @@
 
     Аналогично определяются правые смежные классы.
     Множество левых смежных классов $G$ по $H$: $G fg H$,
-    множество правых смежных классов $G$ по $H$: $G \\ H$.
+    множество правых смежных классов $G$ по $H$: $H \\ G$.
 ]
 
 #example[
@@ -90,9 +90,9 @@
 ]
 
 #follow(plural: true)[
-    + Если $abs(G) < oo$ и $H < G$, то $abs(G) dots.v abs(H)$.
+    + Если $abs(G) < oo$ и $H < G$, то $abs(G) space dots.v space abs(H)$.
     
-    + Если $abs(G) < oo$ и $g in G$, то $abs(G) dots.v abs(gen(g))$.
+    + Если $abs(G) < oo$ и $g in G$, то $abs(G) space dots.v space abs(gen(g))$.
     
     + Если $abs(G) < oo$ и $g in G$, то $g^(abs(G)) = e$.
     

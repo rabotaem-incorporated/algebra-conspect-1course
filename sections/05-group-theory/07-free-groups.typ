@@ -23,8 +23,8 @@
 #proof[
     Существует гомоморфизм $epsilon : F --> F', space epsilon(f_i) = f'_i$ и гомоморфизм $epsilon': F' --> F : epsilon'(f_i') = f_i$
     $
-        epsilon' compose epsilon: F &--> F space (epsilon' compose epsilon)(f_i) = f_i\
-        id: F &--> F space id_F(f_i) = f_i \
+        epsilon' compose epsilon: F &--> F quad (epsilon' compose epsilon)(f_i) = f_i\
+        id: F &--> F quad id_F (f_i) = f_i \
         ==> epsilon' compose epsilon = id_F
     $
     Аналогично $epsilon compose epsilon' = id_F$. Таким образом $epsilon$ биекция, поэтому изоморфизм.
@@ -33,12 +33,12 @@
 #ticket[Построение свободной группы]
 
 #def[
-    + $A = {a_1, ..., a_k, a_1', ..., a_k'}$ --- _алфавит_
+    + $A = {a_1, ..., a_k, a_1 ', ..., a_k '}$ --- _алфавит_
     + $W = {l_1...l_d bar d >= 0; l_1, ..., l_d in A}$ --- _слово_
     + _Вставкой_ назовем следующую операцию:
         $
-            L R --> L a_i a_i' R&\
-            L R --> L a_i' a_i R&, space (L, R in W)
+            L R --> L a_i a_i ' R&\
+            L R --> L a_i ' a_i R&, space (L, R in W)
         $
         Обратную операцию назовем _сокращением_.
     + Будем говорить, что $omega sim omega'$, если $omega$ можно получить из $omega'$ конечным числом вставок и сокращений.
@@ -46,14 +46,14 @@
 
 #notice[
     $sim$ --- отношение эквивалентности на $W$. Тогда $F = W fg sim$.\ 
-    Назовем пустое слово $Lambda$. Таким образом $Lambda = [] = [x_i x_i'] = ...$
+    Назовем пустое слово $Lambda$. Таким образом $Lambda = [] = [x_i x_i '] = ...$
 ]
 
 #notice[
     Умножение введем следующим образом:
     $
         F times F &--> F \
-        ([w], [w']) &maps [w w']
+        ([w], [w ']) &maps [w w ']
     $
     То есть умножение --- конкатенация двух слов. Нетрудно увидеть, что оно определено корректно.
 ]
@@ -71,9 +71,9 @@
     + Обратный элемент:
         $
             cases(
-                [x_j] dot [x_j'] = [x_j x_j'] = Lambda,
-                [x_j'] dot [x_j] = [x_j' x_j] = Lambda
-            ) ==> [x_j], [x_j'] space #[--- обратимые] \
+                [x_j] dot [x_j '] = [x_j x_j '] = Lambda,
+                [x_j '] dot [x_j] = [x_j ' x_j] = Lambda
+            ) ==> [x_j], [x_j '] space #[--- обратимые] \
             [a_1 ... a_n]^(-1) =  ([a_1] dot ... dot [a_n])^(-1) = [a_n]^(-1) dot ... dot [a_1]^(-1)
         $
 ]
@@ -95,30 +95,30 @@
     $
         phi: F &--> G: \ 
         [x_j] &maps g_j \
-        [x_j'] &maps g_j^(-1) \
+        [x_j '] &maps g_j^(-1) \
         [a_1 ... a_n] &maps phi([a_1]) ... phi([a_n])
     $
 
     Проверка корректности:
-    - Пусть мы сделали вставку $L R ~~> L x_j x_j' R$ или $L x_j' x_j R$ 
+    - Пусть мы сделали вставку $L R ~~> L x_j x_j ' R$ или $L x_j ' x_j R$ 
     $
-        phi([L x_j x_j' R]) = phi([L]) phi([x_j]) phi([x_j']) phi([R]) = phi([L]) phi([R]) = phi([L R])
+        phi([L x_j x_j ' R]) = phi([L]) phi([x_j]) phi([x_j ']) phi([R]) = phi([L]) phi([R]) = phi([L R])
     $
     Рассмотрим вспомогательный гомоморфизм  $Phi$ из группы слов $W$ в $G$
     $
         Phi: W &--> G\
         x_j &maps g_j\
-        x_j' &maps g_j^(-1)\ 
+        x_j ' &maps g_j^(-1)\ 
         a_1 ... a_n &maps Phi(a_1) ... Phi(a_n)
     $
     Нетрудно видеть, что равные с точностью до вставки слова переходят в равные элементы $G$.
 
     $
-        Phi(x_j) Phi(x_j') = g_j g_j' = e\
-        w sim w' ==> Phi(w) = Phi(w')
+        Phi(x_j) Phi(x_j ') = g_j g_j ' = e\
+        w sim w ' ==> Phi(w) = Phi(w ')
     $
     
-    Тогда можно показать, что $Phi$ - это композиция двух гомоморфизмов: факторизации по вставке и некоторого $phi'$, который переводит свободные образующие $f_i$ в $g_i$.
+    Тогда можно показать, что $Phi$ --- это композиция двух гомоморфизмов: факторизации по вставке и некоторого $phi'$, который переводит свободные образующие $f_i$ в $g_i$.
 
     #import "../../packages/commute.typ": *
     

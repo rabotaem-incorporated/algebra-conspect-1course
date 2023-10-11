@@ -47,9 +47,9 @@
 ]
 
 #examples[
-  - $(123)$ - перестановка $mat(1, 2, 3; 2, 3, 1)$,
+  - $(123)$ --- перестановка $display(mat(1, 2, 3; 2, 3, 1))$,
 
-  - $(34)$ - перестановка $mat(1, 2, 3, 4; 1, 2, 4, 3)$.
+  - $(34)$ --- перестановка $display(mat(1, 2, 3, 4; 1, 2, 4, 3))$.
 ]
 
 #def[
@@ -81,7 +81,9 @@
   Любая перестановка является произведением элементарных транспозиций.
 ]
 
-#proof-left-to-the-reader()
+#proof[
+  Перестановку можно разложить в произведение циклов, а цикл в произведение транспозиций. Транспозиции в свою очередь можно разложить в произведение элементарных транспозиций.
+]
 
 #ticket[Чётность и знак перестановки]
 
@@ -146,5 +148,5 @@
   A_n &limits(-->)^Phi S_n without A_n & #h(3em) S_n without A_n &limits(-->)^Psi A_n \
   sigma & arrow.long.bar sigma (1 2) & sigma & arrow.long.bar sigma(1 2)
   $
-  Заметим, что $ cases(Phi compose Psi = sigma(1 2)(1 2) = id_(A_n), Psi compose Phi = id_(S_n without A_n)) $ Значит $Phi$ --- биекция и $abs(S_n without A_n) = abs(A_n) ==> abs(A_n) = (n!) / 2$.
+  Заметим, что $ cases(Psi compose Phi = sigma(1 2)(1 2) = id_(A_n), Phi compose Psi = id_(S_n without A_n)) $ Значит $Phi$ --- биекция и $abs(S_n without A_n) = abs(A_n) ==> abs(A_n) = (n!) / 2$.
 ]

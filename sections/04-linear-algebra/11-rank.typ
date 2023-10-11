@@ -19,7 +19,7 @@
 
     Найдутся индексы $sq(i, r)$ такие, что $sq(v, i_1, i_r)$ --- базис $W$. Очевидно, $r = rk(sq(v))$. 
     
-    $sq(v, i_1, i_r)$ --- ЛНС в $W$. Если $sq(w, l)$ --- ЛНС в $W$, то $l <= Dim W = r$.
+    Если $sq(w, l)$ --- ЛНС в $W$, то учитывая что $sq(v, i_1, i_r)$ --- ЛНС в $W$ получаем $l <= Dim W = r$.
 ]
 
 #notice[
@@ -125,12 +125,12 @@
 ]
 
 #proof[
-    - "$4 <=> 1$" --- знаем.
-    - "$1 => 2, 3$" --- тривиально.
-    - "$2 => 4$" --- $det(U) det(V) = det(U V) = det(E_n) = 1 ==> det(U) != 0$.
-    - "$3 => 4$" --- $det(U) det(V) = det(V U) = det(E_n) = 1 ==> det(U) != 0$.
-    - "$1 => 5$" --- $U V = E_n, V in GL_n (K) ==> rk U = rk (U V) = rk E_n = n$.
-    - "$5 => 1$" --- $U = P D Q, rk D = n space "и" space P, Q in GL_n (K)$.
+    - "$4 <=> 1$": знаем
+    - "$1 => 2, 3$": тривиально
+    - "$2 => 4$": $ det(U) det(V) = det(U V) = det(E_n) = 1 ==> det(U) != 0 $
+    - "$3 => 4$": $ det(U) det(V) = det(V U) = det(E_n) = 1 ==> det(U) != 0 $
+    - "$1 => 5$": $ U V = E_n, V in GL_n (K) ==> rk U = rk (U V) = rk E_n = n $
+    - "$5 => 1$": $ U = P D Q, rk D = n space "и" space P, Q in GL_n (K) $
 ]
 
 #ticket[Минорный ранг]

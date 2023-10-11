@@ -5,7 +5,7 @@
 #ticket[Эндоморфизм возведения в степень $p$ поля характеристики $p$]
 
 #pr[
-    Пусть $char F = p in PP_(>0)$. Сущесвует эндоморфизм $Phi$, который ведет себя следующим образом:
+    Пусть $char F = p in PP_(>0)$. Существует эндоморфизм $Phi$, который ведет себя следующим образом:
     $
         F &limits(-->)^(Phi) F \
         x &maps x^p.
@@ -17,7 +17,7 @@
     $
         Phi(x y) = (x y)^p = x^p y^p = Phi(x) Phi(y), \
         Phi(1) = 1^p = 1, \
-        Phi(x + y) = x^p + y^p + sum_(i=1)^(p-1) underbrace(C_p^i x^i y^(p-i), p divides) = x^p + y^p = Phi(x) + Phi(y).
+        Phi(x + y) = x^p + y^p + sum_(i=1)^(p-1) underbrace(C_p^i x^i y^(p-i), dots.v space p) = x^p + y^p = Phi(x) + Phi(y).
     $
 ]
 
@@ -50,7 +50,7 @@
     $a_1, ..., a_q$ --- все корни $x^q - x$, $K = {a_1, ..., a_q}$. 
     Оказывается, что $K$ --- подполе в $L$, потому что:
     $
-        a, b in K space (a+b)^q - (a+b) = a^q + b^q - a - b = 0\
+        a, b in K space (a+b)^q - (a+b) = a^q + b^q - a - b = a + b - a - b = 0\
         (a b)^q - a b = a^q b^q - a b = a b - a b = 0\
         (-a)^q = (-1)^q a^q = underbrace((-1), #place[даже при $p = 2$]) a = -a\
         1^q = 1\
@@ -89,13 +89,15 @@
 #proof[
     + $char K = p ==> abs(K) = p^m$ для некоторого $m in NN$\ 
         $[FF_(p^n) : K] = d ==> underbrace(abs(FF_(p^n)), p^n) = underbrace(abs(K)^d, (p^m)^d), space n = m d$
-    + $m divides n ==> (p^m - 1) divides (p^n - 1) ==> (x^(p^m - 1) - 1) divides (x^(p^n - 1) - 1) ==> (x^(p^m) - x) divides (x^(p^n) - x) $
-    $x^(p^n) - x$ расскладывается на линейные в $FF_(p^n) ==> x^(p^m)- x$ тоже расскладывается на линейные в $FF_(p^n)$
+    + #[
+        "Существование": $m divides n ==> (p^m - 1) divides (p^n - 1) ==> (x^(p^m - 1) - 1) divides (x^(p^n - 1) - 1) ==> (x^(p^m) - x) divides (x^(p^n) - x) $
+        $x^(p^n) - x$ расскладывается на линейные в $FF_(p^n) ==> x^(p^m)- x$ тоже расскладывается на линейные в $FF_(p^n)$
 
-    Очевидно, корни разложения: $x_1, ..., x_(p^m)$, ${x_1, ..., x_(p^m)}$ --- искомое подполе.
-    
-    Единственность: Пусть $F_1$ и $F_2$ --- подполя $FF_(p^n)$ из $p^m$ элементов
-    $ forall x in F_1 union F_2 : x^(p^m) - x = 0 ==> abs(F_1 union F_2) <= p^m ==> F_1 = F_2$
+        Очевидно, корни разложения: $x_1, ..., x_(p^m)$, ${x_1, ..., x_(p^m)}$ --- искомое подполе.
+        
+        "Единственность": Пусть $F_1$ и $F_2$ --- подполя $FF_(p^n)$ из $p^m$ элементов
+        $ forall x in F_1 union F_2 : x^(p^m) - x = 0 ==> abs(F_1 union F_2) <= p^m ==> F_1 = F_2$
+    ]
 ]
 
 

@@ -211,7 +211,9 @@
 #let oth_color = if not config.monochrome { blue } else { luma(30%) }
 #let def_color = if not config.monochrome { orange } else { luma(40%) }
 #let proof_color = if not config.monochrome { gray } else { luma(80%) }
+#let magic_color = if not config.monochrome { purple } else { luma(60%) }
 
+#let magic = make_theorem("Магия какая-то", color: magic_color)
 #let th = make_theorem("Теорема", color: th_color)
 #let lemma = make_theorem("Лемма", color: th_color)
 #let pr = make_theorem("Предложение", color: oth_color)
