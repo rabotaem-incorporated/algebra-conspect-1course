@@ -15,6 +15,7 @@
   info: none,
   document_body,
 ) = {
+  set document(author: "Rabotaem Inc.", title: name)
   set page(
     paper: "a4",
     margin: 6%,
